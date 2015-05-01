@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PARBookViewController">
@@ -16,20 +18,56 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="titleLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXq-S4-0Gl">
-                    <rect key="frame" x="8" y="103" width="219" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tdd.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uDh-hS-dQl">
+                    <rect key="frame" x="8" y="70" width="217" height="230"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXq-S4-0Gl">
+                    <rect key="frame" x="233" y="78" width="359" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="rap-EE-P41"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="25"/>
+                    <color key="textColor" red="0.1333333333" green="0.2666666667" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYl-di-klv">
-                    <rect key="frame" x="8" y="132" width="219" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYl-di-klv">
+                    <rect key="frame" x="233" y="118" width="359" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="Jtx-aO-Hlj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="17"/>
                     <color key="textColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Z8-rt-jQq">
+                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                    <items>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="5Sm-XO-HEd"/>
+                        <barButtonItem title="Web" id="wtT-JU-bwW">
+                            <color key="tintColor" red="0.1333333333" green="0.2666666667" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="5Z8-rt-jQq" secondAttribute="trailing" id="3Np-ot-LkK"/>
+                <constraint firstItem="NXq-S4-0Gl" firstAttribute="top" secondItem="uDh-hS-dQl" secondAttribute="top" constant="8" id="HPd-dq-BnV"/>
+                <constraint firstItem="uDh-hS-dQl" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="0.75" id="IPi-Le-ZAa"/>
+                <constraint firstItem="uDh-hS-dQl" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Iz3-Q5-tpr"/>
+                <constraint firstAttribute="bottom" secondItem="5Z8-rt-jQq" secondAttribute="bottom" id="Oc4-3k-nav"/>
+                <constraint firstAttribute="trailing" secondItem="oYl-di-klv" secondAttribute="trailing" constant="8" id="S1u-Jm-61T"/>
+                <constraint firstItem="NXq-S4-0Gl" firstAttribute="leading" secondItem="uDh-hS-dQl" secondAttribute="trailing" constant="8" id="Sin-Ez-xm5"/>
+                <constraint firstItem="oYl-di-klv" firstAttribute="leading" secondItem="uDh-hS-dQl" secondAttribute="trailing" constant="8" id="aFA-gC-cb7"/>
+                <constraint firstItem="uDh-hS-dQl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="nEu-Vj-FJb"/>
+                <constraint firstItem="oYl-di-klv" firstAttribute="top" secondItem="NXq-S4-0Gl" secondAttribute="bottom" constant="8" id="nl7-hl-sp4"/>
+                <constraint firstAttribute="trailing" secondItem="NXq-S4-0Gl" secondAttribute="trailing" constant="8" id="oeg-Fe-0qM"/>
+                <constraint firstItem="5Z8-rt-jQq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="r9a-Ps-L7Y"/>
+                <constraint firstItem="uDh-hS-dQl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="zQq-dP-jZ6"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="tdd.jpg" width="240" height="315"/>
+    </resources>
 </document>
