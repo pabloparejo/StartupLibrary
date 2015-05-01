@@ -17,7 +17,8 @@ DerivedData
 *.ipa
 *.xcuserstate
 
-.psd
+
+*.psd
 
 # CocoaPods
 #
