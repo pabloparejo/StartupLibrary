@@ -14,7 +14,10 @@
 @property (strong, nonatomic) PARBook *model;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *author;
+@property (weak, nonatomic) IBOutlet UIButton *category;
 @property (weak, nonatomic) IBOutlet UILabel *summary;
+@property (weak, nonatomic) IBOutlet UIImageView *bookImage;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 
 @end
 
@@ -31,8 +34,16 @@
                                 category:@"Metodology"
                                     tags:@[@"test", @"python", @"selenium", @"django", @"test", @"driven", @"development"]];
     
+    
+
+    [self downloadImageFromUrl:[self.model coverURL] complete:^(UIImage *image) {
+        [self.bookImage setImage:image];
+        [self.loading stopAnimating];
+    }];
+    
     self.titleLabel.text = [self.model title];
     self.author.text = [self.model author];
+    [self.category setTitle:[self.model category] forState:UIControlStateNormal];
     self.summary.text = [self.model summary];
 }
 
@@ -41,14 +52,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Utils
+
+-(void)downloadImageFromUrl:(NSURL *)url complete:(void (^)(UIImage *image))completionBlock{
+
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
+        // QOS_CLASS_DEFAULT is the 3rd priority queue
+        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+        
+        // Returning to main queue
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionBlock(image);
+        });
+    });
+    
 }
-*/
 
 @end
