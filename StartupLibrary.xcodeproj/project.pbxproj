@@ -12,6 +12,9 @@
 		C553CFE21AF3A8DE00EC7017 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C553CFE11AF3A8DE00EC7017 /* Images.xcassets */; };
 		C553CFE51AF3A8DE00EC7017 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C553CFE31AF3A8DE00EC7017 /* LaunchScreen.xib */; };
 		C553CFF11AF3A8DF00EC7017 /* StartupLibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C553CFF01AF3A8DF00EC7017 /* StartupLibraryTests.m */; };
+		C553CFFD1AF3AA9600EC7017 /* PARBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C553CFFB1AF3AA9600EC7017 /* PARBookViewController.m */; };
+		C553CFFE1AF3AA9600EC7017 /* PARBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C553CFFC1AF3AA9600EC7017 /* PARBookViewController.xib */; };
+		C553D0021AF3ABD300EC7017 /* PARBook.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0011AF3ABD300EC7017 /* PARBook.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,11 @@
 		C553CFEA1AF3A8DF00EC7017 /* StartupLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StartupLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C553CFEF1AF3A8DF00EC7017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C553CFF01AF3A8DF00EC7017 /* StartupLibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartupLibraryTests.m; sourceTree = "<group>"; };
+		C553CFFA1AF3AA9600EC7017 /* PARBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARBookViewController.h; sourceTree = "<group>"; };
+		C553CFFB1AF3AA9600EC7017 /* PARBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARBookViewController.m; sourceTree = "<group>"; };
+		C553CFFC1AF3AA9600EC7017 /* PARBookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARBookViewController.xib; sourceTree = "<group>"; };
+		C553D0001AF3ABD300EC7017 /* PARBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARBook.h; sourceTree = "<group>"; };
+		C553D0011AF3ABD300EC7017 /* PARBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARBook.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +86,9 @@
 			children = (
 				C553CFD81AF3A8DE00EC7017 /* AppDelegate.h */,
 				C553CFD91AF3A8DE00EC7017 /* AppDelegate.m */,
+				C553D0031AF3ABDA00EC7017 /* Model */,
+				C553CFFF1AF3AA9A00EC7017 /* Controller */,
 				C553CFE11AF3A8DE00EC7017 /* Images.xcassets */,
-				C553CFE31AF3A8DE00EC7017 /* LaunchScreen.xib */,
 				C553CFD41AF3A8DE00EC7017 /* Supporting Files */,
 			);
 			path = StartupLibrary;
@@ -88,6 +97,7 @@
 		C553CFD41AF3A8DE00EC7017 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C553CFE31AF3A8DE00EC7017 /* LaunchScreen.xib */,
 				C553CFD51AF3A8DE00EC7017 /* Info.plist */,
 				C553CFD61AF3A8DE00EC7017 /* main.m */,
 			);
@@ -109,6 +119,25 @@
 				C553CFEF1AF3A8DF00EC7017 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C553CFFF1AF3AA9A00EC7017 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C553CFFA1AF3AA9600EC7017 /* PARBookViewController.h */,
+				C553CFFB1AF3AA9600EC7017 /* PARBookViewController.m */,
+				C553CFFC1AF3AA9600EC7017 /* PARBookViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C553D0031AF3ABDA00EC7017 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C553D0001AF3ABD300EC7017 /* PARBook.h */,
+				C553D0011AF3ABD300EC7017 /* PARBook.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +222,7 @@
 			files = (
 				C553CFE51AF3A8DE00EC7017 /* LaunchScreen.xib in Resources */,
 				C553CFE21AF3A8DE00EC7017 /* Images.xcassets in Resources */,
+				C553CFFE1AF3AA9600EC7017 /* PARBookViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +240,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C553CFFD1AF3AA9600EC7017 /* PARBookViewController.m in Sources */,
 				C553CFDA1AF3A8DE00EC7017 /* AppDelegate.m in Sources */,
+				C553D0021AF3ABD300EC7017 /* PARBook.m in Sources */,
 				C553CFD71AF3A8DE00EC7017 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

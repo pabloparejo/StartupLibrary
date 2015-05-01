@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "PARBookViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +16,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    PARBookViewController *bookVC = [[PARBookViewController alloc] init];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:bookVC];
+    [self.window setRootViewController:navVC];
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
