@@ -52,6 +52,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - IBActions
+
+
+- (IBAction)openBook:(id)sender {
+    NSLog(@"%@", [self.model bookURL]);
+}
+
+- (IBAction)buyBook:(id)sender {
+    NSLog(@"%@", [self.model webURL]);
+}
 
 #pragma mark - Utils
 

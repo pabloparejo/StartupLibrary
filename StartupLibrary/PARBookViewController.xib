@@ -82,6 +82,9 @@
                     <variation key="heightClass=regular-widthClass=regular">
                         <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="20"/>
                     </variation>
+                    <connections>
+                        <action selector="openBook:" destination="-1" eventType="touchUpInside" id="akS-hs-gr2"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSW-UG-YPf">
                     <rect key="frame" x="8" y="556" width="288" height="36"/>
@@ -94,6 +97,9 @@
                     <variation key="heightClass=regular-widthClass=regular">
                         <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="20"/>
                     </variation>
+                    <connections>
+                        <action selector="buyBook:" destination="-1" eventType="touchUpInside" id="AA1-SP-PsB"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYl-di-klv">
                     <rect key="frame" x="233" y="114" width="359" height="24"/>

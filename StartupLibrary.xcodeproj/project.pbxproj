@@ -16,6 +16,8 @@
 		C553CFFE1AF3AA9600EC7017 /* PARBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C553CFFC1AF3AA9600EC7017 /* PARBookViewController.xib */; };
 		C553D0021AF3ABD300EC7017 /* PARBook.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0011AF3ABD300EC7017 /* PARBook.m */; };
 		C553D0051AF3B90700EC7017 /* tdd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C553D0041AF3B90700EC7017 /* tdd.jpg */; };
+		C553D0091AF4154000EC7017 /* PARWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0071AF4154000EC7017 /* PARWebViewController.m */; };
+		C553D00A1AF4154000EC7017 /* PARWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C553D0081AF4154000EC7017 /* PARWebViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,9 @@
 		C553D0001AF3ABD300EC7017 /* PARBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARBook.h; sourceTree = "<group>"; };
 		C553D0011AF3ABD300EC7017 /* PARBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARBook.m; sourceTree = "<group>"; };
 		C553D0041AF3B90700EC7017 /* tdd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tdd.jpg; path = ../../../Desktop/tdd.jpg; sourceTree = "<group>"; };
+		C553D0061AF4154000EC7017 /* PARWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARWebViewController.h; sourceTree = "<group>"; };
+		C553D0071AF4154000EC7017 /* PARWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARWebViewController.m; sourceTree = "<group>"; };
+		C553D0081AF4154000EC7017 /* PARWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARWebViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +94,8 @@
 				C553D0041AF3B90700EC7017 /* tdd.jpg */,
 				C553CFD81AF3A8DE00EC7017 /* AppDelegate.h */,
 				C553CFD91AF3A8DE00EC7017 /* AppDelegate.m */,
-				C553D0031AF3ABDA00EC7017 /* Model */,
-				C553CFFF1AF3AA9A00EC7017 /* Controller */,
+				C553D0031AF3ABDA00EC7017 /* WebView VC */,
+				C553CFFF1AF3AA9A00EC7017 /* PARBook MVC */,
 				C553CFE11AF3A8DE00EC7017 /* Images.xcassets */,
 				C553CFD41AF3A8DE00EC7017 /* Supporting Files */,
 			);
@@ -124,23 +129,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C553CFFF1AF3AA9A00EC7017 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				C553CFFA1AF3AA9600EC7017 /* PARBookViewController.h */,
-				C553CFFB1AF3AA9600EC7017 /* PARBookViewController.m */,
-				C553CFFC1AF3AA9600EC7017 /* PARBookViewController.xib */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		C553D0031AF3ABDA00EC7017 /* Model */ = {
+		C553CFFF1AF3AA9A00EC7017 /* PARBook MVC */ = {
 			isa = PBXGroup;
 			children = (
 				C553D0001AF3ABD300EC7017 /* PARBook.h */,
 				C553D0011AF3ABD300EC7017 /* PARBook.m */,
+				C553CFFA1AF3AA9600EC7017 /* PARBookViewController.h */,
+				C553CFFB1AF3AA9600EC7017 /* PARBookViewController.m */,
+				C553CFFC1AF3AA9600EC7017 /* PARBookViewController.xib */,
 			);
-			name = Model;
+			name = "PARBook MVC";
+			sourceTree = "<group>";
+		};
+		C553D0031AF3ABDA00EC7017 /* WebView VC */ = {
+			isa = PBXGroup;
+			children = (
+				C553D0061AF4154000EC7017 /* PARWebViewController.h */,
+				C553D0071AF4154000EC7017 /* PARWebViewController.m */,
+				C553D0081AF4154000EC7017 /* PARWebViewController.xib */,
+			);
+			name = "WebView VC";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +234,7 @@
 				C553CFE51AF3A8DE00EC7017 /* LaunchScreen.xib in Resources */,
 				C553CFE21AF3A8DE00EC7017 /* Images.xcassets in Resources */,
 				C553D0051AF3B90700EC7017 /* tdd.jpg in Resources */,
+				C553D00A1AF4154000EC7017 /* PARWebViewController.xib in Resources */,
 				C553CFFE1AF3AA9600EC7017 /* PARBookViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +256,7 @@
 				C553CFFD1AF3AA9600EC7017 /* PARBookViewController.m in Sources */,
 				C553CFDA1AF3A8DE00EC7017 /* AppDelegate.m in Sources */,
 				C553D0021AF3ABD300EC7017 /* PARBook.m in Sources */,
+				C553D0091AF4154000EC7017 /* PARWebViewController.m in Sources */,
 				C553CFD71AF3A8DE00EC7017 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
