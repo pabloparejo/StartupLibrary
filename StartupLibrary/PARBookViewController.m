@@ -14,6 +14,7 @@
 @property (strong, nonatomic) PARBook *model;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *author;
+@property (weak, nonatomic) IBOutlet UILabel *summary;
 
 @end
 
@@ -32,6 +33,7 @@
     
     self.titleLabel.text = [self.model title];
     self.author.text = [self.model author];
+    self.summary.text = [self.model summary];
 }
 
 - (void)didReceiveMemoryWarning {
