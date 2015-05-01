@@ -3,6 +3,7 @@ StartupLibrary
 ============
 >Still in progress
 
+
 In this repo you will find an iOS app I am developing during my *master's degree in mobile applications*.
 The specifications are to create a library and get used to collectionViews, TableViews and SplitViewController.
 
@@ -17,6 +18,6 @@ I think this project is a good opportunity to create my own *to-read* books libr
 - [UIImageViewAligned](https://github.com/reydanro/UIImageViewAligned)
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking)
 - [PDF Reader Core](https://github.com/vfr/Reader)
-
+---
 #### Other cool functionality I want to add
 - [Table search by name / category / tags](http://www.raywenderlich.com/16873/how-to-add-search-into-a-table-view)
