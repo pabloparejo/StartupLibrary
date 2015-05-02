@@ -7,7 +7,7 @@
 //
 
 @import UIKit;
-
+#import "PARBook.h"
 @interface PARBookViewController : UIViewController
-
+- (id) initWithModel:(PARBook *)model;
 @end

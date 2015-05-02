@@ -7,8 +7,10 @@
 //
 
 @import Foundation;
+@import UIKit;
 
 @interface PARBook : NSObject
+
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *author;
 @property (strong, nonatomic) NSURL *bookURL;
@@ -35,5 +37,7 @@
                        webURL:(NSURL *)webURL
                      category:(NSString *)category
                          tags:(NSArray *)tags;
+
+-(void) withCoverImage:(void (^)(UIImage *image))completionBlock;
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "PARBook.h"
-
 @implementation PARBook
 
 -(id) initWithTitle:(NSString *)title
@@ -48,6 +47,20 @@
                                 webURL:webURL
                               category:category
                                   tags:tags];
+}
+
+-(void) withCoverImage:(void (^)(UIImage *image))completionBlock{
+    
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
+        // QOS_CLASS_DEFAULT is the 3rd priority queue
+        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.coverURL]];
+        
+        // Returning to main queue
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionBlock(image);
+        });
+    });
+    
 }
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "PARBookViewController.h"
+#import "PARLibraryViewController.h"
 #import "PARLibrary.h"
 @interface AppDelegate ()
 
@@ -20,10 +20,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    PARLibrary *lib = [PARLibrary new];
-    
-    PARBookViewController *bookVC = [[PARBookViewController alloc] init];
-    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:bookVC];
+    PARLibraryViewController *libraryVC = [[PARLibraryViewController alloc] init];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:libraryVC];
     [self.window setRootViewController:navVC];
     
     [self.window makeKeyAndVisible];

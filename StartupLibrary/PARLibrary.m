@@ -7,7 +7,6 @@
 //
 
 #import "PARLibrary.h"
-#import "PARBook.h"
 
 @interface PARLibrary()
 
@@ -85,5 +84,11 @@
 }
 -(NSUInteger)numberOfSections{
     return [[self.library allKeys]count];
+}
+-(NSArray *) booksForKey:(NSString *)key{
+    return [self.library objectForKey:key];
+}
+-(PARBook *) bookForKey:(NSString *)key atIndex:(NSUInteger) index{
+    return [[self.library objectForKey:key] objectAtIndex:index];
 }
 @end

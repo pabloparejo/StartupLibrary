@@ -7,7 +7,6 @@
 //
 
 #import "PARBookViewController.h"
-#import "PARBook.h"
 #import "PARWebViewController.h"
 
 #define BUY_BOOK_TITLE @"Book's Store"
@@ -26,20 +25,16 @@
 
 @implementation PARBookViewController
 
+- (id) initWithModel:(PARBook *)model{
+    if (self = [super init]) {
+        _model = model;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.model  = [PARBook bookWithTitle:@"Test-Driven Development with Python"
-                                  author:@"Harry Percival"
-                                 bookURL:[NSURL URLWithString:@"http://cdn2.filepi.com/g/fxiypq5/1430560276/001f0d881952cccc289ac97cf10a6182"]
-                                coverURL:[NSURL URLWithString:@"http://hackershelf.com/media/cache/49/94/4994a9500689d5b1483c50b6ab9c7975.jpg"]
-                                 summary:@"Test-Driven Development with Python focuses on web development, with some coverage of JavaScript (inescapable for any web programmer). This book uses a concrete example—the development of a website, from scratch—to teach the TDD metholology, and how it applies to web programming, from the basics of database integration and javascript, going via browser-automation tools like Selenium, to advanced (and trendy) topics like NoSQL, websockets and Async programming."
-                                  webURL:[NSURL URLWithString:@"http://chimera.labs.oreilly.com/books/1234000000754/index.html"]
-                                category:@"Metodology"
-                                    tags:@[@"test", @"python", @"selenium", @"django", @"test", @"driven", @"development"]];
-    
-    
-
-    [self downloadImageFromUrl:[self.model coverURL] complete:^(UIImage *image) {
+    [self.model withCoverImage:^(UIImage *image) {
         [self.bookImage setImage:image];
         [self.loading stopAnimating];
     }];
@@ -71,20 +66,6 @@
     [self.navigationController pushViewController:webVC animated:YES];
 }
 
-#pragma mark - Utils
 
--(void)downloadImageFromUrl:(NSURL *)url complete:(void (^)(UIImage *image))completionBlock{
-
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
-        // QOS_CLASS_DEFAULT is the 3rd priority queue
-        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-        
-        // Returning to main queue
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completionBlock(image);
-        });
-    });
-    
-}
 
 @end
