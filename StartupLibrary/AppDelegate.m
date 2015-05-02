@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PARBookViewController.h"
+#import "PARLibrary.h"
 @interface AppDelegate ()
 
 @end
@@ -18,6 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    PARLibrary *lib = [PARLibrary new];
     
     PARBookViewController *bookVC = [[PARBookViewController alloc] init];
     UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:bookVC];
