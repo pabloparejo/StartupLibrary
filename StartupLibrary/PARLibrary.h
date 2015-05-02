@@ -11,4 +11,9 @@
 
 @interface PARLibrary : NSObject
 
+@property (nonatomic, readonly) NSUInteger numberOfSections;
+
+-(NSUInteger)countForKey:(NSString *)key;
+-(NSString *)keyForSection:(NSUInteger)section;
+
 @end

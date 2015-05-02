@@ -27,6 +27,7 @@
 - (void) createLibraryWithBooks:(NSArray *) books{
     NSMutableDictionary *categoriesDict = [NSMutableDictionary dictionary];
     
+    // Order books by category (NSDictionary keys)
     [books enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(PARBook *book, NSUInteger idx, BOOL *stop) {
         if ([categoriesDict objectForKey:book.category] == nil) {
             [categoriesDict setObject:[NSMutableArray arrayWithObject:book] forKey:book.category];
@@ -40,7 +41,6 @@
         [categoriesDict setObject:[array copy] forKey:key];
     }];
     _library = [categoriesDict copy];
-    NSLog(@"%@", _library);
 }
 
 - (NSArray *) generateBooks{
@@ -50,7 +50,7 @@
                                    coverURL:[NSURL URLWithString:@"http://hackershelf.com/media/cache/49/94/4994a9500689d5b1483c50b6ab9c7975.jpg"]
                                     summary:@"Test-Driven Development with Python focuses on web development, with some coverage of JavaScript (inescapable for any web programmer). This book uses a concrete example—the development of a website, from scratch—to teach the TDD metholology, and how it applies to web programming, from the basics of database integration and javascript, going via browser-automation tools like Selenium, to advanced (and trendy) topics like NoSQL, websockets and Async programming."
                                      webURL:[NSURL URLWithString:@"http://chimera.labs.oreilly.com/books/1234000000754/index.html"]
-                                   category:@"Metodology"
+                                   category:@"Methodology"
                                        tags:@[@"test", @"python", @"selenium", @"django", @"test", @"driven", @"development"]];
     PARBook *second = [PARBook bookWithTitle:@"Learning Cocoa with Objective-C"
                                       author:@"James Duncan Davidson"
@@ -74,4 +74,16 @@
     return @[first, second, third];
 }
 
+
+# pragma mark - Data Source
+
+-(NSUInteger)countForKey:(NSString *)key{
+    return [[self.library objectForKey:key] count];
+}
+-(NSString *)keyForSection:(NSUInteger)section{
+    return [[self.library allKeys] objectAtIndex:section];
+}
+-(NSUInteger)numberOfSections{
+    return [[self.library allKeys]count];
+}
 @end
