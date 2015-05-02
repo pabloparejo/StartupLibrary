@@ -7,7 +7,6 @@
 //
 
 #import "PARLibraryViewController.h"
-#import "PARLibrary.h"
 #import "PARBook.h"
 #import "PARBookViewController.h"
 @interface PARLibraryViewController ()
@@ -16,10 +15,15 @@
 
 @implementation PARLibraryViewController
 
+- (id)initWithModel:(PARLibrary *) library{
+    if (self = [super init]) {
+        _model = library;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.model = [PARLibrary new];
     self.title = @"StartUp Library";
 }
 

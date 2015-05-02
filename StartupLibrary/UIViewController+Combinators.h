@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController_Combinators : UIViewController
+@interface UIViewController (Combinators)
+
+-(UINavigationController *) wrappedInNavigationController;
 
 @end

@@ -8,7 +8,10 @@
 
 #import "AppDelegate.h"
 #import "PARLibraryViewController.h"
+#import "PARBookViewController.h"
 #import "PARLibrary.h"
+#import "UIViewController+Combinators.h"
+
 @interface AppDelegate ()
 
 @end
@@ -20,9 +23,16 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    PARLibraryViewController *libraryVC = [[PARLibraryViewController alloc] init];
-    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:libraryVC];
-    [self.window setRootViewController:navVC];
+    PARLibrary *library = [PARLibrary new];
+    PARLibraryViewController *libraryVC = [[PARLibraryViewController alloc] initWithModel:library];
+    PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:[library bookForKey:[library keyForSection:0] atIndex:0]];
+    
+    UISplitViewController *splitVC = [UISplitViewController new];
+    
+    [splitVC setViewControllers:@[[libraryVC wrappedInNavigationController],
+                                  [bookVC wrappedInNavigationController]]];
+    
+    [self.window setRootViewController:splitVC];
     
     [self.window makeKeyAndVisible];
     return YES;

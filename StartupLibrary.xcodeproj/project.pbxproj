@@ -20,6 +20,7 @@
 		C553D00A1AF4154000EC7017 /* PARWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C553D0081AF4154000EC7017 /* PARWebViewController.xib */; };
 		C5FE12031AF4E3E9005AC784 /* PARLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE12021AF4E3E9005AC784 /* PARLibraryViewController.m */; };
 		C5FE120A1AF4E44D005AC784 /* PARLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE12091AF4E44D005AC784 /* PARLibrary.m */; };
+		C5FE120E1AF52431005AC784 /* UIViewController+Combinators.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE120D1AF52431005AC784 /* UIViewController+Combinators.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		C5FE12021AF4E3E9005AC784 /* PARLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARLibraryViewController.m; sourceTree = "<group>"; };
 		C5FE12081AF4E44D005AC784 /* PARLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARLibrary.h; sourceTree = "<group>"; };
 		C5FE12091AF4E44D005AC784 /* PARLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARLibrary.m; sourceTree = "<group>"; };
+		C5FE120C1AF52431005AC784 /* UIViewController+Combinators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Combinators.h"; sourceTree = "<group>"; };
+		C5FE120D1AF52431005AC784 /* UIViewController+Combinators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Combinators.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,7 @@
 		C553CFD31AF3A8DE00EC7017 /* StartupLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				C5FE120B1AF523FD005AC784 /* Categories */,
 				C553D0041AF3B90700EC7017 /* tdd.jpg */,
 				C553CFD81AF3A8DE00EC7017 /* AppDelegate.h */,
 				C553CFD91AF3A8DE00EC7017 /* AppDelegate.m */,
@@ -167,6 +171,15 @@
 				C5FE12021AF4E3E9005AC784 /* PARLibraryViewController.m */,
 			);
 			name = "Library MVC";
+			sourceTree = "<group>";
+		};
+		C5FE120B1AF523FD005AC784 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE120C1AF52431005AC784 /* UIViewController+Combinators.h */,
+				C5FE120D1AF52431005AC784 /* UIViewController+Combinators.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +286,7 @@
 			files = (
 				C5FE12031AF4E3E9005AC784 /* PARLibraryViewController.m in Sources */,
 				C553CFFD1AF3AA9600EC7017 /* PARBookViewController.m in Sources */,
+				C5FE120E1AF52431005AC784 /* UIViewController+Combinators.m in Sources */,
 				C5FE120A1AF4E44D005AC784 /* PARLibrary.m in Sources */,
 				C553CFDA1AF3A8DE00EC7017 /* AppDelegate.m in Sources */,
 				C553D0021AF3ABD300EC7017 /* PARBook.m in Sources */,

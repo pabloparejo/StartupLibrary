@@ -6,8 +6,10 @@
 //  Copyright (c) 2015 PabloParejo. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
+@import UIKit;
+#import "PARLibrary.h"
 @interface PARLibraryViewController : UITableViewController
+
+- (id)initWithModel:(PARLibrary *) library;
 
 @end
