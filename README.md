@@ -8,7 +8,7 @@ The specifications are to create a library and get used to collectionViews, Tabl
 
 Besides, I want to add REST API connection, which I am making possible thanks to [studiodev](https://twitter.com/studiodev)'s  [mocky.io](https://github.com/studiodev/mocky) service, image caching and CocoaPods.
 
-I think this project is a good opportunity to create my own *to-read* books library, so I have set up a JSON array with the books I have found the most interesting for an StartUp (Coding, UX Design, Web development...). You can find it [here](http://www.mocky.io/v2/55449e989da4c2830d29b116)!
+I think this project is a good opportunity to create my own *to-read* books library, so I have set up a JSON array with the books I have found the most interesting for an StartUp (Coding, UX Design, Web development...). You can find it [here](http://www.mocky.io/v2/5544e9cd9da4c21d1429b11f)!
 
 *I own no content shown in the app, all of the links are resources that can be freely found on the internet*
 
