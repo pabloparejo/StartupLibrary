@@ -10,4 +10,6 @@
 
 @interface PARWebViewController : UIViewController
 
+- (id) initWithURL:(NSURL *) url;
+
 @end

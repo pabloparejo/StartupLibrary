@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PARWebViewController">
             <connections>
+                <outlet property="browser" destination="Fsq-FB-tEG" id="yxz-xW-vYi"/>
+                <outlet property="loading" destination="gW5-GI-2Np" id="c6v-BC-H2H"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +15,27 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fsq-FB-tEG">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="iPA-Ie-gHH"/>
+                    </connections>
+                </webView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gW5-GI-2Np">
+                    <rect key="frame" x="282" y="282" width="37" height="37"/>
+                </activityIndicatorView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Fsq-FB-tEG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0ej-st-Uwg"/>
+                <constraint firstAttribute="bottom" secondItem="Fsq-FB-tEG" secondAttribute="bottom" id="593-dm-ihE"/>
+                <constraint firstAttribute="centerY" secondItem="gW5-GI-2Np" secondAttribute="centerY" id="Lmg-99-xu9"/>
+                <constraint firstAttribute="trailing" secondItem="Fsq-FB-tEG" secondAttribute="trailing" id="WuX-5U-2Bf"/>
+                <constraint firstItem="Fsq-FB-tEG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YXT-Xe-xU5"/>
+                <constraint firstAttribute="centerX" secondItem="gW5-GI-2Np" secondAttribute="centerX" id="bTH-LI-ox7"/>
+            </constraints>
         </view>
     </objects>
 </document>
