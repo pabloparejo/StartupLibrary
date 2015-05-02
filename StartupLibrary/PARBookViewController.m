@@ -8,7 +8,7 @@
 
 #import "PARBookViewController.h"
 #import "PARBook.h"
-
+#import "PARWebViewController.h"
 @interface PARBookViewController ()
 
 @property (strong, nonatomic) PARBook *model;
@@ -27,7 +27,7 @@
     [super viewDidLoad];
     self.model  = [PARBook bookWithTitle:@"Test-Driven Development with Python"
                                   author:@"Harry Percival"
-                                 bookURL:[NSURL URLWithString:@"http://filepi.com/i/fxiypq5"]
+                                 bookURL:[NSURL URLWithString:@"http://cdn2.filepi.com/g/fxiypq5/1430560276/001f0d881952cccc289ac97cf10a6182"]
                                 coverURL:[NSURL URLWithString:@"http://hackershelf.com/media/cache/49/94/4994a9500689d5b1483c50b6ab9c7975.jpg"]
                                  summary:@"Test-Driven Development with Python focuses on web development, with some coverage of JavaScript (inescapable for any web programmer). This book uses a concrete example—the development of a website, from scratch—to teach the TDD metholology, and how it applies to web programming, from the basics of database integration and javascript, going via browser-automation tools like Selenium, to advanced (and trendy) topics like NoSQL, websockets and Async programming."
                                   webURL:[NSURL URLWithString:@"http://chimera.labs.oreilly.com/books/1234000000754/index.html"]
@@ -57,10 +57,14 @@
 
 - (IBAction)openBook:(id)sender {
     NSLog(@"%@", [self.model bookURL]);
+    PARWebViewController *webVC = [[PARWebViewController alloc] initWithURL:[self.model bookURL]];
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 - (IBAction)buyBook:(id)sender {
     NSLog(@"%@", [self.model webURL]);
+    PARWebViewController *webVC = [[PARWebViewController alloc] initWithURL:[self.model webURL]];
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 #pragma mark - Utils
