@@ -9,6 +9,9 @@
 #import "PARBookViewController.h"
 #import "PARBook.h"
 #import "PARWebViewController.h"
+
+#define BUY_BOOK_TITLE @"Book's Store"
+
 @interface PARBookViewController ()
 
 @property (strong, nonatomic) PARBook *model;
@@ -43,8 +46,9 @@
     
     self.titleLabel.text = [self.model title];
     self.author.text = [self.model author];
-    [self.category setTitle:[self.model category] forState:UIControlStateNormal];
     self.summary.text = [self.model summary];
+    self.title = [self.model title];
+    [self.category setTitle:[self.model category] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,7 +67,7 @@
 
 - (IBAction)buyBook:(id)sender {
     NSLog(@"%@", [self.model webURL]);
-    PARWebViewController *webVC = [[PARWebViewController alloc] initWithURL:[self.model webURL]];
+    PARWebViewController *webVC = [[PARWebViewController alloc] initWithURL:[self.model webURL] title:BUY_BOOK_TITLE];
     [self.navigationController pushViewController:webVC animated:YES];
 }
 
