@@ -139,10 +139,11 @@
                 <constraint firstItem="6S6-KX-eDg" firstAttribute="leading" secondItem="uDh-hS-dQl" secondAttribute="trailing" constant="8" id="DdV-F2-i0n"/>
                 <constraint firstItem="NXq-S4-0Gl" firstAttribute="top" secondItem="uDh-hS-dQl" secondAttribute="top" id="HPd-dq-BnV"/>
                 <constraint firstItem="uDh-hS-dQl" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="0.85" id="IPi-Le-ZAa">
-                    <variation key="heightClass=compact-widthClass=compact" constant="-40"/>
-                    <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                    <variation key="heightClass=compact-widthClass=compact" constant="-70"/>
                 </constraint>
-                <constraint firstItem="uDh-hS-dQl" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Iz3-Q5-tpr"/>
+                <constraint firstItem="uDh-hS-dQl" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Iz3-Q5-tpr">
+                    <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                </constraint>
                 <constraint firstItem="tSW-UG-YPf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Jy3-pq-3Oe"/>
                 <constraint firstItem="cHv-ip-b5V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="4" id="NO6-lK-hwf"/>
                 <constraint firstAttribute="trailing" secondItem="oYl-di-klv" secondAttribute="trailing" constant="8" id="S1u-Jm-61T"/>

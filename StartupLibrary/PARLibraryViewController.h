@@ -8,8 +8,19 @@
 
 @import UIKit;
 #import "PARLibrary.h"
-@interface PARLibraryViewController : UITableViewController
 
+@class PARLibraryViewController;
+
+@protocol PARLibraryViewControllerDelegate <NSObject>
+
+@optional
+- (void) libraryViewController:(PARLibraryViewController *) libraryVC
+                 didSelectBook:(PARBook *) book;
+@end
+
+@interface PARLibraryViewController : UITableViewController <PARLibraryViewControllerDelegate>
+
+@property (weak, nonatomic) id<PARLibraryViewControllerDelegate> delegate;
 - (id)initWithModel:(PARLibrary *) library;
 
 @end

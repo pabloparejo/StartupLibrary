@@ -69,7 +69,20 @@
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
     PARBook *book = [self.model bookForKey:[self.model keyForSection:indexPath.section] atIndex:indexPath.row];
+    
+    // Message to delegate
+    if ([self.delegate respondsToSelector:@selector(libraryViewController:didSelectBook:)]) {
+        [self.delegate libraryViewController:self
+                               didSelectBook:book];
+    }
+}
+
+# pragma mark - PARLibraryViewControllerDelegate
+
+- (void) libraryViewController:(PARLibraryViewController *)libraryVC didSelectBook:(PARBook *)book{
     PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:book];
     [self.navigationController pushViewController:bookVC animated:YES];
 }

@@ -8,6 +8,8 @@
 
 @import UIKit;
 #import "PARBook.h"
-@interface PARBookViewController : UIViewController
+#import "PARLibraryViewController.h"
+@interface PARBookViewController : UIViewController <   UISplitViewControllerDelegate,
+                                                        PARLibraryViewControllerDelegate>
 - (id) initWithModel:(PARBook *)model;
 @end

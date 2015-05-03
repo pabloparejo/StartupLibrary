@@ -34,21 +34,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.model withCoverImage:^(UIImage *image) {
-        [self.bookImage setImage:image];
-        [self.loading stopAnimating];
-    }];
     
-    self.titleLabel.text = [self.model title];
-    self.author.text = [self.model author];
-    self.summary.text = [self.model summary];
-    self.title = [self.model title];
-    [self.category setTitle:[self.model category] forState:UIControlStateNormal];
+    [self syncViewWithModel];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    //Default DisplayMode to SplitVC
+    if (self.splitViewController.displayMode != UISplitViewControllerDisplayModeAllVisible) {
+        self.navigationItem.leftItemsSupplementBackButton = YES;
+        self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)syncViewWithModel{
+    self.bookImage.image = nil;
+    [self.loading startAnimating];
+    [self.model withCoverImage:^(UIImage *image) {
+        [self.bookImage setImage:image];
+        [self.loading stopAnimating];
+    }];
+    [self.category setTitle:[self.model category] forState:UIControlStateNormal];
+    self.titleLabel.text = [self.model title];
+    self.author.text = [self.model author];
+    self.summary.text = [self.model summary];
+    self.title = [self.model title];
 }
 
 #pragma mark - IBActions
@@ -64,6 +78,24 @@
     NSLog(@"%@", [self.model webURL]);
     PARWebViewController *webVC = [[PARWebViewController alloc] initWithURL:[self.model webURL] title:BUY_BOOK_TITLE];
     [self.navigationController pushViewController:webVC animated:YES];
+}
+
+#pragma mark - UISplitViewControllerDelegate
+
+-(void) splitViewController:(UISplitViewController *)splitVC
+    willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode{
+    if (displayMode != UISplitViewControllerDisplayModeAllVisible) {
+        self.navigationItem.leftItemsSupplementBackButton = YES;
+        self.navigationItem.leftBarButtonItem = splitVC.displayModeButtonItem;
+    }
+    
+}
+
+#pragma mark - PARLibraryViewControllerDelegate
+
+-(void) libraryViewController:(PARLibraryViewController *)libraryVC didSelectBook:(PARBook *)book{
+    self.model = book;
+    [self syncViewWithModel];
 }
 
 

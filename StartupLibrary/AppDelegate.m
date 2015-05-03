@@ -27,8 +27,11 @@
     PARLibraryViewController *libraryVC = [[PARLibraryViewController alloc] initWithModel:library];
     PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:[library bookForKey:[library keyForSection:0] atIndex:0]];
     
+    [libraryVC setDelegate:bookVC];
+    
     UISplitViewController *splitVC = [UISplitViewController new];
     
+    [splitVC setDelegate:bookVC];
     [splitVC setViewControllers:@[[libraryVC wrappedInNavigationController],
                                   [bookVC wrappedInNavigationController]]];
     
