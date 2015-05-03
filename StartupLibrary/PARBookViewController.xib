@@ -44,7 +44,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descriptionLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sS-ds-Rbc">
                             <rect key="frame" x="0.0" y="0.0" width="584" height="30"/>
                             <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="18"/>
-                            <color key="textColor" red="0.42745098039215684" green="0.47058823529411764" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.2666666667" green="0.32156862749999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                             <variation key="heightClass=regular-widthClass=regular">
                                 <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="20"/>
