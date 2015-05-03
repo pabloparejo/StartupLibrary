@@ -1,15 +1,66 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PARBookTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="542" height="141"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TzH-sV-tOe">
+                    <rect key="frame" x="8" y="4" width="112" height="133"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="112" id="hZH-ME-4eK"/>
+                        <constraint firstAttribute="width" secondItem="TzH-sV-tOe" secondAttribute="height" multiplier="16:19" id="vSA-7X-xsT"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="author" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLM-9A-d3N">
+                    <rect key="frame" x="128" y="71" width="406" height="62"/>
+                    <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="17"/>
+                    <color key="textColor" red="0.2666666667" green="0.32156862749999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YMR-ar-Ad6">
+                    <rect key="frame" x="46" y="52" width="37" height="37"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lB8-lz-4IK">
+                    <rect key="frame" x="128" y="8" width="406" height="63"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
+                    <color key="textColor" red="0.12941176469999999" green="0.1843137255" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="lB8-lz-4IK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="7bU-Gg-Eer"/>
+                <constraint firstItem="lB8-lz-4IK" firstAttribute="leading" secondItem="TzH-sV-tOe" secondAttribute="trailing" constant="8" id="9SV-wP-rQQ"/>
+                <constraint firstItem="TzH-sV-tOe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="APN-Ct-ePE"/>
+                <constraint firstItem="lB8-lz-4IK" firstAttribute="centerX" secondItem="HLM-9A-d3N" secondAttribute="centerX" id="BRS-2z-o4N"/>
+                <constraint firstItem="lB8-lz-4IK" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="centerY" id="F0m-Ff-p7T"/>
+                <constraint firstItem="lB8-lz-4IK" firstAttribute="width" secondItem="HLM-9A-d3N" secondAttribute="width" id="FTj-W6-Clt"/>
+                <constraint firstAttribute="bottom" secondItem="TzH-sV-tOe" secondAttribute="bottom" constant="4" id="FWa-Rt-MzV"/>
+                <constraint firstAttribute="trailing" secondItem="lB8-lz-4IK" secondAttribute="trailing" constant="8" id="Gno-1u-m9h"/>
+                <constraint firstItem="TzH-sV-tOe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="JqP-D0-7pf"/>
+                <constraint firstAttribute="bottom" secondItem="HLM-9A-d3N" secondAttribute="bottom" constant="8" id="j7C-d5-TGA"/>
+                <constraint firstItem="HLM-9A-d3N" firstAttribute="top" secondItem="lB8-lz-4IK" secondAttribute="bottom" id="zVi-fe-zfx"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="author" destination="HLM-9A-d3N" id="cFj-k1-Vui"/>
+                <outlet property="bookImage" destination="TzH-sV-tOe" id="eJg-II-tqI"/>
+                <outlet property="loading" destination="YMR-ar-Ad6" id="gq9-1L-2s4"/>
+                <outlet property="titleLabel" destination="lB8-lz-4IK" id="Twj-hf-Has"/>
+            </connections>
+            <point key="canvasLocation" x="399" y="175.5"/>
         </view>
     </objects>
 </document>
