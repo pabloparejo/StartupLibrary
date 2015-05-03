@@ -26,18 +26,6 @@
                     <rect key="frame" x="8" y="78" width="247" height="222"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXq-S4-0Gl">
-                    <rect key="frame" x="263" y="78" width="329" height="32"/>
-                    <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="rap-EE-P41"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
-                    <color key="textColor" red="0.12941176470588237" green="0.18431372549019609" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                    <variation key="heightClass=regular-widthClass=regular">
-                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="34"/>
-                    </variation>
-                </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6S6-KX-eDg">
                     <rect key="frame" x="8" y="308" width="584" height="240"/>
                     <subviews>
@@ -125,6 +113,18 @@
                     <nil key="highlightedColor"/>
                     <variation key="heightClass=regular-widthClass=regular">
                         <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="25"/>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXq-S4-0Gl">
+                    <rect key="frame" x="263" y="78" width="329" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="rap-EE-P41"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
+                    <color key="textColor" red="0.12941176470588237" green="0.18431372549019609" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="34"/>
                     </variation>
                 </label>
             </subviews>
