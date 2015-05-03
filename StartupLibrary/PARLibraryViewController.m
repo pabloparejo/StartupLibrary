@@ -9,6 +9,9 @@
 #import "PARLibraryViewController.h"
 #import "PARBook.h"
 #import "PARBookViewController.h"
+
+#define SELF_TITLE @"Startup Library"
+
 @interface PARLibraryViewController ()
 @property (strong, nonatomic) PARLibrary *model;
 @end
@@ -24,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"StartUp Library";
+    self.title = SELF_TITLE;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,7 +35,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - TableView data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -49,6 +52,8 @@
 }
 
 
+
+#pragma mark - TableViewDelegate
 - (UITableViewCell *) tableView:(UITableView *)tableView
           cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -78,6 +83,15 @@
         [self.delegate libraryViewController:self
                                didSelectBook:book];
     }
+}
+
+- (void) tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section{
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    
+    header.textLabel.textColor = [UIColor colorWithRed:36.f/255.f
+                                                 green:50.f/255.f
+                                                  blue:63.f/255.f
+                                                 alpha:1];
 }
 
 # pragma mark - PARLibraryViewControllerDelegate

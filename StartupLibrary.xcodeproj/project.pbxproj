@@ -17,6 +17,7 @@
 		C553D0021AF3ABD300EC7017 /* PARBook.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0011AF3ABD300EC7017 /* PARBook.m */; };
 		C553D0091AF4154000EC7017 /* PARWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0071AF4154000EC7017 /* PARWebViewController.m */; };
 		C553D00A1AF4154000EC7017 /* PARWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C553D0081AF4154000EC7017 /* PARWebViewController.xib */; };
+		C5EC91521AF6428200DE1B01 /* FunkFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5EC91511AF6428200DE1B01 /* FunkFont.ttf */; };
 		C5FE12031AF4E3E9005AC784 /* PARLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE12021AF4E3E9005AC784 /* PARLibraryViewController.m */; };
 		C5FE120A1AF4E44D005AC784 /* PARLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE12091AF4E44D005AC784 /* PARLibrary.m */; };
 		C5FE120E1AF52431005AC784 /* UIViewController+Combinators.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE120D1AF52431005AC784 /* UIViewController+Combinators.m */; };
@@ -51,6 +52,7 @@
 		C553D0061AF4154000EC7017 /* PARWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARWebViewController.h; sourceTree = "<group>"; };
 		C553D0071AF4154000EC7017 /* PARWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARWebViewController.m; sourceTree = "<group>"; };
 		C553D0081AF4154000EC7017 /* PARWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARWebViewController.xib; sourceTree = "<group>"; };
+		C5EC91511AF6428200DE1B01 /* FunkFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FunkFont.ttf; sourceTree = "<group>"; };
 		C5FE12011AF4E3E9005AC784 /* PARLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARLibraryViewController.h; sourceTree = "<group>"; };
 		C5FE12021AF4E3E9005AC784 /* PARLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARLibraryViewController.m; sourceTree = "<group>"; };
 		C5FE12081AF4E44D005AC784 /* PARLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARLibrary.h; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		C553CFD31AF3A8DE00EC7017 /* StartupLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				C5EC91511AF6428200DE1B01 /* FunkFont.ttf */,
 				C5FE120B1AF523FD005AC784 /* Categories */,
 				C553CFD81AF3A8DE00EC7017 /* AppDelegate.h */,
 				C553CFD91AF3A8DE00EC7017 /* AppDelegate.m */,
@@ -262,6 +265,7 @@
 				C553CFE51AF3A8DE00EC7017 /* LaunchScreen.xib in Resources */,
 				C553CFE21AF3A8DE00EC7017 /* Images.xcassets in Resources */,
 				C553D00A1AF4154000EC7017 /* PARWebViewController.xib in Resources */,
+				C5EC91521AF6428200DE1B01 /* FunkFont.ttf in Resources */,
 				C553CFFE1AF3AA9600EC7017 /* PARBookViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
