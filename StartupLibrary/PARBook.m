@@ -49,6 +49,17 @@
                                   tags:tags];
 }
 
+-(id) initWithJSONDictionary:(NSDictionary *) dictionary{
+    return [self initWithTitle:[dictionary objectForKey:@"title"]
+                        author:[dictionary objectForKey:@"author"]
+                       bookURL:[NSURL URLWithString:[dictionary objectForKey:@"book_url"]]
+                      coverURL:[NSURL URLWithString:[dictionary objectForKey:@"cover_url"]]
+                       summary:[dictionary objectForKey:@"summary"]
+                        webURL:[NSURL URLWithString:[dictionary objectForKey:@"web_url"]]
+                      category:[dictionary objectForKey:@"category"]
+                          tags:[dictionary objectForKey:@"tags"]];
+}
+
 -(void) withCoverImage:(void (^)(UIImage *image))completionBlock{
     
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{

@@ -63,6 +63,11 @@
     PARBook *book = [self.model bookForKey:[self.model keyForSection:indexPath.section] atIndex:indexPath.row];
     // Creamos la celda
     PARBookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID forIndexPath:indexPath];
+    [cell.loading startAnimating];
+    [book withCoverImage:^(UIImage *image) {
+        [cell.loading stopAnimating];
+        cell.bookImage.image = image;
+    }];
 
     cell.titleLabel.text = book.title;
     cell.author.text = book.author;

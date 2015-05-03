@@ -38,6 +38,8 @@
                      category:(NSString *)category
                          tags:(NSArray *)tags;
 
+-(id) initWithJSONDictionary:(NSDictionary *) dictionary;
+
 -(void) withCoverImage:(void (^)(UIImage *image))completionBlock;
 
 @end
