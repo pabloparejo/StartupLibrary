@@ -39,6 +39,10 @@
     return [self.model numberOfSections];
 }
 
+- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return [self.model keyForSection:section];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     return [self.model countForKey:[self.model keyForSection:section]];
