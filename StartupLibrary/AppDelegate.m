@@ -38,22 +38,18 @@
 
 # pragma mark - Appearance
 -(void) configureAppearance{
-    UIColor *fontColor =[UIColor colorWithRed:36.f/255.f
-                                         green:50.f/255.f
-                                          blue:63.f/255.f
+    UIColor *background =[UIColor colorWithRed:3.f/255.f
+                                         green:6.f/255.f
+                                          blue:18.f/255.f
                                          alpha:1];
-    
-    UIColor *background = [UIColor colorWithRed:36.f/255.f
-                                         green:186.f/255.f
-                                          blue:157.f/255.f
-                                         alpha:1];
+
     
     [[UINavigationBar appearance] setBarTintColor:background];
     [[UIBarButtonItem appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateNormal];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[[UITableViewHeaderFooterView appearance] contentView] setBackgroundColor:background];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:fontColor,
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
                                                            NSFontAttributeName:[UIFont fontWithName:@"UVFFunkydori" size:30]}];
+
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
 }
 
