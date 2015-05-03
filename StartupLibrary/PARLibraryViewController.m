@@ -9,8 +9,10 @@
 #import "PARLibraryViewController.h"
 #import "PARBook.h"
 #import "PARBookViewController.h"
+#import "PARBookTableViewCell.h"
 
 #define SELF_TITLE @"Startup Library"
+#define CELL_ID @"PARBookTableViewCell"
 
 @interface PARLibraryViewController ()
 @property (strong, nonatomic) PARLibrary *model;
@@ -27,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self registerNibs];
     self.title = SELF_TITLE;
 }
 
@@ -59,16 +62,10 @@
     
     PARBook *book = [self.model bookForKey:[self.model keyForSection:indexPath.section] atIndex:indexPath.row];
     // Creamos la celda
-    static NSString *cellId = @"BookCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                      reuseIdentifier:cellId];
-    }
+    PARBookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID forIndexPath:indexPath];
 
-    cell.textLabel.text= book.title;
-    cell.detailTextLabel.text = book.author;
+    cell.titleLabel.text = book.title;
+    cell.author.text = book.author;
     
     return cell;
 }
@@ -94,11 +91,23 @@
                                                  alpha:1];
 }
 
+
+-(CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
+
 # pragma mark - PARLibraryViewControllerDelegate
 
 - (void) libraryViewController:(PARLibraryViewController *)libraryVC didSelectBook:(PARBook *)book{
     PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:book];
     [self.navigationController pushViewController:bookVC animated:YES];
+}
+
+#pragma mark - Utils
+
+-(void) registerNibs{
+    UINib *nib = [UINib nibWithNibName:CELL_ID bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:CELL_ID];
 }
 
 @end
