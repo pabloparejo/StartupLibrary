@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "PARLibraryViewController.h"
+#import "PARLibraryTableViewController.h"
 #import "PARBookViewController.h"
 #import "PARLibrary.h"
 #import "UIViewController+Combinators.h"
@@ -56,7 +56,7 @@
 # pragma mark - InterfaceIdiom configuration
 
 -(void) configureForIpadWithModel:(PARLibrary *) library{
-    PARLibraryViewController *libraryVC = [[PARLibraryViewController alloc] initWithModel:library];
+    PARLibraryTableViewController *libraryVC = [[PARLibraryTableViewController alloc] initWithModel:library];
     PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:[library bookForKey:[library keyForSection:0] atIndex:0]];
     
     [libraryVC setDelegate:bookVC];
@@ -70,7 +70,7 @@
 }
 
 -(void) configureForIphoneWithModel:(PARLibrary *) library{
-    PARLibraryViewController *libraryVC = [[PARLibraryViewController alloc] initWithModel:library];
+    PARLibraryTableViewController *libraryVC = [[PARLibraryTableViewController alloc] initWithModel:library];
     [libraryVC setDelegate:libraryVC];
     [self.window setRootViewController:[libraryVC wrappedInNavigationController]];
 }

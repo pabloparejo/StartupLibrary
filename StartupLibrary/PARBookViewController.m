@@ -94,7 +94,7 @@
 
 #pragma mark - PARLibraryViewControllerDelegate
 
--(void) libraryViewController:(PARLibraryViewController *)libraryVC didSelectBook:(PARBook *)book{
+-(void) libraryViewController:(PARLibraryTableViewController *)libraryVC didSelectBook:(PARBook *)book{
     self.model = book;
     
     // We go back to display new book's info

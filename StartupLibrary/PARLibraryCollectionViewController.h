@@ -6,8 +6,22 @@
 //  Copyright (c) 2015 PabloParejo. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+#import "PARLibrary.h"
 
-@interface PARLibraryCollectionViewController : UICollectionViewController
+@class PARLibraryCollectionViewController;
+
+@protocol PARLibraryCollectionViewControllerDelegate <NSObject>
+
+@optional
+- (void) libraryViewController:(PARLibraryCollectionViewController *) libraryVC
+                 didSelectBook:(PARBook *) book;
+@end
+
+@interface PARLibraryCollectionViewController : UICollectionViewController <PARLibraryCollectionViewControllerDelegate>
+
+@property (weak, nonatomic) id<PARLibraryCollectionViewControllerDelegate> delegate;
+- (id)initWithModel:(PARLibrary *) library;
 
 @end
+

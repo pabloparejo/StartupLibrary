@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 PabloParejo. All rights reserved.
 //
 
-#import "PARLibraryViewController.h"
+#import "PARLibraryTableViewController.h"
 #import "PARBook.h"
 #import "PARBookViewController.h"
 #import "PARBookTableViewCell.h"
@@ -14,11 +14,11 @@
 #define SELF_TITLE @"Startup Library"
 #define CELL_ID @"PARBookTableViewCell"
 
-@interface PARLibraryViewController ()
+@interface PARLibraryTableViewController ()
 @property (strong, nonatomic) PARLibrary *model;
 @end
 
-@implementation PARLibraryViewController
+@implementation PARLibraryTableViewController
 
 - (id)initWithModel:(PARLibrary *) library{
     if (self = [super init]) {
@@ -99,12 +99,12 @@
 
 
 -(CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 10;
 }
 
 # pragma mark - PARLibraryViewControllerDelegate
 
-- (void) libraryViewController:(PARLibraryViewController *)libraryVC didSelectBook:(PARBook *)book{
+- (void) libraryViewController:(PARLibraryTableViewController *)libraryVC didSelectBook:(PARBook *)book{
     PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:book];
     [self.navigationController pushViewController:bookVC animated:YES];
 }

@@ -7,6 +7,12 @@
 //
 
 #import "PARBook.h"
+
+@interface PARBook()
+@property (strong, nonatomic) UIImage *image;
+
+@end
+
 @implementation PARBook
 
 -(id) initWithTitle:(NSString *)title
@@ -61,6 +67,7 @@
 }
 
 -(void) withCoverImage:(void (^)(UIImage *image))completionBlock{
+    
     
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
         // QOS_CLASS_DEFAULT is the 3rd priority queue
