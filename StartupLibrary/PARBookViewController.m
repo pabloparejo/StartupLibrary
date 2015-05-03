@@ -9,6 +9,7 @@
 #import "PARBookViewController.h"
 #import "PARWebViewController.h"
 
+#define SELF_TITLE @"Book"
 #define BUY_BOOK_TITLE @"Book's Store"
 
 @interface PARBookViewController ()
@@ -34,7 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = SELF_TITLE;
     [self syncViewWithModel];
 }
 
@@ -62,7 +63,6 @@
     self.titleLabel.text = [self.model title];
     self.author.text = [self.model author];
     self.summary.text = [self.model summary];
-    self.title = [self.model title];
 }
 
 #pragma mark - IBActions
@@ -95,6 +95,9 @@
 
 -(void) libraryViewController:(PARLibraryViewController *)libraryVC didSelectBook:(PARBook *)book{
     self.model = book;
+    
+    // We go back to display new book's info
+    [self.navigationController popToRootViewControllerAnimated:YES];
     [self syncViewWithModel];
 }
 
