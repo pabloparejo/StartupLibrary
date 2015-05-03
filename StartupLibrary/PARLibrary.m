@@ -29,11 +29,15 @@
     NSMutableDictionary *categoriesDict = [NSMutableDictionary dictionary];
     
     // Order books by category (NSDictionary keys)
-    [books enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(PARBook *book, NSUInteger idx, BOOL *stop) {
-        if ([categoriesDict objectForKey:book.category] == nil) {
-            [categoriesDict setObject:[NSMutableArray arrayWithObject:book] forKey:book.category];
-        }else{
+    [books enumerateObjectsUsingBlock:^(PARBook *book, NSUInteger idx, BOOL *stop) {
+        /*  Could this block be concurrent?
+            Sometimes I'm getting this error: EXC_BAD_ACCESS code=1
+            I think it's because the array of a category is not yet fully created
+         */
+        if ([categoriesDict objectForKey:book.category] != nil) {
             [[categoriesDict objectForKey:book.category] addObject:book];
+        }else{
+            [categoriesDict setObject:[NSMutableArray arrayWithObject:book] forKey:book.category];
         }
     }];
 
