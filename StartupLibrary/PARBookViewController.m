@@ -40,6 +40,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     //Default DisplayMode to SplitVC
     if (self.splitViewController.displayMode != UISplitViewControllerDisplayModeAllVisible) {
         self.navigationItem.leftItemsSupplementBackButton = YES;
