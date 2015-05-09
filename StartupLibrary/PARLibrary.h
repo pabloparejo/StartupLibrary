@@ -13,8 +13,12 @@
 
 @property (nonatomic, readonly) NSUInteger numberOfSections;
 
+-(void) freeUpMemory;
+
+
 -(NSUInteger)countForKey:(NSString *)key;
 -(NSString *)keyForSection:(NSUInteger)section;
 -(NSArray *) booksForKey:(NSString *)key;
--(PARBook *) bookForKey:(NSString *)key atIndex:(NSUInteger) index;
+-(PARBook *) bookAtIndexPath:(NSIndexPath *)indexPath;
+
 @end

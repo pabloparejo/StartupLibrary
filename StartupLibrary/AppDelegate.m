@@ -57,7 +57,7 @@
 
 -(void) configureForIpadWithModel:(PARLibrary *) library{
     PARLibraryTableViewController *libraryVC = [[PARLibraryTableViewController alloc] initWithModel:library];
-    PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:[library bookForKey:[library keyForSection:0] atIndex:0]];
+    PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:[library bookAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]]];
     
     [libraryVC setDelegate:bookVC];
     

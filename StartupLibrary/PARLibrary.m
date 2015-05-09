@@ -64,6 +64,14 @@
 }
 
 
+-(void) freeUpMemory{
+    [self.library enumerateKeysAndObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(NSString *key, NSArray *books, BOOL *stop) {
+        [books enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(PARBook *book, NSUInteger idx, BOOL *stop) {
+            [book freeUpMemory];
+        }];
+    }];
+}
+
 # pragma mark - Data Source
 
 -(NSUInteger)countForKey:(NSString *)key{
@@ -78,7 +86,7 @@
 -(NSArray *) booksForKey:(NSString *)key{
     return [self.library objectForKey:key];
 }
--(PARBook *) bookForKey:(NSString *)key atIndex:(NSUInteger) index{
-    return [[self.library objectForKey:key] objectAtIndex:index];
+-(PARBook *) bookAtIndexPath:(NSIndexPath*)indexPath{
+    return [[self.library objectForKey:[self keyForSection:indexPath.section]] objectAtIndex:indexPath.row];
 }
 @end

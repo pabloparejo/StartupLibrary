@@ -56,10 +56,15 @@
 -(void)syncViewWithModel{
     self.bookImage.image = nil;
     [self.loading startAnimating];
-    [self.model withCoverImage:^(UIImage *image) {
-        [self.bookImage setImage:image];
+    if (self.model.image != nil) {
+        self.bookImage.image = self.model.image;
         [self.loading stopAnimating];
-    }];
+    }else{
+        [self.model downloadCoverImage:^{
+            self.bookImage.image = self.model.image;
+            [self.loading stopAnimating];
+        }];
+    }
     [self.category setTitle:[self.model category] forState:UIControlStateNormal];
     self.titleLabel.text = [self.model title];
     self.author.text = [self.model author];

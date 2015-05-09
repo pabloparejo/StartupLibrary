@@ -20,6 +20,8 @@
 @property (strong, nonatomic) NSString *category;
 @property (copy, nonatomic) NSArray *tags;
 
+@property (strong, nonatomic, readonly) UIImage *image;
+
 -(id) initWithTitle:(NSString *)title
              author:(NSString *)author
             bookURL:(NSURL *)bookURL
@@ -40,6 +42,7 @@
 
 -(id) initWithJSONDictionary:(NSDictionary *) dictionary;
 
--(void) withCoverImage:(void (^)(UIImage *image))completionBlock;
+-(void) freeUpMemory;
+-(void) downloadCoverImage:(void (^)())completionBlock;
 
 @end

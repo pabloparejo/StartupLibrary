@@ -35,7 +35,8 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    [self.model freeUpMemory];
 }
 
 #pragma mark - TableView data source
@@ -60,15 +61,19 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView
           cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    PARBook *book = [self.model bookForKey:[self.model keyForSection:indexPath.section] atIndex:indexPath.row];
+    PARBook *book = [self.model bookAtIndexPath:indexPath];
     // Creamos la celda
     PARBookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID forIndexPath:indexPath];
     cell.bookImage.image = nil;
     [cell.loading startAnimating];
-    [book withCoverImage:^(UIImage *image) {
+    if (book.image) {
         [cell.loading stopAnimating];
-        cell.bookImage.image = image;
-    }];
+        cell.bookImage.image = book.image;
+    }else{
+        [book downloadCoverImage:^(void) {
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        }];
+    }
 
     cell.titleLabel.text = book.title;
     cell.author.text = book.author;
@@ -79,7 +84,7 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    PARBook *book = [self.model bookForKey:[self.model keyForSection:indexPath.section] atIndex:indexPath.row];
+    PARBook *book = [self.model bookAtIndexPath:indexPath];
     
     // Message to delegate
     if ([self.delegate respondsToSelector:@selector(libraryViewController:didSelectBook:)]) {
@@ -99,7 +104,7 @@
 
 
 -(CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 10;
+    return 140;
 }
 
 # pragma mark - PARLibraryViewControllerDelegate
