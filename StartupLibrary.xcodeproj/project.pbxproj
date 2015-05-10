@@ -17,6 +17,7 @@
 		C553D0021AF3ABD300EC7017 /* PARBook.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0011AF3ABD300EC7017 /* PARBook.m */; };
 		C553D0091AF4154000EC7017 /* PARWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0071AF4154000EC7017 /* PARWebViewController.m */; };
 		C553D00A1AF4154000EC7017 /* PARWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C553D0081AF4154000EC7017 /* PARWebViewController.xib */; };
+		C56E2AE11AFEA04C0013D8E9 /* oops.png in Resources */ = {isa = PBXBuildFile; fileRef = C56E2AE01AFEA04C0013D8E9 /* oops.png */; };
 		C5EC91521AF6428200DE1B01 /* FunkFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5EC91511AF6428200DE1B01 /* FunkFont.ttf */; };
 		C5EC91561AF66FE300DE1B01 /* PARBookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EC91551AF66FE300DE1B01 /* PARBookTableViewCell.m */; };
 		C5EC91581AF66FFF00DE1B01 /* PARBookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5EC91571AF66FFF00DE1B01 /* PARBookTableViewCell.xib */; };
@@ -55,6 +56,7 @@
 		C553D0061AF4154000EC7017 /* PARWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARWebViewController.h; sourceTree = "<group>"; };
 		C553D0071AF4154000EC7017 /* PARWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARWebViewController.m; sourceTree = "<group>"; };
 		C553D0081AF4154000EC7017 /* PARWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARWebViewController.xib; sourceTree = "<group>"; };
+		C56E2AE01AFEA04C0013D8E9 /* oops.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oops.png; sourceTree = "<group>"; };
 		C5EC91511AF6428200DE1B01 /* FunkFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FunkFont.ttf; sourceTree = "<group>"; };
 		C5EC91541AF66FE300DE1B01 /* PARBookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARBookTableViewCell.h; sourceTree = "<group>"; };
 		C5EC91551AF66FE300DE1B01 /* PARBookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARBookTableViewCell.m; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				C5EC91531AF66FA500DE1B01 /* PARBookTableViewCell */,
 				C5FE12041AF4E3EE005AC784 /* PARLibrary */,
 				C553CFE11AF3A8DE00EC7017 /* Images.xcassets */,
+				C56E2AE01AFEA04C0013D8E9 /* oops.png */,
 				C5EC91511AF6428200DE1B01 /* FunkFont.ttf */,
 				C553CFD41AF3A8DE00EC7017 /* Supporting Files */,
 			);
@@ -289,6 +292,7 @@
 				C553D00A1AF4154000EC7017 /* PARWebViewController.xib in Resources */,
 				C5EC91521AF6428200DE1B01 /* FunkFont.ttf in Resources */,
 				C553CFFE1AF3AA9600EC7017 /* PARBookViewController.xib in Resources */,
+				C56E2AE11AFEA04C0013D8E9 /* oops.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -423,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
