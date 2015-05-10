@@ -8,19 +8,11 @@
 
 @import UIKit;
 #import "PARLibrary.h"
+#import "PARLibraryViewControllerDelegate.h"
 
-@class PARLibraryTableViewController;
+@interface PARLibraryTableViewController : UITableViewController <PARLibraryViewControllerDelegate>
 
-@protocol PARLibraryTableViewControllerDelegate <NSObject>
-
-@optional
-- (void) libraryViewController:(PARLibraryTableViewController *) libraryVC
-                 didSelectBook:(PARBook *) book;
-@end
-
-@interface PARLibraryTableViewController : UITableViewController <PARLibraryTableViewControllerDelegate>
-
-@property (weak, nonatomic) id<PARLibraryTableViewControllerDelegate> delegate;
+@property (weak, nonatomic) id<PARLibraryViewControllerDelegate> delegate;
 - (id)initWithModel:(PARLibrary *) library;
-
+- (void) configureForTabBar;
 @end

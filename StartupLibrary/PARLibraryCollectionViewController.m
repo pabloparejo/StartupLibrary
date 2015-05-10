@@ -7,14 +7,20 @@
 //
 
 #import "PARLibraryCollectionViewController.h"
+#import "PARBookCollectionViewCell.h"
+#import "PARHeaderCollectionReusableView.h"
+#import "PARBook.h"
+#import "PARBookViewController.h"
+
+#define CELL_ID @"PARBookCollectionViewCell"
+#define HEADER_ID @"PARHeaderCollectionReusableView"
+#define SELF_TITLE @"Startup Library"
 
 @interface PARLibraryCollectionViewController ()
 @property (strong, nonatomic) PARLibrary *model;
 @end
 
 @implementation PARLibraryCollectionViewController
-
-static NSString * const reuseIdentifier = @"Cell";
 
 -(id) initWithModel:(PARLibrary *)library{
     if (self = [super init]) {
@@ -26,7 +32,18 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:CELL_ID bundle:nil]
+          forCellWithReuseIdentifier:CELL_ID];
+    [self.collectionView registerNib:[UINib nibWithNibName:HEADER_ID bundle:nil]
+          forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                 withReuseIdentifier:HEADER_ID];
+    
+    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"collection"] tag:0];
+    [self.tabBarItem setImageInsets:UIEdgeInsetsMake(6, 0, -6, 0)];
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,46 +58,69 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.model countForKey:[self.model keyForSection:section]];
+    return [self.model countForSection:section];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    PARBookCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELL_ID forIndexPath:indexPath];
+    PARBook *book = [self.model bookAtIndexPath:indexPath];
+    cell.imageView.image = nil;
+    [cell.loading startAnimating];
+    if (book.image) {
+        [cell.loading stopAnimating];
+        cell.imageView.image = book.image;
+    }else{
+        [book downloadCoverImage:^(void) {
+            [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
+        }];
+    }
+    cell.titleLabel.text = book.title;
     
-    // Configure the cell
+    return cell;
     
     return cell;
 }
 
+-(UICollectionReusableView *) collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath{
+    
+    if (kind == UICollectionElementKindSectionHeader) {
+        PARHeaderCollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                                                     withReuseIdentifier:HEADER_ID
+                                                                                            forIndexPath:indexPath];
+        [header.sectionTitle setText:[self.model titleForSection:indexPath.section]];
+        return header;
+        
+    }
+    return nil;
+}
+
 #pragma mark <UICollectionViewDelegate>
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
+-(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    PARBook *book = [self.model bookAtIndexPath:indexPath];
+    
+    // Message to delegate
+    if ([self.delegate respondsToSelector:@selector(libraryViewController:didSelectBook:)]) {
+        [self.delegate libraryViewController:self
+                               didSelectBook:book];
+    }
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
+# pragma mark - PARLibraryViewControllerDelegate
+
+- (void) libraryViewController:(PARLibraryCollectionViewController *)libraryVC didSelectBook:(PARBook *)book{
+    PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:book];
+    [self.navigationController pushViewController:bookVC animated:YES];
 }
 
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
+#pragma mark - Utils
+
+- (void) configureForTabBar{
+    self.title = SELF_TITLE;
+    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"collection"] tag:0];
+    [self.tabBarItem setImageInsets:UIEdgeInsetsMake(6, 0, -6, 0)];
 }
-*/
 
 @end

@@ -11,8 +11,9 @@
 #import "PARBookViewController.h"
 #import "PARBookTableViewCell.h"
 
-#define SELF_TITLE @"Startup Library"
 #define CELL_ID @"PARBookTableViewCell"
+#define SELF_TITLE @"Startup Library"
+
 
 @interface PARLibraryTableViewController ()
 @property (strong, nonatomic) PARLibrary *model;
@@ -30,7 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerNibs];
-    self.title = SELF_TITLE;
+
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,12 +49,12 @@
 }
 
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return [self.model keyForSection:section];
+    return [self.model titleForSection:section];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.model countForKey:[self.model keyForSection:section]];
+    return [self.model countForSection:section];
 }
 
 
@@ -119,6 +121,12 @@
 -(void) registerNibs{
     UINib *nib = [UINib nibWithNibName:CELL_ID bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:CELL_ID];
+}
+
+- (void) configureForTabBar{
+    self.title = SELF_TITLE;
+    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"list"] tag:0];
+    [self.tabBarItem setImageInsets:UIEdgeInsetsMake(6, 0, -6, 0)];
 }
 
 @end

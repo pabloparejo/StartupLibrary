@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C511961C1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C511961A1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m */; };
+		C511961D1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C511961B1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib */; };
 		C553CFD71AF3A8DE00EC7017 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C553CFD61AF3A8DE00EC7017 /* main.m */; };
 		C553CFDA1AF3A8DE00EC7017 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C553CFD91AF3A8DE00EC7017 /* AppDelegate.m */; };
 		C553CFE21AF3A8DE00EC7017 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C553CFE11AF3A8DE00EC7017 /* Images.xcassets */; };
@@ -18,6 +20,9 @@
 		C553D0091AF4154000EC7017 /* PARWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0071AF4154000EC7017 /* PARWebViewController.m */; };
 		C553D00A1AF4154000EC7017 /* PARWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C553D0081AF4154000EC7017 /* PARWebViewController.xib */; };
 		C56E2AE11AFEA04C0013D8E9 /* oops.png in Resources */ = {isa = PBXBuildFile; fileRef = C56E2AE01AFEA04C0013D8E9 /* oops.png */; };
+		C5D79ED91AFFB86A00B096BB /* PARBookCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D79ED71AFFB86A00B096BB /* PARBookCollectionViewCell.m */; };
+		C5D79EDA1AFFB86A00B096BB /* PARBookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5D79ED81AFFB86A00B096BB /* PARBookCollectionViewCell.xib */; };
+		C5D79EDE1AFFBF4700B096BB /* PARLibraryCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5D79EDD1AFFBF4700B096BB /* PARLibraryCollectionViewController.xib */; };
 		C5EC91521AF6428200DE1B01 /* FunkFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5EC91511AF6428200DE1B01 /* FunkFont.ttf */; };
 		C5EC91561AF66FE300DE1B01 /* PARBookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EC91551AF66FE300DE1B01 /* PARBookTableViewCell.m */; };
 		C5EC91581AF66FFF00DE1B01 /* PARBookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5EC91571AF66FFF00DE1B01 /* PARBookTableViewCell.xib */; };
@@ -38,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C51196191AFFC27E003CB31C /* PARHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARHeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		C511961A1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARHeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		C511961B1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		C553CFD11AF3A8DE00EC7017 /* StartupLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StartupLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C553CFD51AF3A8DE00EC7017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C553CFD61AF3A8DE00EC7017 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -57,6 +65,11 @@
 		C553D0071AF4154000EC7017 /* PARWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARWebViewController.m; sourceTree = "<group>"; };
 		C553D0081AF4154000EC7017 /* PARWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARWebViewController.xib; sourceTree = "<group>"; };
 		C56E2AE01AFEA04C0013D8E9 /* oops.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oops.png; sourceTree = "<group>"; };
+		C5D79ED61AFFB86A00B096BB /* PARBookCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARBookCollectionViewCell.h; sourceTree = "<group>"; };
+		C5D79ED71AFFB86A00B096BB /* PARBookCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARBookCollectionViewCell.m; sourceTree = "<group>"; };
+		C5D79ED81AFFB86A00B096BB /* PARBookCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARBookCollectionViewCell.xib; sourceTree = "<group>"; };
+		C5D79EDC1AFFBD0800B096BB /* PARLibraryViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PARLibraryViewControllerDelegate.h; sourceTree = "<group>"; };
+		C5D79EDD1AFFBF4700B096BB /* PARLibraryCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARLibraryCollectionViewController.xib; sourceTree = "<group>"; };
 		C5EC91511AF6428200DE1B01 /* FunkFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FunkFont.ttf; sourceTree = "<group>"; };
 		C5EC91541AF66FE300DE1B01 /* PARBookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARBookTableViewCell.h; sourceTree = "<group>"; };
 		C5EC91551AF66FE300DE1B01 /* PARBookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARBookTableViewCell.m; sourceTree = "<group>"; };
@@ -89,6 +102,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C51196181AFFC257003CB31C /* PARHeaderCollectionReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				C51196191AFFC27E003CB31C /* PARHeaderCollectionReusableView.h */,
+				C511961A1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m */,
+				C511961B1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib */,
+			);
+			name = PARHeaderCollectionReusableView;
+			sourceTree = "<group>";
+		};
 		C553CFC81AF3A8DE00EC7017 = {
 			isa = PBXGroup;
 			children = (
@@ -112,10 +135,13 @@
 			children = (
 				C553CFD81AF3A8DE00EC7017 /* AppDelegate.h */,
 				C553CFD91AF3A8DE00EC7017 /* AppDelegate.m */,
+				C5D79EDB1AFFBCDF00B096BB /* Protocol */,
 				C5FE120B1AF523FD005AC784 /* Categories */,
 				C553D0031AF3ABDA00EC7017 /* WebView */,
 				C553CFFF1AF3AA9A00EC7017 /* PARBook */,
 				C5EC91531AF66FA500DE1B01 /* PARBookTableViewCell */,
+				C51196181AFFC257003CB31C /* PARHeaderCollectionReusableView */,
+				C5D79ED51AFFB63200B096BB /* PARBookCollectionViewCell */,
 				C5FE12041AF4E3EE005AC784 /* PARLibrary */,
 				C553CFE11AF3A8DE00EC7017 /* Images.xcassets */,
 				C56E2AE01AFEA04C0013D8E9 /* oops.png */,
@@ -174,6 +200,24 @@
 			name = WebView;
 			sourceTree = "<group>";
 		};
+		C5D79ED51AFFB63200B096BB /* PARBookCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5D79ED61AFFB86A00B096BB /* PARBookCollectionViewCell.h */,
+				C5D79ED71AFFB86A00B096BB /* PARBookCollectionViewCell.m */,
+				C5D79ED81AFFB86A00B096BB /* PARBookCollectionViewCell.xib */,
+			);
+			name = PARBookCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		C5D79EDB1AFFBCDF00B096BB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C5D79EDC1AFFBD0800B096BB /* PARLibraryViewControllerDelegate.h */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
 		C5EC91531AF66FA500DE1B01 /* PARBookTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +237,7 @@
 				C5FE12021AF4E3E9005AC784 /* PARLibraryTableViewController.m */,
 				C5EC91591AF6A20000DE1B01 /* PARLibraryCollectionViewController.h */,
 				C5EC915A1AF6A20000DE1B01 /* PARLibraryCollectionViewController.m */,
+				C5D79EDD1AFFBF4700B096BB /* PARLibraryCollectionViewController.xib */,
 			);
 			name = PARLibrary;
 			sourceTree = "<group>";
@@ -290,9 +335,12 @@
 				C553CFE21AF3A8DE00EC7017 /* Images.xcassets in Resources */,
 				C5EC91581AF66FFF00DE1B01 /* PARBookTableViewCell.xib in Resources */,
 				C553D00A1AF4154000EC7017 /* PARWebViewController.xib in Resources */,
+				C5D79EDE1AFFBF4700B096BB /* PARLibraryCollectionViewController.xib in Resources */,
 				C5EC91521AF6428200DE1B01 /* FunkFont.ttf in Resources */,
+				C511961D1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib in Resources */,
 				C553CFFE1AF3AA9600EC7017 /* PARBookViewController.xib in Resources */,
 				C56E2AE11AFEA04C0013D8E9 /* oops.png in Resources */,
+				C5D79EDA1AFFB86A00B096BB /* PARBookCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,8 +358,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C511961C1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m in Sources */,
 				C5FE12031AF4E3E9005AC784 /* PARLibraryTableViewController.m in Sources */,
 				C5EC91561AF66FE300DE1B01 /* PARBookTableViewCell.m in Sources */,
+				C5D79ED91AFFB86A00B096BB /* PARBookCollectionViewCell.m in Sources */,
 				C553CFFD1AF3AA9600EC7017 /* PARBookViewController.m in Sources */,
 				C5FE120E1AF52431005AC784 /* UIViewController+Combinators.m in Sources */,
 				C5FE120A1AF4E44D005AC784 /* PARLibrary.m in Sources */,
@@ -440,6 +490,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StartupLibrary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -450,6 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StartupLibrary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

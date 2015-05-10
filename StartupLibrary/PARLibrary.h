@@ -16,9 +16,9 @@
 -(void) freeUpMemory;
 
 
--(NSUInteger)countForKey:(NSString *)key;
--(NSString *)keyForSection:(NSUInteger)section;
--(NSArray *) booksForKey:(NSString *)key;
+-(NSUInteger)countForSection:(NSUInteger)section;
+-(NSString *)titleForSection:(NSUInteger)section;
+-(NSArray *) booksForSection:(NSUInteger)section;
 -(PARBook *) bookAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

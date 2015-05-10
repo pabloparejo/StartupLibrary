@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PARLibraryTableViewController.h"
+#import "PARLibraryCollectionViewController.h"
 #import "PARBookViewController.h"
 #import "PARLibrary.h"
 #import "UIViewController+Combinators.h"
@@ -49,30 +50,51 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
                                                            NSFontAttributeName:[UIFont fontWithName:@"UVFFunkydori" size:30]}];
+    
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:38.f/255.f green:173.f/255.f blue:138.f/255.f alpha:1]];
 
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
 }
 
+# pragma mark - TabBarItems
+
+
 # pragma mark - InterfaceIdiom configuration
 
+
 -(void) configureForIpadWithModel:(PARLibrary *) library{
-    PARLibraryTableViewController *libraryVC = [[PARLibraryTableViewController alloc] initWithModel:library];
+    PARLibraryTableViewController *libraryTableVC = [[PARLibraryTableViewController alloc] initWithModel:library];
+    PARLibraryCollectionViewController *libraryCollectionVC = [[PARLibraryCollectionViewController alloc] initWithModel:library];
     PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:[library bookAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]]];
     
-    [libraryVC setDelegate:bookVC];
+    [libraryTableVC setDelegate:bookVC];
+    [libraryCollectionVC setDelegate:bookVC];
+    
+    UITabBarController *tabVC = [UITabBarController new];
+    [tabVC setViewControllers:@[[libraryTableVC wrappedInNavigationController], [libraryCollectionVC wrappedInNavigationController]] animated:NO];
+    
+    [libraryCollectionVC configureForTabBar];
+    [libraryTableVC configureForTabBar];
+
     
     UISplitViewController *splitVC = [UISplitViewController new];
     
     [splitVC setDelegate:bookVC];
-    [splitVC setViewControllers:@[[libraryVC wrappedInNavigationController],
+    [splitVC setViewControllers:@[tabVC,
                                   [bookVC wrappedInNavigationController]]];
     [self.window setRootViewController:splitVC];
 }
 
 -(void) configureForIphoneWithModel:(PARLibrary *) library{
-    PARLibraryTableViewController *libraryVC = [[PARLibraryTableViewController alloc] initWithModel:library];
-    [libraryVC setDelegate:libraryVC];
-    [self.window setRootViewController:[libraryVC wrappedInNavigationController]];
+    PARLibraryTableViewController *libraryTableVC = [[PARLibraryTableViewController alloc] initWithModel:library];
+    PARLibraryCollectionViewController *libraryCollectionVC = [[PARLibraryCollectionViewController alloc] initWithModel:library];
+    
+    [libraryCollectionVC configureForTabBar];
+    [libraryTableVC configureForTabBar];
+    
+    UITabBarController *tabVC = [UITabBarController new];
+    [tabVC setViewControllers:@[[libraryTableVC wrappedInNavigationController], [libraryCollectionVC wrappedInNavigationController]] animated:NO];
+    [self.window setRootViewController:tabVC];
 }
 
 @end

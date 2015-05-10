@@ -8,20 +8,15 @@
 
 @import UIKit;
 #import "PARLibrary.h"
+#import "PARLibraryViewControllerDelegate.h"
 
-@class PARLibraryCollectionViewController;
+@interface PARLibraryCollectionViewController : UIViewController <  PARLibraryViewControllerDelegate,
+                                                                    UICollectionViewDataSource,
+                                                                    UICollectionViewDelegate>
 
-@protocol PARLibraryCollectionViewControllerDelegate <NSObject>
-
-@optional
-- (void) libraryViewController:(PARLibraryCollectionViewController *) libraryVC
-                 didSelectBook:(PARBook *) book;
-@end
-
-@interface PARLibraryCollectionViewController : UICollectionViewController <PARLibraryCollectionViewControllerDelegate>
-
-@property (weak, nonatomic) id<PARLibraryCollectionViewControllerDelegate> delegate;
+@property (weak, nonatomic) id<PARLibraryViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 - (id)initWithModel:(PARLibrary *) library;
-
+- (void) configureForTabBar;
 @end
 

@@ -72,19 +72,25 @@
     }];
 }
 
-# pragma mark - Data Source
-
--(NSUInteger)countForKey:(NSString *)key{
-    return [[self.library objectForKey:key] count];
-}
 -(NSString *)keyForSection:(NSUInteger)section{
     return [[self.library allKeys] objectAtIndex:section];
 }
+
+# pragma mark - Data Source
+
+-(NSUInteger)countForSection:(NSUInteger)section{
+    return [[self.library objectForKey:[self keyForSection:section]] count];
+}
+
+-(NSString *)titleForSection:(NSUInteger)section{
+    return [self keyForSection:section];
+}
+
 -(NSUInteger)numberOfSections{
     return [[self.library allKeys]count];
 }
--(NSArray *) booksForKey:(NSString *)key{
-    return [self.library objectForKey:key];
+-(NSArray *) booksForSection:(NSUInteger)section{
+    return [self.library objectForKey:[self keyForSection:section]];
 }
 -(PARBook *) bookAtIndexPath:(NSIndexPath*)indexPath{
     return [[self.library objectForKey:[self keyForSection:indexPath.section]] objectAtIndex:indexPath.row];
