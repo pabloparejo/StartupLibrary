@@ -20,3 +20,5 @@ I think this project is a good opportunity to create my own *to-read* books libr
 
 #### Other cool functionality I want to add
 - [Table search by name / category / tags](http://www.raywenderlich.com/16873/how-to-add-search-into-a-table-view)
+
+*Icons made by [Amit Jakhu](http://www.flaticon.com/authors/amit-jakhu) from [Flaticon](http://www.flaticon.com) is licensed by [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/)*
