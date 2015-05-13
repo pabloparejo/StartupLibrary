@@ -1,0 +1,10 @@
+PODS:
+  - vfrReader (2.7.3)
+
+DEPENDENCIES:
+  - vfrReader (~> 2.7)
+
+SPEC CHECKSUMS:
+  vfrReader: f44a7d5ad67d0c6255f562923bd7f44e5f1125b7
+
+COCOAPODS: 0.36.4
