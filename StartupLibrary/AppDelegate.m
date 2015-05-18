@@ -12,7 +12,7 @@
 #import "PARBookViewController.h"
 #import "PARLibrary.h"
 #import "UIViewController+Combinators.h"
-#import "Settings.h"
+#import "PARSettings.h"
 
 @interface AppDelegate ()
 
@@ -94,6 +94,9 @@
     [libraryCollectionVC configureForTabBar];
     [libraryTableVC configureForTabBar];
     
+    [libraryTableVC setDelegate:libraryTableVC];
+    [libraryCollectionVC setDelegate:libraryCollectionVC];
+    
     UITabBarController *tabVC = [UITabBarController new];
     [tabVC setViewControllers:@[[libraryTableVC wrappedInNavigationController], [libraryCollectionVC wrappedInNavigationController]] animated:NO];
     [self.window setRootViewController:tabVC];
@@ -101,20 +104,15 @@
 
 #pragma mark - User Defaults
 -(PARBook *) lastBookSelectedInModel: (PARLibrary *)model{
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     
-    if (![def objectForKey:LAST_BOOK_SELECTED_KEY]) {
+    NSIndexPath *indexPath = [PARSettings indexPathForLastBookSelected];
+    if (!indexPath) {
         // User has open the app for the first time
-        
-        [def setObject:@[@0,@0] forKey:LAST_BOOK_SELECTED_KEY];
-        [def synchronize];
+        indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [PARSettings saveLastBookSelected:indexPath];
     }
     
-    
-    NSArray *coords = [def objectForKey:LAST_BOOK_SELECTED_KEY];
-    NSUInteger section = [[coords objectAtIndex:0] integerValue];
-    NSUInteger row = [[coords objectAtIndex:1] integerValue];
-    return [model bookAtIndexPath:[NSIndexPath indexPathForRow:row inSection:section]];
+    return [model bookAtIndexPath:indexPath];
 }
 
 @end
