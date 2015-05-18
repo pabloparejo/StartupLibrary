@@ -10,6 +10,7 @@
 
 @interface PARBook()
 @property (strong, nonatomic, readwrite) UIImage *image;
+@property (strong, nonatomic, readwrite) ReaderDocument *document;
 @end
 
 @implementation PARBook
@@ -66,20 +67,27 @@
 }
 
 -(void) freeUpMemory{
-    // Just in case..
-    [self cacheImage];
+    // Caching is performed right after downloading resources
+    
     self.image = nil;
+    self.document = nil;
 }
 
--(NSString *) pathForChachedImage{
+-(NSString *) cachePathForExtension:(NSString *)extension{
     NSString *cacheDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
-    NSString *fileName = [NSString stringWithFormat:@"%@", self.title];
-    return [cacheDir stringByAppendingString:fileName];
+    return [cacheDir stringByAppendingString:[self.title stringByAppendingString:extension]];
 }
 
 -(void) cacheImage{
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
-        [UIImagePNGRepresentation(self.image) writeToFile:[self pathForChachedImage] atomically:YES];
+        [UIImagePNGRepresentation(self.image) writeToFile:[self cachePathForExtension:@".png"] atomically:YES];
+    });
+}
+
+-(void) cachePDF:(NSData *) pdfFile{
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
+        NSString *path = [self cachePathForExtension:@".pdf"];
+        [pdfFile writeToFile:path atomically:YES];
     });
 }
 
@@ -88,7 +96,7 @@
         completionBlock();
     }else{
         // Trying to get the image from cacheDir
-        self.image = [UIImage imageWithContentsOfFile:[self pathForChachedImage]];
+        self.image = [UIImage imageWithContentsOfFile:[self cachePathForExtension:@".png"]];
         if (self.image == nil) {
             __weak typeof(self) weakSelf = self;
             dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
@@ -97,11 +105,37 @@
                 // image loading error
                 if (image == nil){
                     image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"oops" ofType:@".png"]];
+                }else{
+                    [self cacheImage];
                 }
                 weakSelf.image = image;
                 // Returning to main queue
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    completionBlock(image);
+                    completionBlock();
+                });
+            });
+        }else{
+            completionBlock();
+        }
+    }
+}
+
+-(void) downloadBookPDF:(void (^)())completionBlock{
+    if (self.document != nil) {
+        completionBlock();
+    }else{
+        // Trying to get the image from cacheDir
+        self.document = [[ReaderDocument alloc] initWithFilePath:[self cachePathForExtension:@".png"] password:nil];
+        if (self.document == nil) {
+            __weak typeof(self) weakSelf = self;
+            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+                // QOS_CLASS_USER_INITIATED is the 2nd priority queue
+                NSData *bookData = [NSData dataWithContentsOfURL:self.bookURL];
+                [self cachePDF:bookData];
+                weakSelf.document = [[ReaderDocument alloc] initWithFilePath:[self cachePathForExtension:@".pdf"] password:nil];
+                // Returning to main queue
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completionBlock();
                 });
             });
         }else{

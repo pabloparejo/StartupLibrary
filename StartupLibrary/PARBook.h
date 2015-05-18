@@ -9,6 +9,8 @@
 @import Foundation;
 @import UIKit;
 
+#import "ReaderDocument.h"
+
 @interface PARBook : NSObject
 
 @property (strong, nonatomic) NSString *title;
@@ -21,6 +23,7 @@
 @property (copy, nonatomic) NSArray *tags;
 
 @property (strong, nonatomic, readonly) UIImage *image;
+@property (strong, nonatomic, readonly) ReaderDocument *document;
 
 -(id) initWithTitle:(NSString *)title
              author:(NSString *)author
@@ -44,5 +47,6 @@
 
 -(void) freeUpMemory;
 -(void) downloadCoverImage:(void (^)())completionBlock;
+-(void) downloadBookPDF:(void (^)())completionBlock;
 
 @end

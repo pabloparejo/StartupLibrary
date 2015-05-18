@@ -8,6 +8,8 @@
 
 #import "PARBookViewController.h"
 #import "PARWebViewController.h"
+#import "PARBookViewController.h"
+#import "ReaderViewController.h"
 
 #define SELF_TITLE @"Book"
 #define BUY_BOOK_TITLE @"Book's Store"
@@ -20,7 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *category;
 @property (weak, nonatomic) IBOutlet UILabel *summary;
 @property (weak, nonatomic) IBOutlet UIImageView *bookImage;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *imageLoading;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *bookLoading;
 
 @end
 
@@ -46,6 +49,8 @@
         self.navigationItem.leftItemsSupplementBackButton = YES;
         self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     }
+    
+    [self.bookLoading stopAnimating];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,31 +58,17 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)syncViewWithModel{
-    self.bookImage.image = nil;
-    [self.loading startAnimating];
-    if (self.model.image != nil) {
-        self.bookImage.image = self.model.image;
-        [self.loading stopAnimating];
-    }else{
-        [self.model downloadCoverImage:^{
-            self.bookImage.image = self.model.image;
-            [self.loading stopAnimating];
-        }];
-    }
-    [self.category setTitle:[self.model category] forState:UIControlStateNormal];
-    self.titleLabel.text = [self.model title];
-    self.author.text = [self.model author];
-    self.summary.text = [self.model summary];
-}
-
 #pragma mark - IBActions
 
 
 - (IBAction)openBook:(id)sender {
     NSLog(@"%@", [self.model bookURL]);
-    PARWebViewController *webVC = [[PARWebViewController alloc] initWithURL:[self.model bookURL]];
-    [self.navigationController pushViewController:webVC animated:YES];
+    [self.bookLoading startAnimating];
+    [self.model downloadBookPDF:^{
+        ReaderViewController *readerVC = [[ReaderViewController alloc] initWithReaderDocument:self.model.document];
+        [self.navigationController pushViewController:readerVC animated:YES];
+        [self.bookLoading stopAnimating];
+    }];
 }
 
 - (IBAction)buyBook:(id)sender {
@@ -107,6 +98,27 @@
     [self syncViewWithModel];
 }
 
+
+#pragma mark - Utils
+
+-(void)syncViewWithModel{
+    self.bookImage.image = nil;
+    [self.bookLoading stopAnimating];
+    [self.imageLoading startAnimating];
+    if (self.model.image != nil) {
+        self.bookImage.image = self.model.image;
+        [self.imageLoading stopAnimating];
+    }else{
+        [self.model downloadCoverImage:^{
+            self.bookImage.image = self.model.image;
+            [self.imageLoading stopAnimating];
+        }];
+    }
+    [self.category setTitle:[self.model category] forState:UIControlStateNormal];
+    self.titleLabel.text = [self.model title];
+    self.author.text = [self.model author];
+    self.summary.text = [self.model summary];
+}
 
 
 @end
