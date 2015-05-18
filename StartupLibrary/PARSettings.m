@@ -20,8 +20,8 @@
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     NSArray *coords;
     if ((coords = [def objectForKey:LAST_BOOK_SELECTED_KEY])) {
-        long row = [[coords objectAtIndex:0] integerValue];
-        long section = [[coords objectAtIndex:1] integerValue];
+        long section = [[coords objectAtIndex:0] integerValue];
+        long row = [[coords objectAtIndex:1] integerValue];
         return [NSIndexPath indexPathForRow:row inSection:section];
     }
     return nil;
