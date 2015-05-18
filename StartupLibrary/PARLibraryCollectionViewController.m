@@ -11,6 +11,7 @@
 #import "PARHeaderCollectionReusableView.h"
 #import "PARBook.h"
 #import "PARBookViewController.h"
+#import "PARSettings.h"
 
 #define CELL_ID @"PARBookCollectionViewCell"
 #define HEADER_ID @"PARHeaderCollectionReusableView"
@@ -44,6 +45,10 @@
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+}
+
+-(void) viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,6 +111,8 @@
         [self.delegate libraryViewController:self
                                didSelectBook:book];
     }
+    
+    [PARSettings saveLastBookSelected:indexPath];
 }
 
 # pragma mark - PARLibraryViewControllerDelegate

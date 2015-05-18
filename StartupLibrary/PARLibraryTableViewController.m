@@ -10,6 +10,8 @@
 #import "PARBook.h"
 #import "PARBookViewController.h"
 #import "PARBookTableViewCell.h"
+#import "PARSettings.h"
+
 
 #define CELL_ID @"PARBookTableViewCell"
 #define SELF_TITLE @"Startup Library"
@@ -31,8 +33,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerNibs];
+}
 
-
+-(void) viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,6 +97,8 @@
         [self.delegate libraryViewController:self
                                didSelectBook:book];
     }
+    
+    [PARSettings saveLastBookSelected:indexPath];
 }
 
 - (void) tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section{
@@ -106,7 +112,7 @@
 
 
 -(CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 140;
+    return 141;
 }
 
 # pragma mark - PARLibraryViewControllerDelegate

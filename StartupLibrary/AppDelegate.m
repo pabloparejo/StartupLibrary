@@ -12,6 +12,7 @@
 #import "PARBookViewController.h"
 #import "PARLibrary.h"
 #import "UIViewController+Combinators.h"
+#import "Settings.h"
 
 @interface AppDelegate ()
 
@@ -65,7 +66,8 @@
 -(void) configureForIpadWithModel:(PARLibrary *) library{
     PARLibraryTableViewController *libraryTableVC = [[PARLibraryTableViewController alloc] initWithModel:library];
     PARLibraryCollectionViewController *libraryCollectionVC = [[PARLibraryCollectionViewController alloc] initWithModel:library];
-    PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:[library bookAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]]];
+    
+    PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:[self lastBookSelectedInModel:library]];
     
     [libraryTableVC setDelegate:bookVC];
     [libraryCollectionVC setDelegate:bookVC];
@@ -95,6 +97,24 @@
     UITabBarController *tabVC = [UITabBarController new];
     [tabVC setViewControllers:@[[libraryTableVC wrappedInNavigationController], [libraryCollectionVC wrappedInNavigationController]] animated:NO];
     [self.window setRootViewController:tabVC];
+}
+
+#pragma mark - User Defaults
+-(PARBook *) lastBookSelectedInModel: (PARLibrary *)model{
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    
+    if (![def objectForKey:LAST_BOOK_SELECTED_KEY]) {
+        // User has open the app for the first time
+        
+        [def setObject:@[@0,@0] forKey:LAST_BOOK_SELECTED_KEY];
+        [def synchronize];
+    }
+    
+    
+    NSArray *coords = [def objectForKey:LAST_BOOK_SELECTED_KEY];
+    NSUInteger section = [[coords objectAtIndex:0] integerValue];
+    NSUInteger row = [[coords objectAtIndex:1] integerValue];
+    return [model bookAtIndexPath:[NSIndexPath indexPathForRow:row inSection:section]];
 }
 
 @end

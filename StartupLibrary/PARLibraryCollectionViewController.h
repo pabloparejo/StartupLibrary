@@ -9,7 +9,6 @@
 @import UIKit;
 #import "PARLibrary.h"
 #import "PARLibraryViewControllerDelegate.h"
-
 @interface PARLibraryCollectionViewController : UIViewController <  PARLibraryViewControllerDelegate,
                                                                     UICollectionViewDataSource,
                                                                     UICollectionViewDelegate>

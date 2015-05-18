@@ -10,6 +10,7 @@
 		B39B8A597A06DE463DC1AA76 /* libPods-StartupLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E51308FD459D8BAE57A0BC /* libPods-StartupLibrary.a */; };
 		C511961C1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C511961A1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m */; };
 		C511961D1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C511961B1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib */; };
+		C552F42E1B0A595A000D7821 /* PARSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = C552F42D1B0A595A000D7821 /* PARSettings.m */; };
 		C553CFD71AF3A8DE00EC7017 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C553CFD61AF3A8DE00EC7017 /* main.m */; };
 		C553CFDA1AF3A8DE00EC7017 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C553CFD91AF3A8DE00EC7017 /* AppDelegate.m */; };
 		C553CFE21AF3A8DE00EC7017 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C553CFE11AF3A8DE00EC7017 /* Images.xcassets */; };
@@ -50,6 +51,8 @@
 		C51196191AFFC27E003CB31C /* PARHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARHeaderCollectionReusableView.h; sourceTree = "<group>"; };
 		C511961A1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARHeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		C511961B1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		C552F42C1B0A595A000D7821 /* PARSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARSettings.h; sourceTree = "<group>"; };
+		C552F42D1B0A595A000D7821 /* PARSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARSettings.m; sourceTree = "<group>"; };
 		C553CFD11AF3A8DE00EC7017 /* StartupLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StartupLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C553CFD51AF3A8DE00EC7017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C553CFD61AF3A8DE00EC7017 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 			children = (
 				C553CFD81AF3A8DE00EC7017 /* AppDelegate.h */,
 				C553CFD91AF3A8DE00EC7017 /* AppDelegate.m */,
+				C552F42C1B0A595A000D7821 /* PARSettings.h */,
+				C552F42D1B0A595A000D7821 /* PARSettings.m */,
 				C5D79EDB1AFFBCDF00B096BB /* Protocol */,
 				C5FE120B1AF523FD005AC784 /* Categories */,
 				C553D0031AF3ABDA00EC7017 /* WebView */,
@@ -419,6 +424,7 @@
 			files = (
 				C511961C1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m in Sources */,
 				C5FE12031AF4E3E9005AC784 /* PARLibraryTableViewController.m in Sources */,
+				C552F42E1B0A595A000D7821 /* PARSettings.m in Sources */,
 				C5EC91561AF66FE300DE1B01 /* PARBookTableViewCell.m in Sources */,
 				C5D79ED91AFFB86A00B096BB /* PARBookCollectionViewCell.m in Sources */,
 				C553CFFD1AF3AA9600EC7017 /* PARBookViewController.m in Sources */,
