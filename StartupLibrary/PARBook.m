@@ -8,6 +8,7 @@
 
 #import "PARBook.h"
 
+
 @interface PARBook()
 @property (strong, nonatomic, readwrite) UIImage *image;
 @property (strong, nonatomic, readwrite) ReaderDocument *document;
@@ -68,14 +69,14 @@
 
 -(void) freeUpMemory{
     // Caching is performed right after downloading resources
-    
     self.image = nil;
     self.document = nil;
 }
 
 -(NSString *) cachePathForExtension:(NSString *)extension{
-    NSString *cacheDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
-    return [cacheDir stringByAppendingString:[self.title stringByAppendingString:extension]];
+    NSString *cacheDir = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingString:@"/"];
+    NSString *fileName = [self.title stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    return [cacheDir stringByAppendingString:[fileName stringByAppendingString:extension]];
 }
 
 -(void) cacheImage{
@@ -85,10 +86,8 @@
 }
 
 -(void) cachePDF:(NSData *) pdfFile{
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
-        NSString *path = [self cachePathForExtension:@".pdf"];
-        [pdfFile writeToFile:path atomically:YES];
-    });
+    NSString *path = [self cachePathForExtension:@".pdf"];
+    [pdfFile writeToFile:path atomically:YES];
 }
 
 -(void) downloadCoverImage:(void (^)())completionBlock{
@@ -128,8 +127,8 @@
         self.document = [[ReaderDocument alloc] initWithFilePath:[self cachePathForExtension:@".png"] password:nil];
         if (self.document == nil) {
             __weak typeof(self) weakSelf = self;
-            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
-                // QOS_CLASS_USER_INITIATED is the 2nd priority queue
+            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0), ^{
+                // QOS_CLASS_USER_INTERACTIVE is the 1st priority queue
                 NSData *bookData = [NSData dataWithContentsOfURL:self.bookURL];
                 [self cachePDF:bookData];
                 weakSelf.document = [[ReaderDocument alloc] initWithFilePath:[self cachePathForExtension:@".pdf"] password:nil];
