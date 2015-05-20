@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerNibs];
-    self.automaticallyAdjustsScrollViewInsets = YES;
+    [self.tableView setContentInset:UIEdgeInsetsMake(60,0,50,0)];
 }
 
 -(void) viewDidDisappear:(BOOL)animated{

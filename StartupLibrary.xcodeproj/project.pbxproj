@@ -143,6 +143,7 @@
 		C552F4331B0B4053000D7821 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				C5EC91531AF66FA500DE1B01 /* PARBookTableViewCell */,
 				C5FE12011AF4E3E9005AC784 /* PARLibraryTableViewController.h */,
 				C5FE12021AF4E3E9005AC784 /* PARLibraryTableViewController.m */,
 			);
@@ -152,6 +153,8 @@
 		C552F4341B0B405B000D7821 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				C51196181AFFC257003CB31C /* PARHeaderCollectionReusableView */,
+				C5D79ED51AFFB63200B096BB /* PARBookCollectionViewCell */,
 				C5EC91591AF6A20000DE1B01 /* PARLibraryCollectionViewController.h */,
 				C5EC915A1AF6A20000DE1B01 /* PARLibraryCollectionViewController.m */,
 				C5D79EDD1AFFBF4700B096BB /* PARLibraryCollectionViewController.xib */,
@@ -190,9 +193,6 @@
 				C5FE120B1AF523FD005AC784 /* Categories */,
 				C553D0031AF3ABDA00EC7017 /* WebView */,
 				C553CFFF1AF3AA9A00EC7017 /* PARBook */,
-				C5EC91531AF66FA500DE1B01 /* PARBookTableViewCell */,
-				C51196181AFFC257003CB31C /* PARHeaderCollectionReusableView */,
-				C5D79ED51AFFB63200B096BB /* PARBookCollectionViewCell */,
 				C5FE12041AF4E3EE005AC784 /* PARLibrary */,
 				C553CFE11AF3A8DE00EC7017 /* Images.xcassets */,
 				C56E2AE01AFEA04C0013D8E9 /* oops.png */,

@@ -37,9 +37,8 @@
     [self.collectionView registerNib:[UINib nibWithNibName:HEADER_ID bundle:nil]
           forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
                  withReuseIdentifier:HEADER_ID];
-    
-    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"collection"] tag:0];
-    [self.tabBarItem setImageInsets:UIEdgeInsetsMake(6, 0, -6, 0)];
+
+    [self.collectionView setContentInset:UIEdgeInsetsMake(0,0,40,0)];
 }
 
 -(void) viewWillAppear:(BOOL)animated{
@@ -53,6 +52,7 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     [self.model freeUpMemory];
+    NSLog(@"######Memory warning");
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -68,6 +68,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PARBookCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELL_ID forIndexPath:indexPath];
+
     PARBook *book = [self.model bookAtIndexPath:indexPath];
     cell.imageView.image = nil;
     [cell.loading startAnimating];
@@ -80,9 +81,6 @@
         }];
     }
     cell.titleLabel.text = book.title;
-    
-    return cell;
-    
     return cell;
 }
 
