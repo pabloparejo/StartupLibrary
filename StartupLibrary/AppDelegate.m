@@ -13,6 +13,7 @@
 #import "PARLibrary.h"
 #import "UIViewController+Combinators.h"
 #import "PARSettings.h"
+#import "PARLibraryTabController.h"
 
 @interface AppDelegate ()
 
@@ -72,8 +73,9 @@
     [libraryTableVC setDelegate:bookVC];
     [libraryCollectionVC setDelegate:bookVC];
     
-    UITabBarController *tabVC = [UITabBarController new];
-    [tabVC setViewControllers:@[[libraryTableVC wrappedInNavigationController], [libraryCollectionVC wrappedInNavigationController]] animated:NO];
+    PARLibraryTabController *tabVC = [PARLibraryTabController new];
+
+    [tabVC setViewControllers:@[libraryCollectionVC, libraryTableVC] animated:NO];
     
     [libraryCollectionVC configureForTabBar];
     [libraryTableVC configureForTabBar];
@@ -82,7 +84,7 @@
     UISplitViewController *splitVC = [UISplitViewController new];
     
     [splitVC setDelegate:bookVC];
-    [splitVC setViewControllers:@[tabVC,
+    [splitVC setViewControllers:@[[tabVC wrappedInNavigationController],
                                   [bookVC wrappedInNavigationController]]];
     [self.window setRootViewController:splitVC];
 }
@@ -94,12 +96,13 @@
     [libraryCollectionVC configureForTabBar];
     [libraryTableVC configureForTabBar];
     
-    [libraryTableVC setDelegate:libraryTableVC];
-    [libraryCollectionVC setDelegate:libraryCollectionVC];
+    PARLibraryTabController *tabVC = [PARLibraryTabController new];
     
-    UITabBarController *tabVC = [UITabBarController new];
-    [tabVC setViewControllers:@[[libraryTableVC wrappedInNavigationController], [libraryCollectionVC wrappedInNavigationController]] animated:NO];
-    [self.window setRootViewController:tabVC];
+    [libraryTableVC setDelegate:tabVC];
+    [libraryCollectionVC setDelegate:tabVC];
+    
+    [tabVC setViewControllers:@[libraryCollectionVC, libraryTableVC] animated:NO];
+    [self.window setRootViewController:[tabVC wrappedInNavigationController]];
 }
 
 #pragma mark - User Defaults

@@ -14,7 +14,6 @@
 
 
 #define CELL_ID @"PARBookTableViewCell"
-#define SELF_TITLE @"Startup Library"
 
 
 @interface PARLibraryTableViewController ()
@@ -33,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerNibs];
+    self.automaticallyAdjustsScrollViewInsets = YES;
 }
 
 -(void) viewDidDisappear:(BOOL)animated{
@@ -115,13 +115,6 @@
     return 141;
 }
 
-# pragma mark - PARLibraryViewControllerDelegate
-
-- (void) libraryViewController:(PARLibraryTableViewController *)libraryVC didSelectBook:(PARBook *)book{
-    PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:book];
-    [self.navigationController pushViewController:bookVC animated:YES];
-}
-
 #pragma mark - Utils
 
 -(void) registerNibs{
@@ -130,7 +123,6 @@
 }
 
 - (void) configureForTabBar{
-    self.title = SELF_TITLE;
     self.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"list"] tag:0];
     [self.tabBarItem setImageInsets:UIEdgeInsetsMake(6, 0, -6, 0)];
 }

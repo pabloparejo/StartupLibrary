@@ -62,7 +62,6 @@
 
 
 - (IBAction)openBook:(id)sender {
-    NSLog(@"%@", [self.model bookURL]);
     [self.bookLoading startAnimating];
     [self.model downloadBookPDF:^{
         ReaderViewController *readerVC = [[ReaderViewController alloc] initWithReaderDocument:self.model.document];
@@ -72,7 +71,6 @@
 }
 
 - (IBAction)buyBook:(id)sender {
-    NSLog(@"%@", [self.model webURL]);
     PARWebViewController *webVC = [[PARWebViewController alloc] initWithURL:[self.model webURL] title:BUY_BOOK_TITLE];
     [self.navigationController pushViewController:webVC animated:YES];
 }

@@ -9,9 +9,8 @@
 @import UIKit;
 #import "PARLibrary.h"
 #import "PARLibraryViewControllerDelegate.h"
-@interface PARLibraryCollectionViewController : UIViewController <  PARLibraryViewControllerDelegate,
-                                                                    UICollectionViewDataSource,
-                                                                    UICollectionViewDelegate>
+@interface PARLibraryCollectionViewController : UIViewController <UICollectionViewDataSource,
+                                                                  UICollectionViewDelegate>
 
 @property (weak, nonatomic) id<PARLibraryViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;

@@ -11,6 +11,8 @@
 
 #endif
 
+#import "PARBook.h"
+
 @protocol PARLibraryViewControllerDelegate <NSObject>
 
 @optional

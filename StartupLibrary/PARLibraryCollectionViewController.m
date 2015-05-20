@@ -15,7 +15,6 @@
 
 #define CELL_ID @"PARBookCollectionViewCell"
 #define HEADER_ID @"PARHeaderCollectionReusableView"
-#define SELF_TITLE @"Startup Library"
 
 @interface PARLibraryCollectionViewController ()
 @property (strong, nonatomic) PARLibrary *model;
@@ -53,6 +52,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    [self.model freeUpMemory];
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -115,17 +115,9 @@
     [PARSettings saveLastBookSelected:indexPath];
 }
 
-# pragma mark - PARLibraryViewControllerDelegate
-
-- (void) libraryViewController:(PARLibraryCollectionViewController *)libraryVC didSelectBook:(PARBook *)book{
-    PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:book];
-    [self.navigationController pushViewController:bookVC animated:YES];
-}
-
 #pragma mark - Utils
 
 - (void) configureForTabBar{
-    self.title = SELF_TITLE;
     self.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"collection"] tag:0];
     [self.tabBarItem setImageInsets:UIEdgeInsetsMake(6, 0, -6, 0)];
 }

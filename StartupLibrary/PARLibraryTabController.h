@@ -6,8 +6,9 @@
 //  Copyright (c) 2015 PabloParejo. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+#import "PARLibraryViewControllerDelegate.h"
 
-@interface PARLibraryTabController : UITabBarController
+@interface PARLibraryTabController : UITabBarController <PARLibraryViewControllerDelegate>
 
 @end

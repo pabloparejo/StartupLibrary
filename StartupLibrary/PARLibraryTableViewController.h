@@ -10,7 +10,7 @@
 #import "PARLibrary.h"
 #import "PARLibraryViewControllerDelegate.h"
 
-@interface PARLibraryTableViewController : UITableViewController <PARLibraryViewControllerDelegate>
+@interface PARLibraryTableViewController : UITableViewController
 
 @property (weak, nonatomic) id<PARLibraryViewControllerDelegate> delegate;
 - (id)initWithModel:(PARLibrary *) library;
