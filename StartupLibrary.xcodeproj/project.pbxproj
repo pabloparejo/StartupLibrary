@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B39B8A597A06DE463DC1AA76 /* libPods-StartupLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E51308FD459D8BAE57A0BC /* libPods-StartupLibrary.a */; };
+		C5051A131B752C8B000869B6 /* PARNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5051A121B752C8B000869B6 /* PARNetworkManager.m */; };
 		C511961C1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C511961A1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m */; };
 		C511961D1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C511961B1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib */; };
 		C552F42E1B0A595A000D7821 /* PARSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = C552F42D1B0A595A000D7821 /* PARSettings.m */; };
@@ -49,6 +50,9 @@
 		1F0A5631EA145DAC0FC0421F /* Pods-StartupLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartupLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-StartupLibrary/Pods-StartupLibrary.release.xcconfig"; sourceTree = "<group>"; };
 		A2E51308FD459D8BAE57A0BC /* libPods-StartupLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StartupLibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4218B332D223E27BFD3BBF /* Pods-StartupLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartupLibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StartupLibrary/Pods-StartupLibrary.debug.xcconfig"; sourceTree = "<group>"; };
+		C5051A111B752C8B000869B6 /* PARNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARNetworkManager.h; sourceTree = "<group>"; };
+		C5051A121B752C8B000869B6 /* PARNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARNetworkManager.m; sourceTree = "<group>"; };
+		C5051A141B753448000869B6 /* ParseSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseSettings.h; sourceTree = "<group>"; };
 		C51196191AFFC27E003CB31C /* PARHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARHeaderCollectionReusableView.h; sourceTree = "<group>"; };
 		C511961A1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARHeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		C511961B1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
@@ -187,8 +191,11 @@
 			children = (
 				C553CFD81AF3A8DE00EC7017 /* AppDelegate.h */,
 				C553CFD91AF3A8DE00EC7017 /* AppDelegate.m */,
+				C5051A111B752C8B000869B6 /* PARNetworkManager.h */,
+				C5051A121B752C8B000869B6 /* PARNetworkManager.m */,
 				C552F42C1B0A595A000D7821 /* PARSettings.h */,
 				C552F42D1B0A595A000D7821 /* PARSettings.m */,
+				C5051A141B753448000869B6 /* ParseSettings.h */,
 				C5D79EDB1AFFBCDF00B096BB /* Protocol */,
 				C5FE120B1AF523FD005AC784 /* Categories */,
 				C553D0031AF3ABDA00EC7017 /* WebView */,
@@ -457,6 +464,7 @@
 				C552F4311B0B403B000D7821 /* PARLibraryTabController.m in Sources */,
 				C5EC91561AF66FE300DE1B01 /* PARBookTableViewCell.m in Sources */,
 				C5D79ED91AFFB86A00B096BB /* PARBookCollectionViewCell.m in Sources */,
+				C5051A131B752C8B000869B6 /* PARNetworkManager.m in Sources */,
 				C553CFFD1AF3AA9600EC7017 /* PARBookViewController.m in Sources */,
 				C5FE120E1AF52431005AC784 /* UIViewController+Combinators.m in Sources */,
 				C5FE120A1AF4E44D005AC784 /* PARLibrary.m in Sources */,

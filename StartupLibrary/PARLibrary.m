@@ -7,8 +7,7 @@
 //
 
 #import "PARLibrary.h"
-
-#define JSON_URL @"http://www.mocky.io/v2/5544e9cd9da4c21d1429b11f"
+#import "PARNetworkManager.h"
 
 @interface PARLibrary()
 
@@ -49,14 +48,19 @@
 }
 
 - (NSArray *) downloadBooks{
-    NSURL *url = [NSURL URLWithString:JSON_URL];
-    
+
     NSError *jsonError = nil;
-    NSArray *JSONbooks = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:url] options:kNilOptions error:&jsonError];
+    
+    NSData *data = [PARNetworkManager listParseClass:@"Book"];
+    
+    NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data
+                                                             options:kNilOptions
+                                                               error:&jsonError];
+    NSArray *booksJSON = [response objectForKey:@"results"];
     
     NSMutableArray *books = [NSMutableArray array];
     
-    [JSONbooks enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
+    [booksJSON enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
         [books addObject:[[PARBook alloc] initWithJSONDictionary:obj]];
     }];
     
