@@ -115,7 +115,8 @@
         [PARSettings saveLastBookSelected:indexPath];
     }
     
-    return [model bookAtIndexPath:indexPath];
+    PARBook *book = [model bookAtIndexPath:indexPath];
+    return book;
 }
 
 @end

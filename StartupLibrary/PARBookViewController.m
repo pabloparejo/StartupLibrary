@@ -100,6 +100,7 @@
 #pragma mark - Utils
 
 -(void)syncViewWithModel{
+    [self.model retrieveDetail];
     self.bookImage.image = nil;
     [self.bookLoading stopAnimating];
     [self.imageLoading startAnimating];
