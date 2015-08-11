@@ -39,6 +39,7 @@
                  withReuseIdentifier:HEADER_ID];
 
     [self.collectionView setContentInset:UIEdgeInsetsMake(0,0,40,0)];
+    [self.collectionView layoutIfNeeded];
 }
 
 -(void) viewWillAppear:(BOOL)animated{

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14E17e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -83,20 +83,6 @@
                         <action selector="buyBook:" destination="-1" eventType="touchUpInside" id="AA1-SP-PsB"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1I-8T-tsV">
-                    <rect key="frame" x="263" y="144" width="61" height="36"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="36" id="47v-Wq-VFd"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="15"/>
-                    <state key="normal" title="Category">
-                        <color key="titleColor" red="0.1176470588" green="0.67843137249999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <variation key="heightClass=regular-widthClass=regular">
-                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
-                    </variation>
-                </button>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ngc-Ak-hJr">
                     <rect key="frame" x="113" y="170" width="37" height="37"/>
                     <constraints>
@@ -132,6 +118,20 @@
                     <rect key="frame" x="282" y="282" width="37" height="37"/>
                     <color key="color" red="0.12941176469999999" green="0.1843137255" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                 </activityIndicatorView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1I-8T-tsV">
+                    <rect key="frame" x="263" y="144" width="61" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="47v-Wq-VFd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="15"/>
+                    <state key="normal" title="Category">
+                        <color key="titleColor" red="0.1176470588" green="0.67843137249999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
+                    </variation>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
