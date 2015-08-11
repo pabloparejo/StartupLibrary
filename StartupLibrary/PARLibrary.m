@@ -50,9 +50,7 @@
 - (NSArray *) downloadBooks{
 
     NSError *jsonError = nil;
-    
     NSData *data = [PARNetworkManager listParseClass:@"Book"];
-    
     NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data
                                                              options:kNilOptions
                                                                error:&jsonError];

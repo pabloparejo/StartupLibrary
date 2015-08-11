@@ -13,6 +13,7 @@
 
 @interface PARBook : NSObject
 
+@property (strong, nonatomic) NSString *objectId;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *author;
 @property (strong, nonatomic) NSURL *bookURL;
@@ -25,25 +26,29 @@
 @property (strong, nonatomic, readonly) UIImage *image;
 @property (strong, nonatomic, readonly) ReaderDocument *document;
 
--(id) initWithTitle:(NSString *)title
-             author:(NSString *)author
-            bookURL:(NSURL *)bookURL
-           coverURL:(NSURL *)coverURL
-            summary:(NSString *)summary
-             webURL:(NSURL *)webURL
-           category:(NSString *)category
-               tags:(NSArray *)tags;
+-(id) initWithObjectId:(NSString *) objectId
+                 title:(NSString *)title
+                author:(NSString *)author
+               bookURL:(NSURL *)bookURL
+              coverURL:(NSURL *)coverURL
+               summary:(NSString *)summary
+                webURL:(NSURL *)webURL
+              category:(NSString *)category
+                  tags:(NSArray *)tags;
 
-+(instancetype) bookWithTitle:(NSString *)title
-                       author:(NSString *)author
-                      bookURL:(NSURL *)bookURL
-                     coverURL:(NSURL *)coverURL
-                      summary:(NSString *)summary
-                       webURL:(NSURL *)webURL
-                     category:(NSString *)category
-                         tags:(NSArray *)tags;
++(instancetype) bookWithObjectId:(NSString *) objectId
+                           title:(NSString *)title
+                          author:(NSString *)author
+                         bookURL:(NSURL *)bookURL
+                        coverURL:(NSURL *)coverURL
+                         summary:(NSString *)summary
+                          webURL:(NSURL *)webURL
+                        category:(NSString *)category
+                            tags:(NSArray *)tags;
 
 -(id) initWithJSONDictionary:(NSDictionary *) dictionary;
+-(void) retrieveDetail;
+
 
 -(void) freeUpMemory;
 -(void) downloadCoverImage:(void (^)())completionBlock;
