@@ -11,6 +11,6 @@
 @interface PARNetworkManager : NSObject
 
 + (NSData *) listParseClass: (NSString *) parseClass;
++ (NSData *) listParseClass:(NSString *) parseClass fromDate:(NSDate *) date;
 + (NSData *) retrieveObjectId:(NSString*) objectId forParseClass: (NSString *) parseClass;
-
 @end

@@ -8,20 +8,64 @@
 
 #import "PARNetworkManager.h"
 #import "ParseSettings.h"
+
 @implementation PARNetworkManager
+
+
+
++ (NSURLQueryItem *) listBookObjectKeys{
+    NSArray *objectKeys = @[@"title", @"author", @"category", @"tags", @"createdAt", @"updatedAt"];
+    NSURLQueryItem *keys = [NSURLQueryItem queryItemWithName:@"keys" value:[objectKeys componentsJoinedByString:@","]];
+    return keys;
+}
+
+
++ (NSData *) listParseClass:(NSString *) parseClass fromDate:(NSDate *) date{
+    NSURLQueryItem *listObjectKeys;
+    NSDictionary *dateFilter = @{@"modifiedAt": @{@"$gt": @{@"__type": @"Date", @"iso": date}}};
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dateFilter options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSString *escapedJSON = [jsonString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
+    NSURLQueryItem *dateQuery = [NSURLQueryItem queryItemWithName:@"where" value:escapedJSON];
+
+    if ([parseClass isEqualToString:PARSE_CLASS_BOOK]) {
+        listObjectKeys = [self listBookObjectKeys];
+    }
+    
+    NSURLRequest *request = [self listRequestForClass:parseClass
+                                       withQueryItems:@[listObjectKeys, dateQuery]];
+    
+    NSError *connectionError = [NSError new];
+    NSURLResponse *response = [NSURLResponse new];
+    
+    
+    NSData *data =  [NSURLConnection sendSynchronousRequest:request
+                                          returningResponse:&response
+                                                      error:&connectionError];
+    
+    
+    return data;
+}
+
++ (NSURLRequest *) listRequestForClass:(NSString *)parseClass withQueryItems:(NSArray *)queryItems{
+    NSString *urlString = [PARSE_URL stringByAppendingPathComponent:parseClass];
+    NSURLComponents *components = [NSURLComponents componentsWithString:urlString];
+    components.queryItems = queryItems;
+    NSURL *url = components.URL;
+    return [self requestForURL:url];
+}
+
 
 + (NSData *) listParseClass: (NSString *) parseClass{
     
-    NSString *urlString = [PARSE_URL stringByAppendingPathComponent:parseClass];
-    NSURLComponents *components = [NSURLComponents componentsWithString:urlString];
+    NSURLQueryItem *listObjectKeys;
+    if ([parseClass isEqualToString:PARSE_CLASS_BOOK]) {
+        listObjectKeys = [self listBookObjectKeys];
+    }
     
-    NSArray *objectKeys = @[@"title", @"author", @"category", @"tags"];
-    NSURLQueryItem *keys = [NSURLQueryItem queryItemWithName:@"keys" value:[objectKeys componentsJoinedByString:@","]];
-    components.queryItems = @[keys];
+    NSURLRequest *request = [self listRequestForClass:parseClass
+                                       withQueryItems:@[listObjectKeys]];
     
-    NSURL *url = components.URL;
-    
-    NSURLRequest *request = [self requestForURL: url];
     NSError *connectionError = [NSError new];
     NSURLResponse *response = [NSURLResponse new];
 
@@ -58,5 +102,6 @@
     
     return data;
 }
+
 
 @end
