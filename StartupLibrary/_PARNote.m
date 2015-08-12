@@ -22,16 +22,16 @@ const struct PARNoteRelationships PARNoteRelationships = {
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:moc_];
+	return [NSEntityDescription insertNewObjectForEntityForName:@"PARNote" inManagedObjectContext:moc_];
 }
 
 + (NSString*)entityName {
-	return @"Note";
+	return @"PARNote";
 }
 
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
-	return [NSEntityDescription entityForName:@"Note" inManagedObjectContext:moc_];
+	return [NSEntityDescription entityForName:@"PARNote" inManagedObjectContext:moc_];
 }
 
 - (PARNoteID*)objectID {

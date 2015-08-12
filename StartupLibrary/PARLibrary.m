@@ -8,6 +8,7 @@
 
 #import "PARLibrary.h"
 #import "PARNetworkManager.h"
+#import "ParseSettings.h"
 
 @interface PARLibrary()
 
@@ -52,7 +53,7 @@
 - (NSArray *) fecthBooksWithContext:context{
 
     NSError *jsonError = nil;
-    NSData *data = [PARNetworkManager listParseClass:@"Book"];
+    NSData *data = [PARNetworkManager listParseClass:PARSE_CLASS_BOOK];
     NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data
                                                              options:kNilOptions
                                                                error:&jsonError];
