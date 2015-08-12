@@ -27,62 +27,6 @@
                     <rect key="frame" x="8" y="78" width="247" height="222"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6S6-KX-eDg">
-                    <rect key="frame" x="8" y="308" width="584" height="240"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descriptionLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sS-ds-Rbc">
-                            <rect key="frame" x="0.0" y="0.0" width="584" height="30"/>
-                            <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="18"/>
-                            <color key="textColor" red="0.2666666667" green="0.32156862749999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                            <variation key="heightClass=regular-widthClass=regular">
-                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="20"/>
-                            </variation>
-                        </label>
-                    </subviews>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="8sS-ds-Rbc" secondAttribute="trailing" id="Sac-Sm-jiF"/>
-                        <constraint firstItem="8sS-ds-Rbc" firstAttribute="width" secondItem="6S6-KX-eDg" secondAttribute="width" id="WAO-G9-ycf"/>
-                        <constraint firstItem="8sS-ds-Rbc" firstAttribute="top" secondItem="6S6-KX-eDg" secondAttribute="top" id="d36-z1-8Qa"/>
-                        <constraint firstAttribute="bottom" secondItem="8sS-ds-Rbc" secondAttribute="bottom" id="ucW-kY-aDk"/>
-                        <constraint firstItem="8sS-ds-Rbc" firstAttribute="leading" secondItem="6S6-KX-eDg" secondAttribute="leading" id="wNw-HK-4Z8"/>
-                    </constraints>
-                </scrollView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHv-ip-b5V">
-                    <rect key="frame" x="304" y="556" width="288" height="36"/>
-                    <color key="backgroundColor" red="0.11764705882352941" green="0.67843137254901964" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="36" id="hAG-Ue-JfI">
-                            <variation key="heightClass=regular-widthClass=regular" constant="46"/>
-                        </constraint>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="15"/>
-                    <state key="normal" title="Read PDF">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <variation key="heightClass=regular-widthClass=regular">
-                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="20"/>
-                    </variation>
-                    <connections>
-                        <action selector="openBook:" destination="-1" eventType="touchUpInside" id="akS-hs-gr2"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSW-UG-YPf">
-                    <rect key="frame" x="8" y="556" width="288" height="36"/>
-                    <color key="backgroundColor" red="0.12941176470588237" green="0.18431372549019609" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="15"/>
-                    <state key="normal" title="Buy this book">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <variation key="heightClass=regular-widthClass=regular">
-                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="20"/>
-                    </variation>
-                    <connections>
-                        <action selector="buyBook:" destination="-1" eventType="touchUpInside" id="AA1-SP-PsB"/>
-                    </connections>
-                </button>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ngc-Ak-hJr">
                     <rect key="frame" x="113" y="170" width="37" height="37"/>
                     <constraints>
@@ -90,24 +34,12 @@
                         <constraint firstAttribute="height" constant="37" id="N9p-K2-kZZ"/>
                     </constraints>
                 </activityIndicatorView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="author" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYl-di-klv">
-                    <rect key="frame" x="263" y="114" width="329" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Jtx-aO-Hlj"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="18"/>
-                    <color key="textColor" red="0.26666666666666666" green="0.32156862745098042" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                    <variation key="heightClass=regular-widthClass=regular">
-                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="25"/>
-                    </variation>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXq-S4-0Gl">
                     <rect key="frame" x="263" y="78" width="329" height="32"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="rap-EE-P41"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="23"/>
                     <color key="textColor" red="0.12941176470588237" green="0.18431372549019609" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                     <variation key="heightClass=regular-widthClass=regular">
@@ -118,93 +50,182 @@
                     <rect key="frame" x="282" y="282" width="37" height="37"/>
                     <color key="color" red="0.12941176469999999" green="0.1843137255" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                 </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="author" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYl-di-klv">
+                    <rect key="frame" x="263" y="118" width="329" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Jtx-aO-Hlj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="18"/>
+                    <color key="textColor" red="0.12941176469999999" green="0.1843137255" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
+                    </variation>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1I-8T-tsV">
-                    <rect key="frame" x="263" y="144" width="61" height="36"/>
+                    <rect key="frame" x="263" y="147" width="67" height="36"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="47v-Wq-VFd"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="18"/>
                     <state key="normal" title="Category">
                         <color key="titleColor" red="0.1176470588" green="0.67843137249999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="heightClass=regular-widthClass=regular">
-                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
+                        <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="21"/>
                     </variation>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxd-Tw-pTW">
+                    <rect key="frame" x="263" y="191" width="329" height="21"/>
+                    <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="18"/>
+                    <color key="textColor" red="0.12941176469999999" green="0.1843137255" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
+                    </variation>
+                </label>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6S6-KX-eDg">
+                    <rect key="frame" x="263" y="220" width="329" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descriptionLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sS-ds-Rbc">
+                            <rect key="frame" x="0.0" y="0.0" width="329" height="27"/>
+                            <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="16"/>
+                            <color key="textColor" red="0.2666666667" green="0.32156862749999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="heightClass=regular-widthClass=regular">
+                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="18"/>
+                            </variation>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="8sS-ds-Rbc" secondAttribute="bottom" constant="4" id="7Ci-YV-7ix"/>
+                        <constraint firstItem="8sS-ds-Rbc" firstAttribute="width" secondItem="6S6-KX-eDg" secondAttribute="width" id="9cf-VA-9mN"/>
+                        <constraint firstAttribute="trailing" secondItem="8sS-ds-Rbc" secondAttribute="trailing" id="KGS-nN-fk2"/>
+                        <constraint firstItem="8sS-ds-Rbc" firstAttribute="top" secondItem="6S6-KX-eDg" secondAttribute="top" id="Kwq-Ve-UdB"/>
+                        <constraint firstAttribute="centerX" secondItem="8sS-ds-Rbc" secondAttribute="centerX" id="aMB-vt-WKf"/>
+                        <constraint firstItem="8sS-ds-Rbc" firstAttribute="leading" secondItem="6S6-KX-eDg" secondAttribute="leading" id="roq-xD-VY3"/>
+                    </constraints>
+                </scrollView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Wu8-Ax-7Ef">
+                    <rect key="frame" x="8" y="347" width="584" height="193"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes in this book" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niF-zf-bn7">
+                    <rect key="frame" x="8" y="316" width="584" height="24"/>
+                    <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="21"/>
+                    <color key="textColor" red="0.2666666667" green="0.32156862749999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSW-UG-YPf">
+                    <rect key="frame" x="8" y="264" width="247" height="36"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="1bL-I4-wCv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="15"/>
+                    <state key="normal" title="Buy this book">
+                        <color key="titleColor" red="0.12941176469999999" green="0.1843137255" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="20"/>
+                    </variation>
+                    <connections>
+                        <action selector="buyBook:" destination="-1" eventType="touchUpInside" id="AA1-SP-PsB"/>
+                    </connections>
+                </button>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMR-2O-utO">
+                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                    <items>
+                        <barButtonItem systemItem="add" id="txc-v9-ucI"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="YcT-kr-0Tj"/>
+                        <barButtonItem systemItem="bookmarks" id="rRE-yY-KFR">
+                            <connections>
+                                <action selector="openBook:" destination="-1" id="USP-yZ-sjQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="1so-c6-xVP"/>
+                        <barButtonItem systemItem="action" id="9Ie-XP-psO">
+                            <connections>
+                                <action selector="shareBook:" destination="-1" id="AjT-pl-Qyr"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="r1I-8T-tsV" firstAttribute="top" secondItem="oYl-di-klv" secondAttribute="bottom" id="0m9-61-OeA"/>
-                <constraint firstItem="6S6-KX-eDg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="2fy-Yl-wzi"/>
-                <constraint firstItem="cHv-ip-b5V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="5OA-WJ-b8O"/>
+                <constraint firstAttribute="trailing" secondItem="6S6-KX-eDg" secondAttribute="trailing" constant="8" id="4aW-xl-xvS"/>
+                <constraint firstItem="6S6-KX-eDg" firstAttribute="top" secondItem="Kxd-Tw-pTW" secondAttribute="bottom" constant="8" id="5Vf-g3-rhY"/>
                 <constraint firstItem="6S6-KX-eDg" firstAttribute="top" secondItem="r1I-8T-tsV" secondAttribute="bottom" constant="8" id="5fa-HI-tbb"/>
+                <constraint firstAttribute="trailing" secondItem="niF-zf-bn7" secondAttribute="trailing" constant="8" id="6zi-iF-jk7"/>
                 <constraint firstItem="r1I-8T-tsV" firstAttribute="leading" secondItem="oYl-di-klv" secondAttribute="leading" id="76B-mN-7Ky"/>
-                <constraint firstAttribute="bottom" secondItem="cHv-ip-b5V" secondAttribute="bottom" constant="8" id="9NI-to-OAY"/>
+                <constraint firstItem="Kxd-Tw-pTW" firstAttribute="top" secondItem="r1I-8T-tsV" secondAttribute="bottom" constant="8" id="7Px-MU-Kas"/>
+                <constraint firstItem="6S6-KX-eDg" firstAttribute="leading" secondItem="uDh-hS-dQl" secondAttribute="trailing" constant="8" id="BaG-fz-t6o"/>
+                <constraint firstAttribute="trailing" secondItem="Wu8-Ax-7Ef" secondAttribute="trailing" constant="8" id="DCD-jZ-Tzb"/>
                 <constraint firstItem="6S6-KX-eDg" firstAttribute="leading" secondItem="uDh-hS-dQl" secondAttribute="trailing" constant="8" id="DdV-F2-i0n"/>
                 <constraint firstItem="NXq-S4-0Gl" firstAttribute="top" secondItem="uDh-hS-dQl" secondAttribute="top" id="HPd-dq-BnV"/>
+                <constraint firstItem="tSW-UG-YPf" firstAttribute="bottom" secondItem="uDh-hS-dQl" secondAttribute="bottom" id="HXH-cQ-VxA"/>
                 <constraint firstItem="uDh-hS-dQl" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="0.85" id="IPi-Le-ZAa">
                     <variation key="heightClass=compact-widthClass=compact" constant="-70"/>
                 </constraint>
                 <constraint firstItem="uDh-hS-dQl" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Iz3-Q5-tpr">
                     <variation key="heightClass=regular-widthClass=regular" constant="50"/>
                 </constraint>
-                <constraint firstItem="tSW-UG-YPf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Jy3-pq-3Oe"/>
-                <constraint firstItem="cHv-ip-b5V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="4" id="NO6-lK-hwf"/>
+                <constraint firstItem="Wu8-Ax-7Ef" firstAttribute="top" secondItem="niF-zf-bn7" secondAttribute="bottom" constant="8" id="Juv-H7-yJG"/>
+                <constraint firstItem="niF-zf-bn7" firstAttribute="top" secondItem="uDh-hS-dQl" secondAttribute="bottom" constant="16" id="LPx-tV-dec"/>
+                <constraint firstItem="Wu8-Ax-7Ef" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="QsO-9P-SYv"/>
+                <constraint firstAttribute="trailing" secondItem="Kxd-Tw-pTW" secondAttribute="trailing" constant="8" id="Rpv-4h-ljp"/>
                 <constraint firstAttribute="trailing" secondItem="oYl-di-klv" secondAttribute="trailing" constant="8" id="S1u-Jm-61T"/>
-                <constraint firstAttribute="trailing" secondItem="cHv-ip-b5V" secondAttribute="trailing" constant="8" id="SdX-eW-7Pq"/>
+                <constraint firstItem="6S6-KX-eDg" firstAttribute="top" secondItem="r1I-8T-tsV" secondAttribute="bottom" id="Sfo-fH-ZFB"/>
                 <constraint firstItem="NXq-S4-0Gl" firstAttribute="leading" secondItem="uDh-hS-dQl" secondAttribute="trailing" constant="8" id="Sin-Ez-xm5"/>
-                <constraint firstItem="cHv-ip-b5V" firstAttribute="top" secondItem="6S6-KX-eDg" secondAttribute="bottom" constant="8" id="T15-v8-B1R"/>
+                <constraint firstItem="r1I-8T-tsV" firstAttribute="top" secondItem="oYl-di-klv" secondAttribute="bottom" constant="8" id="T79-Gq-rCc"/>
                 <constraint firstItem="Ngc-Ak-hJr" firstAttribute="centerX" secondItem="uDh-hS-dQl" secondAttribute="centerX" id="TPV-0X-PES"/>
-                <constraint firstItem="tSW-UG-YPf" firstAttribute="height" secondItem="cHv-ip-b5V" secondAttribute="height" id="V0f-qU-pCr"/>
-                <constraint firstItem="tSW-UG-YPf" firstAttribute="centerY" secondItem="cHv-ip-b5V" secondAttribute="centerY" id="Wqg-eb-9cy"/>
+                <constraint firstItem="ZMR-2O-utO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TTJ-5g-SZx"/>
                 <constraint firstItem="NXq-S4-0Gl" firstAttribute="leading" secondItem="6S6-KX-eDg" secondAttribute="leading" constant="225" id="YwC-XN-Dpr"/>
                 <constraint firstAttribute="centerX" secondItem="Vqz-Eo-8oK" secondAttribute="centerX" id="ass-lB-egN"/>
                 <constraint firstAttribute="centerY" secondItem="Vqz-Eo-8oK" secondAttribute="centerY" id="cJv-sz-Qxf"/>
-                <constraint firstItem="6S6-KX-eDg" firstAttribute="top" secondItem="uDh-hS-dQl" secondAttribute="bottom" constant="8" id="elG-4x-g3d"/>
-                <constraint firstItem="uDh-hS-dQl" firstAttribute="leading" secondItem="cHv-ip-b5V" secondAttribute="leading" id="i0a-7e-Gmo"/>
+                <constraint firstItem="Kxd-Tw-pTW" firstAttribute="leading" secondItem="uDh-hS-dQl" secondAttribute="trailing" constant="8" id="dCY-pL-d2U"/>
+                <constraint firstItem="6S6-KX-eDg" firstAttribute="bottom" secondItem="uDh-hS-dQl" secondAttribute="bottom" id="eDl-gn-45E"/>
+                <constraint firstItem="tSW-UG-YPf" firstAttribute="centerX" secondItem="uDh-hS-dQl" secondAttribute="centerX" id="gEG-w0-XDv"/>
+                <constraint firstItem="niF-zf-bn7" firstAttribute="leading" secondItem="uDh-hS-dQl" secondAttribute="leading" id="hNt-rt-cxe"/>
                 <constraint firstAttribute="trailing" secondItem="6S6-KX-eDg" secondAttribute="trailing" constant="8" id="jLS-1G-RKu"/>
                 <constraint firstItem="uDh-hS-dQl" firstAttribute="bottom" secondItem="tSW-UG-YPf" secondAttribute="top" constant="8" id="k1K-7n-a4V">
                     <variation key="heightClass=compact-widthClass=compact" constant="-8"/>
                 </constraint>
+                <constraint firstAttribute="trailing" secondItem="ZMR-2O-utO" secondAttribute="trailing" id="lEs-Au-DYk"/>
                 <constraint firstItem="uDh-hS-dQl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="nEu-Vj-FJb"/>
                 <constraint firstItem="Ngc-Ak-hJr" firstAttribute="centerY" secondItem="uDh-hS-dQl" secondAttribute="centerY" constant="-0.5" id="nTo-Mt-mof"/>
-                <constraint firstItem="oYl-di-klv" firstAttribute="top" secondItem="NXq-S4-0Gl" secondAttribute="bottom" constant="4" id="nl7-hl-sp4">
+                <constraint firstItem="oYl-di-klv" firstAttribute="top" secondItem="NXq-S4-0Gl" secondAttribute="bottom" constant="8" id="nl7-hl-sp4">
                     <variation key="heightClass=regular-widthClass=regular" constant="8"/>
                 </constraint>
                 <constraint firstAttribute="trailing" secondItem="NXq-S4-0Gl" secondAttribute="trailing" constant="8" id="oeg-Fe-0qM"/>
-                <constraint firstItem="tSW-UG-YPf" firstAttribute="width" secondItem="cHv-ip-b5V" secondAttribute="width" id="pLg-C6-n2K"/>
-                <constraint firstAttribute="trailing" secondItem="6S6-KX-eDg" secondAttribute="trailing" constant="8" id="qcI-x7-mH8"/>
                 <constraint firstItem="oYl-di-klv" firstAttribute="leading" secondItem="NXq-S4-0Gl" secondAttribute="leading" id="szV-Xc-l3E"/>
-                <constraint firstItem="cHv-ip-b5V" firstAttribute="trailing" secondItem="6S6-KX-eDg" secondAttribute="trailing" id="t9g-JI-4tH"/>
-                <constraint firstItem="tSW-UG-YPf" firstAttribute="top" secondItem="6S6-KX-eDg" secondAttribute="bottom" constant="8" id="uPi-8d-Fqa"/>
+                <constraint firstAttribute="bottom" secondItem="ZMR-2O-utO" secondAttribute="bottom" id="y7i-Ot-gSU"/>
+                <constraint firstItem="tSW-UG-YPf" firstAttribute="width" secondItem="uDh-hS-dQl" secondAttribute="width" id="ykB-Ur-EFc"/>
                 <constraint firstItem="uDh-hS-dQl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="78" id="zQq-dP-jZ6">
                     <variation key="heightClass=compact-widthClass=compact" constant="40"/>
                 </constraint>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="i0a-7e-Gmo"/>
                     <exclude reference="k1K-7n-a4V"/>
                     <exclude reference="YwC-XN-Dpr"/>
+                    <exclude reference="0m9-61-OeA"/>
                     <exclude reference="5fa-HI-tbb"/>
                     <exclude reference="DdV-F2-i0n"/>
+                    <exclude reference="Sfo-fH-ZFB"/>
                     <exclude reference="jLS-1G-RKu"/>
-                    <exclude reference="5OA-WJ-b8O"/>
-                    <exclude reference="T15-v8-B1R"/>
-                    <exclude reference="t9g-JI-4tH"/>
                 </mask>
             </variation>
             <variation key="heightClass=compact-widthClass=compact">
                 <mask key="constraints">
                     <exclude reference="Iz3-Q5-tpr"/>
                     <include reference="k1K-7n-a4V"/>
-                    <exclude reference="2fy-Yl-wzi"/>
                     <include reference="5fa-HI-tbb"/>
                     <include reference="DdV-F2-i0n"/>
-                    <exclude reference="elG-4x-g3d"/>
-                    <exclude reference="uPi-8d-Fqa"/>
-                    <include reference="T15-v8-B1R"/>
                 </mask>
             </variation>
         </view>

@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 PabloParejo. All rights reserved.
 //
 
+
+@import Social;
 #import "PARBookViewController.h"
 #import "PARWebViewController.h"
 #import "PARBookViewController.h"
@@ -74,6 +76,13 @@
     PARWebViewController *webVC = [[PARWebViewController alloc] initWithURL:[NSURL URLWithString:self.model.webURL] title:BUY_BOOK_TITLE];
     [self.navigationController pushViewController:webVC animated:YES];
 }
+
+- (IBAction)shareBook:(id)sender {
+    SLComposeServiceViewController *vc = [SLComposeServiceViewController new];
+    [self presentViewController:vc animated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 #pragma mark - UISplitViewControllerDelegate
 
