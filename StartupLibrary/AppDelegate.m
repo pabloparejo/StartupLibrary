@@ -28,6 +28,21 @@
     
     PARLibrary *library = [PARLibrary new];
     
+    //[PARBook bookWithContext:self.managedObjectContext dictionary:@{@"objectId": @"99"}];
+    //[self saveContext];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"PARBook"];
+    
+    NSArray *books = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    NSLog(@"Array Notes is: %@", [books class]);
+    
+    [books enumerateObjectsUsingBlock:^(PARBook *book, NSUInteger idx, BOOL *stop) {
+        
+        NSLog(@"ObjectID: %@ the title is: '%@' and the book: %@", book.objectId, book.title, book);
+    }];
+
+    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [self configureForIpadWithModel:library];
     }else{
@@ -136,7 +151,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Everpobre" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"StartupLibrary" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -150,7 +165,7 @@
     // Create the coordinator and store
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Everpobre.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"StartupLibrary.sqlite"];
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {

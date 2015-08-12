@@ -58,9 +58,9 @@
     
     NSMutableArray *books = [NSMutableArray array];
     
-    [booksJSON enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
+    /*[booksJSON enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
         [books addObject:[PARBook bookWithContext:<#(NSManagedObjectContext *)#> dictionary:obj];
-    }];
+    }];*/
     
     return books;
 }

@@ -104,6 +104,7 @@
 		C5F4E54A1B7A7DF7005E1BED /* _PARBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _PARBook.m; sourceTree = "<group>"; };
 		C5F4E54D1B7BC38E005E1BED /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		C5F4E54E1B7BC38E005E1BED /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		C5F4E5511B7BC711005E1BED /* StartupLibrary2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StartupLibrary2.xcdatamodel; sourceTree = "<group>"; };
 		C5FE12011AF4E3E9005AC784 /* PARLibraryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARLibraryTableViewController.h; sourceTree = "<group>"; };
 		C5FE12021AF4E3E9005AC784 /* PARLibraryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARLibraryTableViewController.m; sourceTree = "<group>"; };
 		C5FE12081AF4E44D005AC784 /* PARLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARLibrary.h; sourceTree = "<group>"; };
@@ -734,6 +735,7 @@
 		C5F4E53F1B7A76FF005E1BED /* StartupLibrary.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				C5F4E5511B7BC711005E1BED /* StartupLibrary2.xcdatamodel */,
 				C5F4E5401B7A76FF005E1BED /* StartupLibrary.xcdatamodel */,
 			);
 			currentVersion = C5F4E5401B7A76FF005E1BED /* StartupLibrary.xcdatamodel */;
