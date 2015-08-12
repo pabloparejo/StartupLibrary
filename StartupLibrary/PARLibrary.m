@@ -17,14 +17,16 @@
 
 @implementation PARLibrary
 
--(id) init{
+-(id) initWithContext:(NSManagedObjectContext *)context{
     if (self = [super init]) {
-        [self createLibraryWithBooks:[self downloadBooks]];
+        [self createLibraryWithBooks:[self fecthBooksWithContext:context] context:context];
     }
     return self;
 }
 
-- (void) createLibraryWithBooks:(NSArray *) books{
+- (void) createLibraryWithBooks:(NSArray *) books
+           context:(NSManagedObjectContext *) context{
+
     NSMutableDictionary *categoriesDict = [NSMutableDictionary dictionary];
     
     // Order books by category (NSDictionary keys)
@@ -47,7 +49,7 @@
     _library = [categoriesDict copy];
 }
 
-- (NSArray *) downloadBooks{
+- (NSArray *) fecthBooksWithContext:context{
 
     NSError *jsonError = nil;
     NSData *data = [PARNetworkManager listParseClass:@"Book"];
@@ -57,10 +59,11 @@
     NSArray *booksJSON = [response objectForKey:@"results"];
     
     NSMutableArray *books = [NSMutableArray array];
-    
-    /*[booksJSON enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
-        [books addObject:[PARBook bookWithContext:<#(NSManagedObjectContext *)#> dictionary:obj];
-    }];*/
+
+    # warning This should be in a method (we have to save only new books
+    [booksJSON enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
+        [books addObject:[PARBook bookWithContext:context dictionary:obj]];
+    }];
     
     return books;
 }

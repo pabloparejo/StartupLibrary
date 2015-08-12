@@ -26,10 +26,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    PARLibrary *library = [PARLibrary new];
+    PARLibrary *library = [[PARLibrary alloc] initWithContext:self.managedObjectContext];
     
-    //[PARBook bookWithContext:self.managedObjectContext dictionary:@{@"objectId": @"99"}];
-    //[self saveContext];
+    [self saveContext];
     
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"PARBook"];
     

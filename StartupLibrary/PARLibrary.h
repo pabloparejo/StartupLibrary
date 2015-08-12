@@ -15,6 +15,7 @@
 
 -(void) freeUpMemory;
 
+-(id) initWithContext:(NSManagedObjectContext *)context;
 
 -(NSUInteger)countForSection:(NSUInteger)section;
 -(NSString *)titleForSection:(NSUInteger)section;
