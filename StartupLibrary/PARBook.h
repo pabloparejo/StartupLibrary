@@ -8,35 +8,18 @@
 
 @import Foundation;
 @import UIKit;
+@import CoreData;
 
 #import "ReaderDocument.h"
+#import "_PARBook.h"
 
-@interface PARBook : NSObject
-
-@property (strong, nonatomic) NSString *objectId;
-@property (strong, nonatomic) NSString *title;
-@property (strong, nonatomic) NSString *author;
-@property (strong, nonatomic) NSURL *bookURL;
-@property (strong, nonatomic) NSURL *coverURL;
-@property (strong, nonatomic) NSString *summary;
-@property (strong, nonatomic) NSURL *webURL;
-@property (strong, nonatomic) NSString *category;
-@property (copy, nonatomic) NSArray *tags;
+@interface PARBook : _PARBook
 
 @property (strong, nonatomic, readonly) UIImage *image;
 @property (strong, nonatomic, readonly) ReaderDocument *document;
 
--(id) initWithObjectId:(NSString *) objectId
-                 title:(NSString *)title
-                author:(NSString *)author
-               bookURL:(NSURL *)bookURL
-              coverURL:(NSURL *)coverURL
-               summary:(NSString *)summary
-                webURL:(NSURL *)webURL
-              category:(NSString *)category
-                  tags:(NSArray *)tags;
-
-+(instancetype) bookWithObjectId:(NSString *) objectId
++ (instancetype) bookWithContext:(NSManagedObjectContext *)context
+                        objectId:(NSString *) objectId
                            title:(NSString *)title
                           author:(NSString *)author
                          bookURL:(NSURL *)bookURL
@@ -46,7 +29,9 @@
                         category:(NSString *)category
                             tags:(NSArray *)tags;
 
--(id) initWithJSONDictionary:(NSDictionary *) dictionary;
++ (instancetype) bookWithContext:(NSManagedObjectContext *)context
+                      dictionary:(NSDictionary *) dictionary;
+
 -(void) retrieveDetail;
 
 

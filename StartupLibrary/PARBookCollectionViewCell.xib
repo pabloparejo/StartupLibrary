@@ -23,7 +23,7 @@
                     <rect key="frame" x="57" y="83" width="37" height="37"/>
                 </activityIndicatorView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="titleLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="If4-In-zwA">
-                    <rect key="frame" x="0.0" y="159" width="150" height="44"/>
+                    <rect key="frame" x="0.0" y="160" width="150" height="44"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="JsD-JH-aav"/>
@@ -41,6 +41,7 @@
                 <constraint firstItem="Zrt-EY-7aB" firstAttribute="centerY" secondItem="n79-We-p7s" secondAttribute="centerY" id="FHW-H9-dhR"/>
                 <constraint firstItem="Zrt-EY-7aB" firstAttribute="centerX" secondItem="n79-We-p7s" secondAttribute="centerX" id="Hnf-L6-nUw"/>
                 <constraint firstItem="n79-We-p7s" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="RJv-Ec-05Z"/>
+                <constraint firstAttribute="bottom" secondItem="If4-In-zwA" secondAttribute="bottom" constant="-1" id="Rcp-bf-bJy"/>
                 <constraint firstAttribute="bottom" secondItem="n79-We-p7s" secondAttribute="bottom" id="UfD-as-M3x"/>
                 <constraint firstItem="If4-In-zwA" firstAttribute="width" secondItem="n79-We-p7s" secondAttribute="width" id="Zzx-Gd-1t3"/>
                 <constraint firstItem="If4-In-zwA" firstAttribute="bottom" secondItem="n79-We-p7s" secondAttribute="bottom" id="an4-SS-cfV"/>
@@ -53,6 +54,7 @@
                     <exclude reference="RJv-Ec-05Z"/>
                     <exclude reference="UfD-as-M3x"/>
                     <exclude reference="sTv-xS-nF6"/>
+                    <exclude reference="an4-SS-cfV"/>
                 </mask>
             </variation>
             <connections>

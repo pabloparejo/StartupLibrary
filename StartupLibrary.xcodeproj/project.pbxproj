@@ -31,6 +31,11 @@
 		C5EC91561AF66FE300DE1B01 /* PARBookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EC91551AF66FE300DE1B01 /* PARBookTableViewCell.m */; };
 		C5EC91581AF66FFF00DE1B01 /* PARBookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5EC91571AF66FFF00DE1B01 /* PARBookTableViewCell.xib */; };
 		C5EC915B1AF6A20000DE1B01 /* PARLibraryCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EC915A1AF6A20000DE1B01 /* PARLibraryCollectionViewController.m */; };
+		C5F4E5411B7A76FF005E1BED /* StartupLibrary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5F4E53F1B7A76FF005E1BED /* StartupLibrary.xcdatamodeld */; };
+		C5F4E5451B7A7C29005E1BED /* PARNote.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F4E5441B7A7C29005E1BED /* PARNote.m */; };
+		C5F4E5481B7A7DA5005E1BED /* _PARNote.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F4E5471B7A7DA5005E1BED /* _PARNote.m */; };
+		C5F4E54B1B7A7DF7005E1BED /* _PARBook.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F4E54A1B7A7DF7005E1BED /* _PARBook.m */; };
+		C5F4E54F1B7BC38E005E1BED /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F4E54E1B7BC38E005E1BED /* CoreDataTableViewController.m */; };
 		C5FE12031AF4E3E9005AC784 /* PARLibraryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE12021AF4E3E9005AC784 /* PARLibraryTableViewController.m */; };
 		C5FE120A1AF4E44D005AC784 /* PARLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE12091AF4E44D005AC784 /* PARLibrary.m */; };
 		C5FE120E1AF52431005AC784 /* UIViewController+Combinators.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE120D1AF52431005AC784 /* UIViewController+Combinators.m */; };
@@ -90,6 +95,15 @@
 		C5EC91571AF66FFF00DE1B01 /* PARBookTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARBookTableViewCell.xib; sourceTree = "<group>"; };
 		C5EC91591AF6A20000DE1B01 /* PARLibraryCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARLibraryCollectionViewController.h; sourceTree = "<group>"; };
 		C5EC915A1AF6A20000DE1B01 /* PARLibraryCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARLibraryCollectionViewController.m; sourceTree = "<group>"; };
+		C5F4E5401B7A76FF005E1BED /* StartupLibrary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StartupLibrary.xcdatamodel; sourceTree = "<group>"; };
+		C5F4E5431B7A7C29005E1BED /* PARNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARNote.h; sourceTree = "<group>"; };
+		C5F4E5441B7A7C29005E1BED /* PARNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARNote.m; sourceTree = "<group>"; };
+		C5F4E5461B7A7DA5005E1BED /* _PARNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _PARNote.h; sourceTree = "<group>"; };
+		C5F4E5471B7A7DA5005E1BED /* _PARNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _PARNote.m; sourceTree = "<group>"; };
+		C5F4E5491B7A7DF7005E1BED /* _PARBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _PARBook.h; sourceTree = "<group>"; };
+		C5F4E54A1B7A7DF7005E1BED /* _PARBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _PARBook.m; sourceTree = "<group>"; };
+		C5F4E54D1B7BC38E005E1BED /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		C5F4E54E1B7BC38E005E1BED /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		C5FE12011AF4E3E9005AC784 /* PARLibraryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARLibraryTableViewController.h; sourceTree = "<group>"; };
 		C5FE12021AF4E3E9005AC784 /* PARLibraryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARLibraryTableViewController.m; sourceTree = "<group>"; };
 		C5FE12081AF4E44D005AC784 /* PARLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARLibrary.h; sourceTree = "<group>"; };
@@ -196,12 +210,15 @@
 				C552F42C1B0A595A000D7821 /* PARSettings.h */,
 				C552F42D1B0A595A000D7821 /* PARSettings.m */,
 				C5051A141B753448000869B6 /* ParseSettings.h */,
+				C5F4E5501B7BC391005E1BED /* CoreDataTableVC */,
 				C5D79EDB1AFFBCDF00B096BB /* Protocol */,
 				C5FE120B1AF523FD005AC784 /* Categories */,
 				C553D0031AF3ABDA00EC7017 /* WebView */,
 				C553CFFF1AF3AA9A00EC7017 /* PARBook */,
+				C5F4E5421B7A7C05005E1BED /* PARNote */,
 				C5FE12041AF4E3EE005AC784 /* PARLibrary */,
 				C553CFE11AF3A8DE00EC7017 /* Images.xcassets */,
+				C5F4E53F1B7A76FF005E1BED /* StartupLibrary.xcdatamodeld */,
 				C56E2AE01AFEA04C0013D8E9 /* oops.png */,
 				C5EC91511AF6428200DE1B01 /* FunkFont.ttf */,
 				C553CFD41AF3A8DE00EC7017 /* Supporting Files */,
@@ -239,8 +256,7 @@
 		C553CFFF1AF3AA9A00EC7017 /* PARBook */ = {
 			isa = PBXGroup;
 			children = (
-				C553D0001AF3ABD300EC7017 /* PARBook.h */,
-				C553D0011AF3ABD300EC7017 /* PARBook.m */,
+				C5F4E54C1B7A7E00005E1BED /* model */,
 				C553CFFA1AF3AA9600EC7017 /* PARBookViewController.h */,
 				C553CFFB1AF3AA9600EC7017 /* PARBookViewController.m */,
 				C553CFFC1AF3AA9600EC7017 /* PARBookViewController.xib */,
@@ -284,6 +300,37 @@
 				C5EC91571AF66FFF00DE1B01 /* PARBookTableViewCell.xib */,
 			);
 			name = PARBookTableViewCell;
+			sourceTree = "<group>";
+		};
+		C5F4E5421B7A7C05005E1BED /* PARNote */ = {
+			isa = PBXGroup;
+			children = (
+				C5F4E5461B7A7DA5005E1BED /* _PARNote.h */,
+				C5F4E5471B7A7DA5005E1BED /* _PARNote.m */,
+				C5F4E5431B7A7C29005E1BED /* PARNote.h */,
+				C5F4E5441B7A7C29005E1BED /* PARNote.m */,
+			);
+			name = PARNote;
+			sourceTree = "<group>";
+		};
+		C5F4E54C1B7A7E00005E1BED /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C5F4E5491B7A7DF7005E1BED /* _PARBook.h */,
+				C5F4E54A1B7A7DF7005E1BED /* _PARBook.m */,
+				C553D0001AF3ABD300EC7017 /* PARBook.h */,
+				C553D0011AF3ABD300EC7017 /* PARBook.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		C5F4E5501B7BC391005E1BED /* CoreDataTableVC */ = {
+			isa = PBXGroup;
+			children = (
+				C5F4E54D1B7BC38E005E1BED /* CoreDataTableViewController.h */,
+				C5F4E54E1B7BC38E005E1BED /* CoreDataTableViewController.m */,
+			);
+			name = CoreDataTableVC;
 			sourceTree = "<group>";
 		};
 		C5FE12041AF4E3EE005AC784 /* PARLibrary */ = {
@@ -466,9 +513,14 @@
 				C5D79ED91AFFB86A00B096BB /* PARBookCollectionViewCell.m in Sources */,
 				C5051A131B752C8B000869B6 /* PARNetworkManager.m in Sources */,
 				C553CFFD1AF3AA9600EC7017 /* PARBookViewController.m in Sources */,
+				C5F4E54B1B7A7DF7005E1BED /* _PARBook.m in Sources */,
 				C5FE120E1AF52431005AC784 /* UIViewController+Combinators.m in Sources */,
+				C5F4E5481B7A7DA5005E1BED /* _PARNote.m in Sources */,
 				C5FE120A1AF4E44D005AC784 /* PARLibrary.m in Sources */,
 				C553CFDA1AF3A8DE00EC7017 /* AppDelegate.m in Sources */,
+				C5F4E5451B7A7C29005E1BED /* PARNote.m in Sources */,
+				C5F4E54F1B7BC38E005E1BED /* CoreDataTableViewController.m in Sources */,
+				C5F4E5411B7A76FF005E1BED /* StartupLibrary.xcdatamodeld in Sources */,
 				C553D0021AF3ABD300EC7017 /* PARBook.m in Sources */,
 				C553D0091AF4154000EC7017 /* PARWebViewController.m in Sources */,
 				C5EC915B1AF6A20000DE1B01 /* PARLibraryCollectionViewController.m in Sources */,
@@ -677,6 +729,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C5F4E53F1B7A76FF005E1BED /* StartupLibrary.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C5F4E5401B7A76FF005E1BED /* StartupLibrary.xcdatamodel */,
+			);
+			currentVersion = C5F4E5401B7A76FF005E1BED /* StartupLibrary.xcdatamodel */;
+			path = StartupLibrary.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C553CFC91AF3A8DE00EC7017 /* Project object */;
 }
