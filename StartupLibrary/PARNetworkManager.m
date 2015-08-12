@@ -8,6 +8,7 @@
 
 #import "PARNetworkManager.h"
 #import "ParseSettings.h"
+#import "NSDate+Formatters.h"
 
 @implementation PARNetworkManager
 
@@ -22,11 +23,12 @@
 
 + (NSData *) listParseClass:(NSString *) parseClass fromDate:(NSDate *) date{
     NSURLQueryItem *listObjectKeys;
-    NSDictionary *dateFilter = @{@"modifiedAt": @{@"$gt": @{@"__type": @"Date", @"iso": date}}};
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dateFilter options:NSJSONWritingPrettyPrinted error:nil];
+    NSDictionary *dateFilter = @{@"updatedAt": @{@"$gt": [NSDate stringWithISO8601Date:date]}};
+    NSError *jsonError;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dateFilter options:NSJSONWritingPrettyPrinted error:&jsonError];
+    NSLog(@"%@", jsonError);
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSString *escapedJSON = [jsonString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
-    NSURLQueryItem *dateQuery = [NSURLQueryItem queryItemWithName:@"where" value:escapedJSON];
+    NSURLQueryItem *dateQuery = [NSURLQueryItem queryItemWithName:@"where" value:jsonString];
 
     if ([parseClass isEqualToString:PARSE_CLASS_BOOK]) {
         listObjectKeys = [self listBookObjectKeys];

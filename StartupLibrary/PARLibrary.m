@@ -9,6 +9,8 @@
 #import "PARLibrary.h"
 #import "PARNetworkManager.h"
 #import "ParseSettings.h"
+#import "NSDate+Formatters.h"
+
 
 @interface PARLibrary()
 
@@ -53,7 +55,7 @@
 - (NSArray *) fecthBooksWithContext:context{
 
     NSError *jsonError = nil;
-    NSData *data = [PARNetworkManager listParseClass:PARSE_CLASS_BOOK];
+    NSData *data = [PARNetworkManager listParseClass:PARSE_CLASS_BOOK fromDate:[NSDate dateWithISO8601String:@"2015-08-01T12:00:20.124Z"]];
     NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data
                                                              options:kNilOptions
                                                                error:&jsonError];

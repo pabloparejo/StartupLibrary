@@ -11,5 +11,5 @@
 @interface NSDate (Formatters)
 
 + (NSDate *) dateWithISO8601String:(NSString *) string;
-
++ (NSString *) stringWithISO8601Date:(NSDate *) date;
 @end
