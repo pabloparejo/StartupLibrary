@@ -8,10 +8,12 @@ extern const struct PARBookAttributes {
 	__unsafe_unretained NSString *bookURL;
 	__unsafe_unretained NSString *category;
 	__unsafe_unretained NSString *coverURL;
+	__unsafe_unretained NSString *createdAt;
 	__unsafe_unretained NSString *objectId;
 	__unsafe_unretained NSString *summary;
 	__unsafe_unretained NSString *tags;
 	__unsafe_unretained NSString *title;
+	__unsafe_unretained NSString *updatedAt;
 	__unsafe_unretained NSString *webURL;
 } PARBookAttributes;
 
@@ -48,6 +50,10 @@ extern const struct PARBookRelationships {
 
 //- (BOOL)validateCoverURL:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSDate* createdAt;
+
+//- (BOOL)validateCreatedAt:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSString* objectId;
 
 //- (BOOL)validateObjectId:(id*)value_ error:(NSError**)error_;
@@ -63,6 +69,10 @@ extern const struct PARBookRelationships {
 @property (nonatomic, strong) NSString* title;
 
 //- (BOOL)validateTitle:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSDate* updatedAt;
+
+//- (BOOL)validateUpdatedAt:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSString* webURL;
 
@@ -88,6 +98,9 @@ extern const struct PARBookRelationships {
 - (NSString*)primitiveCoverURL;
 - (void)setPrimitiveCoverURL:(NSString*)value;
 
+- (NSDate*)primitiveCreatedAt;
+- (void)setPrimitiveCreatedAt:(NSDate*)value;
+
 - (NSString*)primitiveObjectId;
 - (void)setPrimitiveObjectId:(NSString*)value;
 
@@ -99,6 +112,9 @@ extern const struct PARBookRelationships {
 
 - (NSString*)primitiveTitle;
 - (void)setPrimitiveTitle:(NSString*)value;
+
+- (NSDate*)primitiveUpdatedAt;
+- (void)setPrimitiveUpdatedAt:(NSDate*)value;
 
 - (NSString*)primitiveWebURL;
 - (void)setPrimitiveWebURL:(NSString*)value;

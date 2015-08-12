@@ -8,6 +8,7 @@
 
 #import "PARBook.h"
 #import "PARNetworkManager.h"
+#import "NSDate+Formatters.h"
 
 @interface PARBook()
 @property (strong, nonatomic, readwrite) UIImage *image;
@@ -28,7 +29,9 @@
                         summary:(NSString *)summary
                          webURL:(NSString *)webURL
                        category:(NSString *)category
-                           tags:(NSArray *)tags{
+                           tags:(NSArray *)tags
+                       createdAt:(NSDate *)createdAt
+                       updatedAt:(NSDate *)updatedAt{
     
     PARBook *book = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(self.class)
                                                   inManagedObjectContext:context];
@@ -41,7 +44,8 @@
     book.webURL = webURL;
     book.category = category;
     book.tags = tags;
-    
+    book.createdAt = createdAt;
+    book.updatedAt = updatedAt;
     return book;
 }
 
@@ -64,6 +68,9 @@
     self.webURL = [dictionary objectForKey:@"web_url"];
     self.category = [dictionary objectForKey:@"category"];
     self.tags = [dictionary objectForKey:@"tags"];
+    
+    self.createdAt = [NSDate dateWithISO8601String:[dictionary objectForKey:@"createdAt"]];
+    self.updatedAt = [NSDate dateWithISO8601String:[dictionary objectForKey:@"updatedAt"]];
 }
 
 -(void) retrieveDetail{

@@ -36,6 +36,7 @@
 		C5F4E5481B7A7DA5005E1BED /* _PARNote.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F4E5471B7A7DA5005E1BED /* _PARNote.m */; };
 		C5F4E54B1B7A7DF7005E1BED /* _PARBook.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F4E54A1B7A7DF7005E1BED /* _PARBook.m */; };
 		C5F4E54F1B7BC38E005E1BED /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F4E54E1B7BC38E005E1BED /* CoreDataTableViewController.m */; };
+		C5F4E5551B7BDCE0005E1BED /* NSDate+Formatters.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F4E5541B7BDCE0005E1BED /* NSDate+Formatters.m */; };
 		C5FE12031AF4E3E9005AC784 /* PARLibraryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE12021AF4E3E9005AC784 /* PARLibraryTableViewController.m */; };
 		C5FE120A1AF4E44D005AC784 /* PARLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE12091AF4E44D005AC784 /* PARLibrary.m */; };
 		C5FE120E1AF52431005AC784 /* UIViewController+Combinators.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE120D1AF52431005AC784 /* UIViewController+Combinators.m */; };
@@ -105,6 +106,9 @@
 		C5F4E54D1B7BC38E005E1BED /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		C5F4E54E1B7BC38E005E1BED /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		C5F4E5511B7BC711005E1BED /* StartupLibrary2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StartupLibrary2.xcdatamodel; sourceTree = "<group>"; };
+		C5F4E5521B7BD144005E1BED /* StartupLibrary 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "StartupLibrary 3.xcdatamodel"; sourceTree = "<group>"; };
+		C5F4E5531B7BDCE0005E1BED /* NSDate+Formatters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatters.h"; sourceTree = "<group>"; };
+		C5F4E5541B7BDCE0005E1BED /* NSDate+Formatters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Formatters.m"; sourceTree = "<group>"; };
 		C5FE12011AF4E3E9005AC784 /* PARLibraryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARLibraryTableViewController.h; sourceTree = "<group>"; };
 		C5FE12021AF4E3E9005AC784 /* PARLibraryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARLibraryTableViewController.m; sourceTree = "<group>"; };
 		C5FE12081AF4E44D005AC784 /* PARLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARLibrary.h; sourceTree = "<group>"; };
@@ -351,6 +355,8 @@
 			children = (
 				C5FE120C1AF52431005AC784 /* UIViewController+Combinators.h */,
 				C5FE120D1AF52431005AC784 /* UIViewController+Combinators.m */,
+				C5F4E5531B7BDCE0005E1BED /* NSDate+Formatters.h */,
+				C5F4E5541B7BDCE0005E1BED /* NSDate+Formatters.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -521,6 +527,7 @@
 				C553CFDA1AF3A8DE00EC7017 /* AppDelegate.m in Sources */,
 				C5F4E5451B7A7C29005E1BED /* PARNote.m in Sources */,
 				C5F4E54F1B7BC38E005E1BED /* CoreDataTableViewController.m in Sources */,
+				C5F4E5551B7BDCE0005E1BED /* NSDate+Formatters.m in Sources */,
 				C5F4E5411B7A76FF005E1BED /* StartupLibrary.xcdatamodeld in Sources */,
 				C553D0021AF3ABD300EC7017 /* PARBook.m in Sources */,
 				C553D0091AF4154000EC7017 /* PARWebViewController.m in Sources */,
@@ -735,6 +742,7 @@
 		C5F4E53F1B7A76FF005E1BED /* StartupLibrary.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				C5F4E5521B7BD144005E1BED /* StartupLibrary 3.xcdatamodel */,
 				C5F4E5511B7BC711005E1BED /* StartupLibrary2.xcdatamodel */,
 				C5F4E5401B7A76FF005E1BED /* StartupLibrary.xcdatamodel */,
 			);

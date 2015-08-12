@@ -71,7 +71,7 @@
 }
 
 - (IBAction)buyBook:(id)sender {
-    PARWebViewController *webVC = [[PARWebViewController alloc] initWithURL:[self.model webURL] title:BUY_BOOK_TITLE];
+    PARWebViewController *webVC = [[PARWebViewController alloc] initWithURL:[NSURL URLWithString:self.model.webURL] title:BUY_BOOK_TITLE];
     [self.navigationController pushViewController:webVC animated:YES];
 }
 

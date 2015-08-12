@@ -8,10 +8,12 @@ const struct PARBookAttributes PARBookAttributes = {
 	.bookURL = @"bookURL",
 	.category = @"category",
 	.coverURL = @"coverURL",
+	.createdAt = @"createdAt",
 	.objectId = @"objectId",
 	.summary = @"summary",
 	.tags = @"tags",
 	.title = @"title",
+	.updatedAt = @"updatedAt",
 	.webURL = @"webURL",
 };
 
@@ -26,16 +28,16 @@ const struct PARBookRelationships PARBookRelationships = {
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Book" inManagedObjectContext:moc_];
+	return [NSEntityDescription insertNewObjectForEntityForName:@"PARBook" inManagedObjectContext:moc_];
 }
 
 + (NSString*)entityName {
-	return @"Book";
+	return @"PARBook";
 }
 
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
-	return [NSEntityDescription entityForName:@"Book" inManagedObjectContext:moc_];
+	return [NSEntityDescription entityForName:@"PARBook" inManagedObjectContext:moc_];
 }
 
 - (PARBookID*)objectID {
@@ -56,6 +58,8 @@ const struct PARBookRelationships PARBookRelationships = {
 
 @dynamic coverURL;
 
+@dynamic createdAt;
+
 @dynamic objectId;
 
 @dynamic summary;
@@ -63,6 +67,8 @@ const struct PARBookRelationships PARBookRelationships = {
 @dynamic tags;
 
 @dynamic title;
+
+@dynamic updatedAt;
 
 @dynamic webURL;
 

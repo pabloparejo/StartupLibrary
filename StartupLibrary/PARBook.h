@@ -18,16 +18,18 @@
 @property (strong, nonatomic, readonly) UIImage *image;
 @property (strong, nonatomic, readonly) ReaderDocument *document;
 
-+ (instancetype) bookWithContext:(NSManagedObjectContext *)context
-                        objectId:(NSString *) objectId
-                           title:(NSString *)title
-                          author:(NSString *)author
-                         bookURL:(NSURL *)bookURL
-                        coverURL:(NSURL *)coverURL
-                         summary:(NSString *)summary
-                          webURL:(NSURL *)webURL
-                        category:(NSString *)category
-                            tags:(NSArray *)tags;
++(instancetype) bookWithContext:(NSManagedObjectContext *)context
+                       objectId:(NSString *)objectId
+                          title:(NSString *)title
+                         author:(NSString *)author
+                        bookURL:(NSString *)bookURL
+                       coverURL:(NSString *)coverURL
+                        summary:(NSString *)summary
+                         webURL:(NSString *)webURL
+                       category:(NSString *)category
+                           tags:(NSArray *)tags
+                      createdAt:(NSDate *)createdAt
+                     updatedAt:(NSDate *)updatedAt;
 
 + (instancetype) bookWithContext:(NSManagedObjectContext *)context
                       dictionary:(NSDictionary *) dictionary;
