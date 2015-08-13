@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerNibs];
-    [self.tableView setContentInset:UIEdgeInsetsMake(60,0,50,0)];
+    //[self.tableView setContentInset:UIEdgeInsetsMake(60,0,50,0)];
 }
 
 -(void) viewDidDisappear:(BOOL)animated{
@@ -41,33 +41,14 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
-    [self.model freeUpMemory];
 }
-
-#pragma mark - TableView data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
-    return [self.model numberOfSections];
-}
-
-- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return [self.model titleForSection:section];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    return [self.model countForSection:section];
-}
-
 
 
 #pragma mark - TableViewDelegate
 - (UITableViewCell *) tableView:(UITableView *)tableView
           cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    PARBook *book = [self.model bookAtIndexPath:indexPath];
+    PARBook *book = [self.fetchedResultsController objectAtIndexPath:indexPath];
     // Creamos la celda
     PARBookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID forIndexPath:indexPath];
     cell.bookImage.image = nil;
@@ -90,7 +71,7 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    PARBook *book = [self.model bookAtIndexPath:indexPath];
+    PARBook *book = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     // Message to delegate
     if ([self.delegate respondsToSelector:@selector(libraryViewController:didSelectBook:)]) {

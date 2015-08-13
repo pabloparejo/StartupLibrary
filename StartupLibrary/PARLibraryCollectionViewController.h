@@ -9,12 +9,14 @@
 @import UIKit;
 #import "PARLibrary.h"
 #import "PARLibraryViewControllerDelegate.h"
-@interface PARLibraryCollectionViewController : UIViewController <UICollectionViewDataSource,
-                                                                  UICollectionViewDelegate>
+/*@interface PARLibraryCollectionViewController : UIViewController <UICollectionViewDataSource,
+                                                                  UICollectionViewDelegate>*/
+
+@interface PARLibraryCollectionViewController : UIViewController
 
 @property (weak, nonatomic) id<PARLibraryViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 - (id)initWithModel:(PARLibrary *) library;
-- (void) configureForTabBar;
+//- (void) configureForTabBar;
 @end
 

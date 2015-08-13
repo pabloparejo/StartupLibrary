@@ -107,8 +107,8 @@
                         <constraint firstItem="8sS-ds-Rbc" firstAttribute="leading" secondItem="6S6-KX-eDg" secondAttribute="leading" id="roq-xD-VY3"/>
                     </constraints>
                 </scrollView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Wu8-Ax-7Ef">
-                    <rect key="frame" x="8" y="347" width="584" height="193"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Wu8-Ax-7Ef">
+                    <rect key="frame" x="8" y="348" width="584" height="192"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes in this book" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niF-zf-bn7">
@@ -184,11 +184,13 @@
                 <constraint firstItem="r1I-8T-tsV" firstAttribute="top" secondItem="oYl-di-klv" secondAttribute="bottom" constant="8" id="T79-Gq-rCc"/>
                 <constraint firstItem="Ngc-Ak-hJr" firstAttribute="centerX" secondItem="uDh-hS-dQl" secondAttribute="centerX" id="TPV-0X-PES"/>
                 <constraint firstItem="ZMR-2O-utO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TTJ-5g-SZx"/>
+                <constraint firstItem="Wu8-Ax-7Ef" firstAttribute="top" secondItem="niF-zf-bn7" secondAttribute="bottom" constant="7" id="Vrn-Qs-rs6"/>
                 <constraint firstItem="NXq-S4-0Gl" firstAttribute="leading" secondItem="6S6-KX-eDg" secondAttribute="leading" constant="225" id="YwC-XN-Dpr"/>
                 <constraint firstAttribute="centerX" secondItem="Vqz-Eo-8oK" secondAttribute="centerX" id="ass-lB-egN"/>
                 <constraint firstAttribute="centerY" secondItem="Vqz-Eo-8oK" secondAttribute="centerY" id="cJv-sz-Qxf"/>
                 <constraint firstItem="Kxd-Tw-pTW" firstAttribute="leading" secondItem="uDh-hS-dQl" secondAttribute="trailing" constant="8" id="dCY-pL-d2U"/>
                 <constraint firstItem="6S6-KX-eDg" firstAttribute="bottom" secondItem="uDh-hS-dQl" secondAttribute="bottom" id="eDl-gn-45E"/>
+                <constraint firstItem="ZMR-2O-utO" firstAttribute="top" secondItem="Wu8-Ax-7Ef" secondAttribute="bottom" constant="16" id="fEB-Ej-5mm"/>
                 <constraint firstItem="tSW-UG-YPf" firstAttribute="centerX" secondItem="uDh-hS-dQl" secondAttribute="centerX" id="gEG-w0-XDv"/>
                 <constraint firstItem="niF-zf-bn7" firstAttribute="leading" secondItem="uDh-hS-dQl" secondAttribute="leading" id="hNt-rt-cxe"/>
                 <constraint firstAttribute="trailing" secondItem="6S6-KX-eDg" secondAttribute="trailing" constant="8" id="jLS-1G-RKu"/>
@@ -218,6 +220,7 @@
                     <exclude reference="DdV-F2-i0n"/>
                     <exclude reference="Sfo-fH-ZFB"/>
                     <exclude reference="jLS-1G-RKu"/>
+                    <exclude reference="Vrn-Qs-rs6"/>
                 </mask>
             </variation>
             <variation key="heightClass=compact-widthClass=compact">

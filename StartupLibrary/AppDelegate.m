@@ -16,7 +16,7 @@
 #import "PARLibraryTabController.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic) BOOL autosave;
 @end
 
 @implementation AppDelegate
@@ -26,29 +26,24 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    PARLibrary *library = [[PARLibrary alloc] initWithContext:self.managedObjectContext];
-    
-    [self saveContext];
-    
+    [PARLibrary fetchBooksWithContext:self.managedObjectContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"PARBook"];
-    
-    NSArray *books = [self.managedObjectContext executeFetchRequest:request error:nil];
-    
-    NSLog(@"Array Notes is: %@", [books class]);
-    
-    [books enumerateObjectsUsingBlock:^(PARBook *book, NSUInteger idx, BOOL *stop) {
-        
-        NSLog(@"ObjectID: %@ the title is: '%@' and the book: %@", book.objectId, book.title, book);
-    }];
+    request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"updatedAt" ascending:NO]];
 
+    NSFetchedResultsController *fetchController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                                      managedObjectContext:self.managedObjectContext
+                                                                                        sectionNameKeyPath:nil
+                                                                                                 cacheName:nil];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [self configureForIpadWithModel:library];
+        [self configureForIpadWithFetchedResultsController:fetchController];
     }else{
-        [self configureForIphoneWithModel:library];
+        [self configureForIphoneWithFetchedResultsController:fetchController];
     }
     
+    [self startAutosave];
     [self configureAppearance];
+
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -78,22 +73,23 @@
 # pragma mark - InterfaceIdiom configuration
 
 
--(void) configureForIpadWithModel:(PARLibrary *) library{
-    PARLibraryTableViewController *libraryTableVC = [[PARLibraryTableViewController alloc] initWithModel:library];
-    PARLibraryCollectionViewController *libraryCollectionVC = [[PARLibraryCollectionViewController alloc] initWithModel:library];
+-(void) configureForIpadWithFetchedResultsController:(NSFetchedResultsController *) fetchedRC{
+    PARLibraryTableViewController *libraryTableVC = [PARLibraryTableViewController new];
+    [libraryTableVC setFetchedResultsController:fetchedRC];
+//    PARLibraryCollectionViewController *libraryCollectionVC = [[PARLibraryCollectionViewController alloc] initWithModel:library];
     
-    PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:[self lastBookSelectedInModel:library]];
+    PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:nil];
     
     [libraryTableVC setDelegate:bookVC];
-    [libraryCollectionVC setDelegate:bookVC];
+//    [libraryCollectionVC setDelegate:bookVC];
     
     PARLibraryTabController *tabVC = [PARLibraryTabController new];
 
-    [tabVC setViewControllers:@[libraryCollectionVC, libraryTableVC] animated:NO];
+//    [tabVC setViewControllers:@[libraryCollectionVC, libraryTableVC] animated:NO];
+    [tabVC setViewControllers:@[libraryTableVC] animated:NO];
     
-    [libraryCollectionVC configureForTabBar];
+//  [libraryCollectionVC configureForTabBar];
     [libraryTableVC configureForTabBar];
-
     
     UISplitViewController *splitVC = [UISplitViewController new];
     
@@ -103,24 +99,28 @@
     [self.window setRootViewController:splitVC];
 }
 
--(void) configureForIphoneWithModel:(PARLibrary *) library{
-    PARLibraryTableViewController *libraryTableVC = [[PARLibraryTableViewController alloc] initWithModel:library];
-    PARLibraryCollectionViewController *libraryCollectionVC = [[PARLibraryCollectionViewController alloc] initWithModel:library];
+-(void) configureForIphoneWithFetchedResultsController:(NSFetchedResultsController *) fetchedRC{
+    PARLibraryTableViewController *libraryTableVC = [PARLibraryTableViewController new];
+    [libraryTableVC setFetchedResultsController:fetchedRC];
+//    PARLibraryCollectionViewController *libraryCollectionVC = [[PARLibraryCollectionViewController alloc] initWithModel:library];
     
-    [libraryCollectionVC configureForTabBar];
+//    [libraryCollectionVC configureForTabBar];
     [libraryTableVC configureForTabBar];
     
     PARLibraryTabController *tabVC = [PARLibraryTabController new];
     
     [libraryTableVC setDelegate:tabVC];
-    [libraryCollectionVC setDelegate:tabVC];
+//    [libraryCollectionVC setDelegate:tabVC];
     
-    [tabVC setViewControllers:@[libraryCollectionVC, libraryTableVC] animated:NO];
+//   [tabVC setViewControllers:@[libraryCollectionVC, libraryTableVC] animated:NO];
+    [tabVC setViewControllers:@[libraryTableVC] animated:NO];
     [self.window setRootViewController:[tabVC wrappedInNavigationController]];
 }
 
 #pragma mark - User Defaults
--(PARBook *) lastBookSelectedInModel: (PARLibrary *)model{
+
+#warning TODO
+/*-(PARBook *) lastBookSelectedInModel: (PARLibrary *)model{
     
     NSIndexPath *indexPath = [PARSettings indexPathForLastBookSelected];
     if (!indexPath) {
@@ -131,6 +131,19 @@
     
     PARBook *book = [model bookAtIndexPath:indexPath];
     return book;
+}*/
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    self.autosave = NO;
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    [self startAutosave];
+}
+
+- (void) startAutosave{
+    self.autosave = YES;
+    [self performSelector:@selector(saveContext) withObject:nil afterDelay:SAVE_RATE];
 }
 
 
@@ -211,6 +224,9 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
+    }
+    if (self.autosave) {
+        [self performSelector:@selector(saveContext) withObject:nil afterDelay:SAVE_RATE];
     }
 }
 

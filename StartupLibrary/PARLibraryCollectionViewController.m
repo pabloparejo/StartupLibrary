@@ -49,7 +49,7 @@
 -(void) viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
 }
-
+/*
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     [self.model freeUpMemory];
@@ -119,6 +119,6 @@
 - (void) configureForTabBar{
     self.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"collection"] tag:0];
     [self.tabBarItem setImageInsets:UIEdgeInsetsMake(6, 0, -6, 0)];
-}
+}*/
 
 @end

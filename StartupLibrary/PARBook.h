@@ -34,6 +34,8 @@
 + (instancetype) bookWithContext:(NSManagedObjectContext *)context
                       dictionary:(NSDictionary *) dictionary;
 
+-(void) updateModelWithJSONDictionary:(NSDictionary *)dictionary;
+
 -(void) retrieveDetail;
 
 

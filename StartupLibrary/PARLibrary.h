@@ -8,18 +8,9 @@
 
 
 @import Foundation;
-#import "PARBook.h"
+@import CoreData;
 @interface PARLibrary : NSObject
 
-@property (nonatomic, readonly) NSUInteger numberOfSections;
-
--(void) freeUpMemory;
-
--(id) initWithContext:(NSManagedObjectContext *)context;
-
--(NSUInteger)countForSection:(NSUInteger)section;
--(NSString *)titleForSection:(NSUInteger)section;
--(NSArray *) booksForSection:(NSUInteger)section;
--(PARBook *) bookAtIndexPath:(NSIndexPath *)indexPath;
++ (void) fetchBooksWithContext:(NSManagedObjectContext *)context;
 
 @end

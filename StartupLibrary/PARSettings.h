@@ -9,6 +9,7 @@
 @import UIKit;
 
 #define LAST_BOOK_SELECTED_KEY @"LASTBOOKSELECTED"
+#define SAVE_RATE 5
 
 @interface PARSettings : NSObject
 

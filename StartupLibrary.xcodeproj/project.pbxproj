@@ -35,8 +35,8 @@
 		C5F4E5451B7A7C29005E1BED /* PARNote.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F4E5441B7A7C29005E1BED /* PARNote.m */; };
 		C5F4E5481B7A7DA5005E1BED /* _PARNote.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F4E5471B7A7DA5005E1BED /* _PARNote.m */; };
 		C5F4E54B1B7A7DF7005E1BED /* _PARBook.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F4E54A1B7A7DF7005E1BED /* _PARBook.m */; };
-		C5F4E54F1B7BC38E005E1BED /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F4E54E1B7BC38E005E1BED /* CoreDataTableViewController.m */; };
 		C5F4E5551B7BDCE0005E1BED /* NSDate+Formatters.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F4E5541B7BDCE0005E1BED /* NSDate+Formatters.m */; };
+		C5F4E5581B7D21D0005E1BED /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F4E5571B7D21D0005E1BED /* CoreDataTableViewController.m */; };
 		C5FE12031AF4E3E9005AC784 /* PARLibraryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE12021AF4E3E9005AC784 /* PARLibraryTableViewController.m */; };
 		C5FE120A1AF4E44D005AC784 /* PARLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE12091AF4E44D005AC784 /* PARLibrary.m */; };
 		C5FE120E1AF52431005AC784 /* UIViewController+Combinators.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE120D1AF52431005AC784 /* UIViewController+Combinators.m */; };
@@ -109,6 +109,8 @@
 		C5F4E5521B7BD144005E1BED /* StartupLibrary 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "StartupLibrary 3.xcdatamodel"; sourceTree = "<group>"; };
 		C5F4E5531B7BDCE0005E1BED /* NSDate+Formatters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatters.h"; sourceTree = "<group>"; };
 		C5F4E5541B7BDCE0005E1BED /* NSDate+Formatters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Formatters.m"; sourceTree = "<group>"; };
+		C5F4E5561B7D21D0005E1BED /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		C5F4E5571B7D21D0005E1BED /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		C5FE12011AF4E3E9005AC784 /* PARLibraryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARLibraryTableViewController.h; sourceTree = "<group>"; };
 		C5FE12021AF4E3E9005AC784 /* PARLibraryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARLibraryTableViewController.m; sourceTree = "<group>"; };
 		C5FE12081AF4E44D005AC784 /* PARLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARLibrary.h; sourceTree = "<group>"; };
@@ -212,9 +214,9 @@
 				C553CFD91AF3A8DE00EC7017 /* AppDelegate.m */,
 				C5051A111B752C8B000869B6 /* PARNetworkManager.h */,
 				C5051A121B752C8B000869B6 /* PARNetworkManager.m */,
-				C552F42C1B0A595A000D7821 /* PARSettings.h */,
-				C552F42D1B0A595A000D7821 /* PARSettings.m */,
-				C5051A141B753448000869B6 /* ParseSettings.h */,
+				C5F4E5561B7D21D0005E1BED /* CoreDataTableViewController.h */,
+				C5F4E5571B7D21D0005E1BED /* CoreDataTableViewController.m */,
+				C5F4E5591B7D21D5005E1BED /* PARSettings */,
 				C5F4E5501B7BC391005E1BED /* CoreDataTableVC */,
 				C5D79EDB1AFFBCDF00B096BB /* Protocol */,
 				C5FE120B1AF523FD005AC784 /* Categories */,
@@ -338,6 +340,16 @@
 			name = CoreDataTableVC;
 			sourceTree = "<group>";
 		};
+		C5F4E5591B7D21D5005E1BED /* PARSettings */ = {
+			isa = PBXGroup;
+			children = (
+				C552F42C1B0A595A000D7821 /* PARSettings.h */,
+				C552F42D1B0A595A000D7821 /* PARSettings.m */,
+				C5051A141B753448000869B6 /* ParseSettings.h */,
+			);
+			name = PARSettings;
+			sourceTree = "<group>";
+		};
 		C5FE12041AF4E3EE005AC784 /* PARLibrary */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,7 +428,7 @@
 		C553CFC91AF3A8DE00EC7017 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = PabloParejo;
 				TargetAttributes = {
 					C553CFD01AF3A8DE00EC7017 = {
@@ -514,6 +526,7 @@
 			files = (
 				C511961C1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m in Sources */,
 				C5FE12031AF4E3E9005AC784 /* PARLibraryTableViewController.m in Sources */,
+				C5F4E5581B7D21D0005E1BED /* CoreDataTableViewController.m in Sources */,
 				C552F42E1B0A595A000D7821 /* PARSettings.m in Sources */,
 				C552F4311B0B403B000D7821 /* PARLibraryTabController.m in Sources */,
 				C5EC91561AF66FE300DE1B01 /* PARBookTableViewCell.m in Sources */,
@@ -526,7 +539,6 @@
 				C5FE120A1AF4E44D005AC784 /* PARLibrary.m in Sources */,
 				C553CFDA1AF3A8DE00EC7017 /* AppDelegate.m in Sources */,
 				C5F4E5451B7A7C29005E1BED /* PARNote.m in Sources */,
-				C5F4E54F1B7BC38E005E1BED /* CoreDataTableViewController.m in Sources */,
 				C5F4E5551B7BDCE0005E1BED /* NSDate+Formatters.m in Sources */,
 				C5F4E5411B7A76FF005E1BED /* StartupLibrary.xcdatamodeld in Sources */,
 				C553D0021AF3ABD300EC7017 /* PARBook.m in Sources */,

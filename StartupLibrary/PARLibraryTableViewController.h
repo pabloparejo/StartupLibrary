@@ -9,10 +9,10 @@
 @import UIKit;
 #import "PARLibrary.h"
 #import "PARLibraryViewControllerDelegate.h"
+#import "CoreDataTableViewController.h"
 
-@interface PARLibraryTableViewController : UITableViewController
+@interface PARLibraryTableViewController : CoreDataTableViewController
 
 @property (weak, nonatomic) id<PARLibraryViewControllerDelegate> delegate;
-- (id)initWithModel:(PARLibrary *) library;
 - (void) configureForTabBar;
 @end
