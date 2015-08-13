@@ -76,19 +76,20 @@
 -(void) configureForIpadWithFetchedResultsController:(NSFetchedResultsController *) fetchedRC{
     PARLibraryTableViewController *libraryTableVC = [PARLibraryTableViewController new];
     [libraryTableVC setFetchedResultsController:fetchedRC];
-//    PARLibraryCollectionViewController *libraryCollectionVC = [[PARLibraryCollectionViewController alloc] initWithModel:library];
+    PARLibraryCollectionViewController *libraryCollectionVC = [PARLibraryCollectionViewController new];
+    [libraryCollectionVC setFetchedResultsController:fetchedRC];
     
     PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:nil];
     
     [libraryTableVC setDelegate:bookVC];
-//    [libraryCollectionVC setDelegate:bookVC];
+    [libraryCollectionVC setDelegate:bookVC];
     
     PARLibraryTabController *tabVC = [PARLibraryTabController new];
 
-//    [tabVC setViewControllers:@[libraryCollectionVC, libraryTableVC] animated:NO];
+    [tabVC setViewControllers:@[libraryCollectionVC, libraryTableVC] animated:NO];
     [tabVC setViewControllers:@[libraryTableVC] animated:NO];
     
-//  [libraryCollectionVC configureForTabBar];
+    [libraryCollectionVC configureForTabBar];
     [libraryTableVC configureForTabBar];
     
     UISplitViewController *splitVC = [UISplitViewController new];
@@ -102,18 +103,18 @@
 -(void) configureForIphoneWithFetchedResultsController:(NSFetchedResultsController *) fetchedRC{
     PARLibraryTableViewController *libraryTableVC = [PARLibraryTableViewController new];
     [libraryTableVC setFetchedResultsController:fetchedRC];
-//    PARLibraryCollectionViewController *libraryCollectionVC = [[PARLibraryCollectionViewController alloc] initWithModel:library];
+    PARLibraryCollectionViewController *libraryCollectionVC = [PARLibraryCollectionViewController new];
+    [libraryCollectionVC setFetchedResultsController:fetchedRC];
     
-//    [libraryCollectionVC configureForTabBar];
+    [libraryCollectionVC configureForTabBar];
     [libraryTableVC configureForTabBar];
     
     PARLibraryTabController *tabVC = [PARLibraryTabController new];
     
     [libraryTableVC setDelegate:tabVC];
-//    [libraryCollectionVC setDelegate:tabVC];
+    [libraryCollectionVC setDelegate:tabVC];
     
-//   [tabVC setViewControllers:@[libraryCollectionVC, libraryTableVC] animated:NO];
-    [tabVC setViewControllers:@[libraryTableVC] animated:NO];
+    [tabVC setViewControllers:@[libraryCollectionVC, libraryTableVC] animated:NO];
     [self.window setRootViewController:[tabVC wrappedInNavigationController]];
 }
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B39B8A597A06DE463DC1AA76 /* libPods-StartupLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E51308FD459D8BAE57A0BC /* libPods-StartupLibrary.a */; };
 		C5051A131B752C8B000869B6 /* PARNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5051A121B752C8B000869B6 /* PARNetworkManager.m */; };
+		C506835D1B7D2EE900F51500 /* CoreDataCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C506835C1B7D2EE900F51500 /* CoreDataCollectionViewController.m */; };
 		C511961C1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C511961A1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m */; };
 		C511961D1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C511961B1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib */; };
 		C552F42E1B0A595A000D7821 /* PARSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = C552F42D1B0A595A000D7821 /* PARSettings.m */; };
@@ -59,6 +60,8 @@
 		C5051A111B752C8B000869B6 /* PARNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARNetworkManager.h; sourceTree = "<group>"; };
 		C5051A121B752C8B000869B6 /* PARNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARNetworkManager.m; sourceTree = "<group>"; };
 		C5051A141B753448000869B6 /* ParseSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseSettings.h; sourceTree = "<group>"; };
+		C506835B1B7D2EE900F51500 /* CoreDataCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataCollectionViewController.h; sourceTree = "<group>"; };
+		C506835C1B7D2EE900F51500 /* CoreDataCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataCollectionViewController.m; sourceTree = "<group>"; };
 		C51196191AFFC27E003CB31C /* PARHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARHeaderCollectionReusableView.h; sourceTree = "<group>"; };
 		C511961A1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARHeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		C511961B1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
@@ -146,6 +149,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C506835A1B7D2BBB00F51500 /* CoreDataVC */ = {
+			isa = PBXGroup;
+			children = (
+				C5F4E5561B7D21D0005E1BED /* CoreDataTableViewController.h */,
+				C5F4E5571B7D21D0005E1BED /* CoreDataTableViewController.m */,
+				C506835B1B7D2EE900F51500 /* CoreDataCollectionViewController.h */,
+				C506835C1B7D2EE900F51500 /* CoreDataCollectionViewController.m */,
+			);
+			name = CoreDataVC;
+			sourceTree = "<group>";
+		};
 		C51196181AFFC257003CB31C /* PARHeaderCollectionReusableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,8 +228,7 @@
 				C553CFD91AF3A8DE00EC7017 /* AppDelegate.m */,
 				C5051A111B752C8B000869B6 /* PARNetworkManager.h */,
 				C5051A121B752C8B000869B6 /* PARNetworkManager.m */,
-				C5F4E5561B7D21D0005E1BED /* CoreDataTableViewController.h */,
-				C5F4E5571B7D21D0005E1BED /* CoreDataTableViewController.m */,
+				C506835A1B7D2BBB00F51500 /* CoreDataVC */,
 				C5F4E5591B7D21D5005E1BED /* PARSettings */,
 				C5F4E5501B7BC391005E1BED /* CoreDataTableVC */,
 				C5D79EDB1AFFBCDF00B096BB /* Protocol */,
@@ -545,6 +558,7 @@
 				C553D0091AF4154000EC7017 /* PARWebViewController.m in Sources */,
 				C5EC915B1AF6A20000DE1B01 /* PARLibraryCollectionViewController.m in Sources */,
 				C553CFD71AF3A8DE00EC7017 /* main.m in Sources */,
+				C506835D1B7D2EE900F51500 /* CoreDataCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

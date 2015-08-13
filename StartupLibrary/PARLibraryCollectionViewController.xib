@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PARLibraryCollectionViewController">
             <connections>
-                <outlet property="collectionView" destination="4h6-my-1Th" id="0Zn-yl-ZEZ"/>
+                <outlet property="collectionView" destination="4h6-my-1Th" id="V2f-qN-u3I"/>
                 <outlet property="view" destination="iN0-l3-epB" id="B4N-f1-moK"/>
             </connections>
         </placeholder>
@@ -26,7 +26,7 @@
                     </collectionViewFlowLayout>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="mna-YK-sWR"/>
-                        <outlet property="delegate" destination="-1" id="VVS-H2-1u8"/>
+                        <outlet property="delegate" destination="-1" id="OGt-kS-Q8B"/>
                     </connections>
                 </collectionView>
             </subviews>

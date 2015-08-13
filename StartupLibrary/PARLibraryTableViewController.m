@@ -58,7 +58,7 @@
         cell.bookImage.image = book.image;
     }else{
         [book downloadCoverImage:^(void) {
-            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView reloadData];
         }];
     }
 
