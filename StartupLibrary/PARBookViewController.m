@@ -78,9 +78,15 @@
 }
 
 - (IBAction)shareBook:(id)sender {
-    SLComposeServiceViewController *vc = [SLComposeServiceViewController new];
-    [self presentViewController:vc animated:YES completion:nil];
-    //[self dismissViewControllerAnimated:YES completion:nil];
+    SLComposeViewController *vc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    if (vc) {
+        [vc setInitialText:[NSString stringWithFormat:@"I am loving the book %@!", self.model.title]];
+        [vc addURL:[NSURL URLWithString:self.model.webURL]];
+        
+        [self presentViewController:vc animated:YES completion:nil];
+    }else{
+        NSLog(@"Twitter account has not been set");
+    }
 }
 
 
