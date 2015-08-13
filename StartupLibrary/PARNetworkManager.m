@@ -15,7 +15,7 @@
 
 
 + (NSURLQueryItem *) listBookObjectKeys{
-    NSArray *objectKeys = @[@"title", @"author", @"category", @"tags", @"createdAt", @"updatedAt"];
+    NSArray *objectKeys = @[@"title", @"author", @"cover_url", @"category", @"tags", @"createdAt", @"updatedAt"];
     NSURLQueryItem *keys = [NSURLQueryItem queryItemWithName:@"keys" value:[objectKeys componentsJoinedByString:@","]];
     return keys;
 }
