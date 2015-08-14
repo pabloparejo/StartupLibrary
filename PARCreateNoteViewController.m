@@ -71,6 +71,9 @@
                                         book:self.book
                                         text:self.noteText.text];
     note.image = self.noteImage;
+    note.latitude = [NSNumber numberWithDouble:self.coordinate.latitude];
+    note.longitude = [NSNumber numberWithDouble:self.coordinate.longitude ];
+    
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

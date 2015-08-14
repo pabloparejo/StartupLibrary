@@ -16,7 +16,6 @@
 		C54A9BDD1B7E5D1300789248 /* PARCreateNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C54A9BDB1B7E5D1300789248 /* PARCreateNoteViewController.xib */; };
 		C54A9BDF1B7E67AE00789248 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54A9BDE1B7E67AE00789248 /* CoreLocation.framework */; };
 		C54A9BE11B7E67BA00789248 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54A9BE01B7E67BA00789248 /* MapKit.framework */; };
-		C54A9BE51B7E6D8900789248 /* PARNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C54A9BE41B7E6D8900789248 /* PARNotesViewController.m */; };
 		C552F42E1B0A595A000D7821 /* PARSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = C552F42D1B0A595A000D7821 /* PARSettings.m */; };
 		C552F4311B0B403B000D7821 /* PARLibraryTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = C552F4301B0B403B000D7821 /* PARLibraryTabController.m */; };
 		C553CFD71AF3A8DE00EC7017 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C553CFD61AF3A8DE00EC7017 /* main.m */; };
@@ -75,8 +74,6 @@
 		C54A9BDB1B7E5D1300789248 /* PARCreateNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARCreateNoteViewController.xib; sourceTree = "<group>"; };
 		C54A9BDE1B7E67AE00789248 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C54A9BE01B7E67BA00789248 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		C54A9BE31B7E6D8900789248 /* PARNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARNotesViewController.h; sourceTree = "<group>"; };
-		C54A9BE41B7E6D8900789248 /* PARNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARNotesViewController.m; sourceTree = "<group>"; };
 		C552F42C1B0A595A000D7821 /* PARSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARSettings.h; sourceTree = "<group>"; };
 		C552F42D1B0A595A000D7821 /* PARSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARSettings.m; sourceTree = "<group>"; };
 		C552F42F1B0B403B000D7821 /* PARLibraryTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARLibraryTabController.h; sourceTree = "<group>"; };
@@ -187,15 +184,6 @@
 			name = PARHeaderCollectionReusableView;
 			sourceTree = "<group>";
 		};
-		C54A9BE21B7E6D7600789248 /* PARNotesViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C54A9BE31B7E6D8900789248 /* PARNotesViewController.h */,
-				C54A9BE41B7E6D8900789248 /* PARNotesViewController.m */,
-			);
-			name = PARNotesViewController;
-			sourceTree = "<group>";
-		};
 		C552F4321B0B4043000D7821 /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,7 +291,6 @@
 		C553CFFF1AF3AA9A00EC7017 /* PARBook */ = {
 			isa = PBXGroup;
 			children = (
-				C54A9BE21B7E6D7600789248 /* PARNotesViewController */,
 				C5F4E54C1B7A7E00005E1BED /* model */,
 				C553CFFA1AF3AA9600EC7017 /* PARBookViewController.h */,
 				C553CFFB1AF3AA9600EC7017 /* PARBookViewController.m */,
@@ -600,7 +587,6 @@
 				C553D0091AF4154000EC7017 /* PARWebViewController.m in Sources */,
 				C5EC915B1AF6A20000DE1B01 /* PARLibraryCollectionViewController.m in Sources */,
 				C553CFD71AF3A8DE00EC7017 /* main.m in Sources */,
-				C54A9BE51B7E6D8900789248 /* PARNotesViewController.m in Sources */,
 				C506835D1B7D2EE900F51500 /* CoreDataCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

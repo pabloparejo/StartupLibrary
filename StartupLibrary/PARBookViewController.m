@@ -8,23 +8,21 @@
 
 
 @import Social;
+@import MapKit;
 #import "PARBookViewController.h"
 #import "PARWebViewController.h"
 #import "PARBookViewController.h"
 #import "PARCreateNoteViewController.h"
 #import "ReaderViewController.h"
-#import "PARNotesViewController.h"
 #import "AppDelegate.h"
 #import "PARNote.h"
 
 #define SELF_TITLE @"Book"
 #define BUY_BOOK_TITLE @"Book's Store"
 
-@interface PARBookViewController ()
+@interface PARBookViewController () <MKMapViewDelegate>
 
 @property (strong, nonatomic) PARBook *model;
-@property (strong, nonatomic) PARNotesViewController *notesTableController;
-@property (weak, nonatomic) IBOutlet UITableView *notesTable;
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *author;
@@ -34,6 +32,8 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *imageLoading;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *bookLoading;
 
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 
 @end
 
@@ -42,7 +42,6 @@
 - (id) initWithModel:(PARBook *)model{
     if (self = [super init]) {
         _model = model;
-        _notesTableController = [PARNotesViewController new];
     }
     return self;
 }
@@ -50,8 +49,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = SELF_TITLE;
-    self.notesTable.delegate = self.notesTableController;
-    self.notesTable.dataSource = self.notesTableController;
     [self syncViewWithModel];
 }
 
@@ -62,7 +59,7 @@
         self.navigationItem.leftItemsSupplementBackButton = YES;
         self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     }
-
+    [self updateMap];
     [self.bookLoading stopAnimating];
 }
 
@@ -129,20 +126,44 @@
 
 
 #pragma mark - Utils
-
--(void)syncViewWithModel{
-  
-    
+- (void)updateMap{
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([PARNote class])];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:YES]];
     request.predicate = [NSPredicate predicateWithFormat:@"book == %@", self.model];
     AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     
-    NSFetchedResultsController *frc = [[NSFetchedResultsController alloc] initWithFetchRequest:request
-                                                                          managedObjectContext:appDelegate.managedObjectContext sectionNameKeyPath:nil
-                                                                                     cacheName:nil];
+    NSArray *notes = [appDelegate.managedObjectContext executeFetchRequest:request error:nil];
     
-    self.notesTableController.fetchedResultsController = frc;
+    [notes enumerateObjectsUsingBlock:^(PARNote *obj, NSUInteger idx, BOOL *stop) {
+        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+        CLLocationDegrees lat = [obj.latitude doubleValue];
+        CLLocationDegrees lon = [obj.longitude doubleValue];
+        
+        
+        CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(lat, lon);
+        annotation.coordinate = coord;
+        annotation.title = obj.text;
+        [self.mapView addAnnotation:annotation];
+        
+        if (idx == notes.count - 1) {
+            MKCoordinateRegion region = MKCoordinateRegionMake(coord, MKCoordinateSpanMake(1, 1));
+            self.mapView.region = region;
+        }
+
+    }];
+    
+    
+    
+    self.mapView.mapType = MKMapTypeHybrid;
+    //self.mapView.showsUserLocation = YES;
+    self.mapView.showsBuildings = YES;
+    self.mapView.pitchEnabled = YES;
+    
+    self.mapView.delegate = self;
+}
+
+
+-(void)syncViewWithModel{
     
     [self.model retrieveDetail];
     self.bookImage.image = nil;
