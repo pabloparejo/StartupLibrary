@@ -90,7 +90,6 @@
     PARLibraryTabController *tabVC = [PARLibraryTabController new];
 
     [tabVC setViewControllers:@[libraryCollectionVC, libraryTableVC] animated:NO];
-    [tabVC setViewControllers:@[libraryTableVC] animated:NO];
     
     [libraryCollectionVC configureForTabBar];
     [libraryTableVC configureForTabBar];
