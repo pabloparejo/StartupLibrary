@@ -82,7 +82,7 @@
     PARLibraryCollectionViewController *libraryCollectionVC = [PARLibraryCollectionViewController new];
     [libraryCollectionVC setFetchedResultsController:fetchedRC];
     
-    PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:nil];
+    PARBookViewController *bookVC = [[PARBookViewController alloc] initWithModel:[self lastBookSelected]];
     
     [libraryTableVC setDelegate:bookVC];
     [libraryCollectionVC setDelegate:bookVC];
@@ -121,20 +121,22 @@
 }
 
 #pragma mark - User Defaults
+-(PARBook *) lastBookSelected{
+    
+    NSString *objectId = [PARSettings objectIdForLastBookSelected];
 
-#warning TODO
-/*-(PARBook *) lastBookSelectedInModel: (PARLibrary *)model{
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([PARBook class])];
+    request.predicate = [NSPredicate predicateWithFormat:@"objectId == %@", objectId];
     
-    NSIndexPath *indexPath = [PARSettings indexPathForLastBookSelected];
-    if (!indexPath) {
-        // User has open the app for the first time
-        indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-        [PARSettings saveLastBookSelected:indexPath];
+    NSArray *results = [self.managedObjectContext executeFetchRequest:request error:nil];
+    PARBook *book;
+    if ([results count]) {
+        book = [results firstObject];
+    }else{
+        book = [PARLibrary lastBookUpdatedWithContext:self.managedObjectContext];
     }
-    
-    PARBook *book = [model bookAtIndexPath:indexPath];
     return book;
-}*/
+}
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     self.autosave = NO;

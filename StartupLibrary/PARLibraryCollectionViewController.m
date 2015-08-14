@@ -79,7 +79,7 @@
                                didSelectBook:book];
     }
     
-    [PARSettings saveLastBookSelected:indexPath];
+    [PARSettings saveLastBookSelected:book.objectId];
 }
 
 #pragma mark - Utils

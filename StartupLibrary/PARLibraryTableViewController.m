@@ -79,7 +79,7 @@
                                didSelectBook:book];
     }
     
-    [PARSettings saveLastBookSelected:indexPath];
+    [PARSettings saveLastBookSelected:book.objectId];
 }
 
 - (void) tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section{

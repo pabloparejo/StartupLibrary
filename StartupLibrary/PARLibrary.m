@@ -16,16 +16,14 @@
 
 + (void) fetchBooksWithContext:(NSManagedObjectContext *)context{
     
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"PARBook"];
-    request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"updatedAt" ascending:NO]];
+    
     
     NSError *jsonError = nil;
-    NSArray *results = [context executeFetchRequest:request error:nil];
     NSData *data;
-    if ([results count]) {
-        PARBook *lastBook = [results firstObject];
+    PARBook *lastBook = [self lastBookUpdatedWithContext:context];
+    if (lastBook) {
         data = [PARNetworkManager listParseClass:PARSE_CLASS_BOOK
-                                                fromDate:[lastBook updatedAt]];
+                                        fromDate:[lastBook updatedAt]];
     }else{
         data = [PARNetworkManager listParseClass:PARSE_CLASS_BOOK];
     }
@@ -50,5 +48,16 @@
             [PARBook bookWithContext:context dictionary:obj];
         }
     }];
+}
+
++(PARBook *) lastBookUpdatedWithContext:(NSManagedObjectContext *)context{
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"PARBook"];
+    request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"updatedAt" ascending:NO]];
+    NSArray *results = [context executeFetchRequest:request error:nil];
+    if ([results count]) {
+        PARBook *lastBook = [results firstObject];
+        return lastBook;
+    }
+    return nil;
 }
 @end

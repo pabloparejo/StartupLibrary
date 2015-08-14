@@ -9,8 +9,9 @@
 
 @import Foundation;
 @import CoreData;
+@class PARBook;
 @interface PARLibrary : NSObject
 
 + (void) fetchBooksWithContext:(NSManagedObjectContext *)context;
-
++ (PARBook *) lastBookUpdatedWithContext:(NSManagedObjectContext *)context;
 @end

@@ -59,8 +59,8 @@
         self.navigationItem.leftItemsSupplementBackButton = YES;
         self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     }
-    [self updateMap];
     [self.bookLoading stopAnimating];
+    [self updateMap];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -129,7 +129,7 @@
 - (void)updateMap{
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([PARNote class])];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:YES]];
-    request.predicate = [NSPredicate predicateWithFormat:@"book == %@", self.model];
+    request.predicate = [NSPredicate predicateWithFormat:@"book = %@", self.model];
     AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     
     NSArray *notes = [appDelegate.managedObjectContext executeFetchRequest:request error:nil];
@@ -155,7 +155,7 @@
     
     
     self.mapView.mapType = MKMapTypeHybrid;
-    //self.mapView.showsUserLocation = YES;
+    self.mapView.showsUserLocation = YES;
     self.mapView.showsBuildings = YES;
     self.mapView.pitchEnabled = YES;
     
@@ -164,8 +164,8 @@
 
 
 -(void)syncViewWithModel{
-    
     [self.model retrieveDetail];
+    [self updateMap];
     self.bookImage.image = nil;
     [self.bookLoading stopAnimating];
     [self.imageLoading startAnimating];

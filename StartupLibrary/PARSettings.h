@@ -13,6 +13,6 @@
 
 @interface PARSettings : NSObject
 
-+(void) saveLastBookSelected:(NSIndexPath *)indexPath;
-+(NSIndexPath *) indexPathForLastBookSelected;
++(void) saveLastBookSelected:(NSString *)objectId;
++(NSString *) objectIdForLastBookSelected;
 @end

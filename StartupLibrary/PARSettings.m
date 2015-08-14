@@ -10,21 +10,16 @@
 
 @implementation PARSettings
 
-+(void)saveLastBookSelected:(NSIndexPath *)indexPath{
++(void) saveLastBookSelected:(NSString *)objectId{
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    [def setObject:@[@(indexPath.section), @(indexPath.row)] forKey:LAST_BOOK_SELECTED_KEY];
+    [def setObject:objectId forKey:LAST_BOOK_SELECTED_KEY];
     [def synchronize];
 }
 
-+(NSIndexPath *) indexPathForLastBookSelected{
++(NSString *) objectIdForLastBookSelected{
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    NSArray *coords;
-    if ((coords = [def objectForKey:LAST_BOOK_SELECTED_KEY])) {
-        long section = [[coords objectAtIndex:0] integerValue];
-        long row = [[coords objectAtIndex:1] integerValue];
-        return [NSIndexPath indexPathForRow:row inSection:section];
-    }
-    return nil;
+    NSString *objectId = [def objectForKey:LAST_BOOK_SELECTED_KEY];
+    return objectId;
 }
 
 @end
