@@ -5,6 +5,7 @@
 
 extern const struct PARNoteAttributes {
 	__unsafe_unretained NSString *address;
+	__unsafe_unretained NSString *createdAt;
 	__unsafe_unretained NSString *image;
 	__unsafe_unretained NSString *latitude;
 	__unsafe_unretained NSString *longitude;
@@ -31,6 +32,10 @@ extern const struct PARNoteRelationships {
 @property (nonatomic, strong) NSString* address;
 
 //- (BOOL)validateAddress:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSDate* createdAt;
+
+//- (BOOL)validateCreatedAt:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) id image;
 
@@ -66,6 +71,9 @@ extern const struct PARNoteRelationships {
 
 - (NSString*)primitiveAddress;
 - (void)setPrimitiveAddress:(NSString*)value;
+
+- (NSDate*)primitiveCreatedAt;
+- (void)setPrimitiveCreatedAt:(NSDate*)value;
 
 - (id)primitiveImage;
 - (void)setPrimitiveImage:(id)value;

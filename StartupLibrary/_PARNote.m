@@ -5,6 +5,7 @@
 
 const struct PARNoteAttributes PARNoteAttributes = {
 	.address = @"address",
+	.createdAt = @"createdAt",
 	.image = @"image",
 	.latitude = @"latitude",
 	.longitude = @"longitude",
@@ -56,6 +57,8 @@ const struct PARNoteRelationships PARNoteRelationships = {
 }
 
 @dynamic address;
+
+@dynamic createdAt;
 
 @dynamic image;
 

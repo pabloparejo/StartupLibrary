@@ -13,6 +13,7 @@
                 <outlet property="bookLoading" destination="Vqz-Eo-8oK" id="seu-a8-1T0"/>
                 <outlet property="category" destination="r1I-8T-tsV" id="D9D-oC-fw2"/>
                 <outlet property="imageLoading" destination="Ngc-Ak-hJr" id="axt-Ld-MzM"/>
+                <outlet property="notesTable" destination="Wu8-Ax-7Ef" id="Drr-zJ-cqF"/>
                 <outlet property="summary" destination="8sS-ds-Rbc" id="uBu-FC-uRZ"/>
                 <outlet property="titleLabel" destination="NXq-S4-0Gl" id="jAD-S3-qPR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

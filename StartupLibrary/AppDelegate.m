@@ -14,6 +14,7 @@
 #import "UIViewController+Combinators.h"
 #import "PARSettings.h"
 #import "PARLibraryTabController.h"
+#import "PARNote.h"
 
 @interface AppDelegate ()
 @property (nonatomic) BOOL autosave;
@@ -34,6 +35,8 @@
                                                                                       managedObjectContext:self.managedObjectContext
                                                                                         sectionNameKeyPath:nil
                                                                                                  cacheName:nil];
+
+    
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [self configureForIpadWithFetchedResultsController:fetchController];

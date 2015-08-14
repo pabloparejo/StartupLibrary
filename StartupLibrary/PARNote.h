@@ -14,6 +14,7 @@
 @interface PARNote : _PARNote
 
 + (instancetype) noteWithContext:(NSManagedObjectContext *)context
+                            book:(PARBook *)book
                             text:(NSString *)text;
 
 @end

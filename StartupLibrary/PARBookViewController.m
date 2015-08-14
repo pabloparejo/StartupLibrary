@@ -13,6 +13,9 @@
 #import "PARBookViewController.h"
 #import "PARCreateNoteViewController.h"
 #import "ReaderViewController.h"
+#import "PARNotesViewController.h"
+#import "AppDelegate.h"
+#import "PARNote.h"
 
 #define SELF_TITLE @"Book"
 #define BUY_BOOK_TITLE @"Book's Store"
@@ -20,6 +23,9 @@
 @interface PARBookViewController ()
 
 @property (strong, nonatomic) PARBook *model;
+@property (strong, nonatomic) PARNotesViewController *notesTableController;
+@property (weak, nonatomic) IBOutlet UITableView *notesTable;
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *author;
 @property (weak, nonatomic) IBOutlet UIButton *category;
@@ -28,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *imageLoading;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *bookLoading;
 
+
 @end
 
 @implementation PARBookViewController
@@ -35,6 +42,7 @@
 - (id) initWithModel:(PARBook *)model{
     if (self = [super init]) {
         _model = model;
+        _notesTableController = [PARNotesViewController new];
     }
     return self;
 }
@@ -42,6 +50,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = SELF_TITLE;
+    self.notesTable.delegate = self.notesTableController;
+    self.notesTable.dataSource = self.notesTableController;
     [self syncViewWithModel];
 }
 
@@ -52,7 +62,7 @@
         self.navigationItem.leftItemsSupplementBackButton = YES;
         self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     }
-    
+
     [self.bookLoading stopAnimating];
 }
 
@@ -63,35 +73,13 @@
 
 #pragma mark - IBActions
 
-- (IBAction)addNote:(id)sender {
-    
-    /*UIAlertController *notebookDialog = [UIAlertController alertControllerWithTitle:@"New Notebook"
-                                                                            message:@"Please, insert notebook name"
-                                                                     preferredStyle:UIAlertControllerStyleAlert];
-    
-    [notebookDialog addAction:[UIAlertAction actionWithTitle:@"Add new note" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        UITextField *titleTextField = notebookDialog.textFields.firstObject;
-        [PARNote noteWithContext:self.fetchedResultsController.managedObjectContext text:titleTextField.text];
-    }]];
-    
-    [notebookDialog addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        [notebookDialog dismissViewControllerAnimated:YES completion:nil];
-    }]];
-    
-    [notebookDialog addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"Notebook name";
-    }];
-    
-    [self presentViewController:notebookDialog animated:YES completion:nil];*/
-}
-
 - (IBAction)buyBook:(id)sender {
     PARWebViewController *webVC = [[PARWebViewController alloc] initWithURL:[NSURL URLWithString:self.model.webURL] title:BUY_BOOK_TITLE];
     [self.navigationController pushViewController:webVC animated:YES];
 }
 
 - (IBAction)newNote:(id)sender {
-    PARCreateNoteViewController *noteVC = [PARCreateNoteViewController new];
+    PARCreateNoteViewController *noteVC = [[PARCreateNoteViewController alloc] initWithBook:self.model];
     [self presentViewController:noteVC animated:YES completion:nil];
 }
 
@@ -143,6 +131,19 @@
 #pragma mark - Utils
 
 -(void)syncViewWithModel{
+  
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([PARNote class])];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:YES]];
+    request.predicate = [NSPredicate predicateWithFormat:@"book == %@", self.model];
+    AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+    
+    NSFetchedResultsController *frc = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                          managedObjectContext:appDelegate.managedObjectContext sectionNameKeyPath:nil
+                                                                                     cacheName:nil];
+    
+    self.notesTableController.fetchedResultsController = frc;
+    
     [self.model retrieveDetail];
     self.bookImage.image = nil;
     [self.bookLoading stopAnimating];

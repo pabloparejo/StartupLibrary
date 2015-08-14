@@ -6,8 +6,13 @@
 //
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+@class PARBook;
 
 @interface PARCreateNoteViewController : UIViewController
+
+@property (strong, nonatomic) PARBook *book;
+
+-(instancetype) initWithBook:(PARBook *) book;
 
 @end

@@ -11,9 +11,12 @@
 @implementation PARNote
 
 + (instancetype) noteWithContext:(NSManagedObjectContext *)context
+                            book:(PARBook *)book
                             text:(NSString *)text{
-    PARNote *note = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(self.class) inManagedObjectContext:context];
+    PARNote *note = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(self.class)
+                                                  inManagedObjectContext:context];
 
+    note.book = book;
     note.text = text;
     return note;
 }
