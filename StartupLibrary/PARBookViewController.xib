@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A225f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -25,10 +25,12 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uDh-hS-dQl">
                     <rect key="frame" x="8" y="78" width="247" height="222"/>
+                    <animations/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ngc-Ak-hJr">
                     <rect key="frame" x="113" y="170" width="37" height="37"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="37" id="Bsi-tg-5Td"/>
                         <constraint firstAttribute="height" constant="37" id="N9p-K2-kZZ"/>
@@ -36,6 +38,7 @@
                 </activityIndicatorView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXq-S4-0Gl">
                     <rect key="frame" x="263" y="78" width="329" height="32"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="rap-EE-P41"/>
                     </constraints>
@@ -48,10 +51,12 @@
                 </label>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Vqz-Eo-8oK">
                     <rect key="frame" x="282" y="282" width="37" height="37"/>
+                    <animations/>
                     <color key="color" red="0.12941176469999999" green="0.1843137255" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                 </activityIndicatorView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="author" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYl-di-klv">
                     <rect key="frame" x="263" y="118" width="329" height="21"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Jtx-aO-Hlj"/>
                     </constraints>
@@ -64,6 +69,7 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1I-8T-tsV">
                     <rect key="frame" x="263" y="147" width="67" height="36"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="47v-Wq-VFd"/>
                     </constraints>
@@ -78,6 +84,7 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxd-Tw-pTW">
                     <rect key="frame" x="263" y="191" width="329" height="21"/>
+                    <animations/>
                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="18"/>
                     <color key="textColor" red="0.12941176469999999" green="0.1843137255" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -90,6 +97,7 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descriptionLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sS-ds-Rbc">
                             <rect key="frame" x="0.0" y="0.0" width="329" height="27"/>
+                            <animations/>
                             <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="16"/>
                             <color key="textColor" red="0.2666666667" green="0.32156862749999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -98,6 +106,7 @@
                             </variation>
                         </label>
                     </subviews>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="8sS-ds-Rbc" secondAttribute="bottom" constant="4" id="7Ci-YV-7ix"/>
                         <constraint firstItem="8sS-ds-Rbc" firstAttribute="width" secondItem="6S6-KX-eDg" secondAttribute="width" id="9cf-VA-9mN"/>
@@ -107,18 +116,21 @@
                         <constraint firstItem="8sS-ds-Rbc" firstAttribute="leading" secondItem="6S6-KX-eDg" secondAttribute="leading" id="roq-xD-VY3"/>
                     </constraints>
                 </scrollView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Wu8-Ax-7Ef">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Wu8-Ax-7Ef">
                     <rect key="frame" x="8" y="348" width="584" height="192"/>
+                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes in this book" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niF-zf-bn7">
-                    <rect key="frame" x="8" y="316" width="584" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Notes in this book" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niF-zf-bn7">
+                    <rect key="frame" x="8" y="316" width="292" height="24"/>
+                    <animations/>
                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="21"/>
                     <color key="textColor" red="0.2666666667" green="0.32156862749999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSW-UG-YPf">
                     <rect key="frame" x="8" y="258" width="247" height="42"/>
+                    <animations/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="42" id="1bL-I4-wCv"/>
@@ -137,8 +149,13 @@
                 </button>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMR-2O-utO">
                     <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                    <animations/>
                     <items>
-                        <barButtonItem systemItem="add" id="txc-v9-ucI"/>
+                        <barButtonItem systemItem="add" id="txc-v9-ucI">
+                            <connections>
+                                <action selector="newNote:" destination="-1" id="9Wl-X0-iMJ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="YcT-kr-0Tj"/>
                         <barButtonItem systemItem="bookmarks" id="rRE-yY-KFR">
                             <connections>
@@ -153,19 +170,33 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View map" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyB-XA-hIf">
+                    <rect key="frame" x="491" y="316" width="90" height="28"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="8DE-0w-iKF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="17"/>
+                    <color key="textColor" red="0.1176470588" green="0.67843137249999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
+            <animations/>
             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="r1I-8T-tsV" firstAttribute="top" secondItem="oYl-di-klv" secondAttribute="bottom" id="0m9-61-OeA"/>
                 <constraint firstAttribute="trailing" secondItem="6S6-KX-eDg" secondAttribute="trailing" constant="8" id="4aW-xl-xvS"/>
                 <constraint firstItem="6S6-KX-eDg" firstAttribute="top" secondItem="Kxd-Tw-pTW" secondAttribute="bottom" constant="8" id="5Vf-g3-rhY"/>
                 <constraint firstItem="6S6-KX-eDg" firstAttribute="top" secondItem="r1I-8T-tsV" secondAttribute="bottom" constant="8" id="5fa-HI-tbb"/>
-                <constraint firstAttribute="trailing" secondItem="niF-zf-bn7" secondAttribute="trailing" constant="8" id="6zi-iF-jk7"/>
                 <constraint firstItem="r1I-8T-tsV" firstAttribute="leading" secondItem="oYl-di-klv" secondAttribute="leading" id="76B-mN-7Ky"/>
                 <constraint firstItem="Kxd-Tw-pTW" firstAttribute="top" secondItem="r1I-8T-tsV" secondAttribute="bottom" constant="8" id="7Px-MU-Kas"/>
                 <constraint firstItem="6S6-KX-eDg" firstAttribute="leading" secondItem="uDh-hS-dQl" secondAttribute="trailing" constant="8" id="BaG-fz-t6o"/>
+                <constraint firstAttribute="centerX" secondItem="niF-zf-bn7" secondAttribute="trailing" id="Cl3-KR-qzc"/>
                 <constraint firstAttribute="trailing" secondItem="Wu8-Ax-7Ef" secondAttribute="trailing" constant="8" id="DCD-jZ-Tzb"/>
                 <constraint firstItem="6S6-KX-eDg" firstAttribute="leading" secondItem="uDh-hS-dQl" secondAttribute="trailing" constant="8" id="DdV-F2-i0n"/>
+                <constraint firstAttribute="trailing" secondItem="fyB-XA-hIf" secondAttribute="trailing" constant="19" id="DgH-86-rLe"/>
+                <constraint firstItem="Wu8-Ax-7Ef" firstAttribute="top" secondItem="fyB-XA-hIf" secondAttribute="bottom" constant="11" id="Dp2-f1-tvH"/>
+                <constraint firstItem="fyB-XA-hIf" firstAttribute="top" secondItem="6S6-KX-eDg" secondAttribute="bottom" constant="16" id="F4X-LM-fku"/>
                 <constraint firstItem="NXq-S4-0Gl" firstAttribute="top" secondItem="uDh-hS-dQl" secondAttribute="top" id="HPd-dq-BnV"/>
                 <constraint firstItem="tSW-UG-YPf" firstAttribute="bottom" secondItem="uDh-hS-dQl" secondAttribute="bottom" id="HXH-cQ-VxA"/>
                 <constraint firstItem="uDh-hS-dQl" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="0.85" id="IPi-Le-ZAa">

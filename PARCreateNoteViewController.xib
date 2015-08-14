@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A225f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PARCreateNoteViewController">
+            <connections>
+                <outlet property="noteAddress" destination="laP-Ex-fla" id="A2P-XJ-XGJ"/>
+                <outlet property="noteImage" destination="PS1-mS-QLf" id="2Y4-sp-Slz"/>
+                <outlet property="noteText" destination="hPV-lY-hBU" id="DKr-TU-rPf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oops.png" translatesAutoresizingMaskIntoConstraints="NO" id="PS1-mS-QLf">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                    <animations/>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hPV-lY-hBU">
+                    <rect key="frame" x="8" y="308" width="584" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="K7j-eA-jGa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No location lodaded" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laP-Ex-fla">
+                    <rect key="frame" x="8" y="346" width="443" height="21"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="oXq-kv-Urb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.12941176469999999" green="0.1843137255" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xt-Kq-iFf">
+                    <rect key="frame" x="471" y="342" width="121" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="121" id="gEo-rD-TZq"/>
+                    </constraints>
+                    <state key="normal" title="Add location">
+                        <color key="titleColor" red="0.1176470588" green="0.67843137249999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addLocation:" destination="-1" eventType="touchUpInside" id="q1n-Cm-paH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruG-CI-HeV">
+                    <rect key="frame" x="179" y="468" width="117" height="30"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="7Q3-Ot-w2c"/>
+                        <constraint firstAttribute="width" constant="117" id="fgp-ze-nmh"/>
+                        <constraint firstAttribute="height" constant="30" id="mHF-tK-r13"/>
+                    </constraints>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" red="0.12941176469999999" green="0.1843137255" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="close:" destination="-1" eventType="touchUpInside" id="bl7-DB-Xjw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvN-II-2AL">
+                    <rect key="frame" x="304" y="468" width="117" height="30"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.1176470588" green="0.67843137249999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Save note">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="saveNote:" destination="-1" eventType="touchUpInside" id="lmM-uN-FjU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gch-ic-K2S">
+                    <rect key="frame" x="471" y="259" width="121" height="30"/>
+                    <animations/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="121" id="Blu-ZX-WNw"/>
+                        <constraint firstAttribute="height" constant="30" id="oyZ-oB-KFT"/>
+                    </constraints>
+                    <state key="normal" title="Add image">
+                        <color key="titleColor" red="0.1176470588" green="0.67843137249999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addImage:" destination="-1" eventType="touchUpInside" id="eRa-hJ-Nwg"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="PS1-mS-QLf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="25f-TX-8z9"/>
+                <constraint firstItem="3xt-Kq-iFf" firstAttribute="top" secondItem="hPV-lY-hBU" secondAttribute="bottom" constant="4" id="4jN-nx-vI1"/>
+                <constraint firstAttribute="centerY" secondItem="PS1-mS-QLf" secondAttribute="bottom" id="9f4-X5-l8I"/>
+                <constraint firstItem="gch-ic-K2S" firstAttribute="leading" secondItem="PS1-mS-QLf" secondAttribute="trailing" constant="-129" id="Beh-fq-4ko"/>
+                <constraint firstItem="gch-ic-K2S" firstAttribute="top" secondItem="PS1-mS-QLf" secondAttribute="bottom" constant="-41" id="EXI-1Z-J0Q"/>
+                <constraint firstItem="laP-Ex-fla" firstAttribute="top" secondItem="hPV-lY-hBU" secondAttribute="bottom" constant="8" id="GnZ-LI-tu9"/>
+                <constraint firstItem="ruG-CI-HeV" firstAttribute="centerY" secondItem="KvN-II-2AL" secondAttribute="centerY" id="HVB-jn-I2T"/>
+                <constraint firstItem="ruG-CI-HeV" firstAttribute="width" secondItem="KvN-II-2AL" secondAttribute="width" id="Kw6-ki-UKS"/>
+                <constraint firstItem="PS1-mS-QLf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="LCP-aX-3bK"/>
+                <constraint firstAttribute="trailing" secondItem="3xt-Kq-iFf" secondAttribute="trailing" constant="8" id="MBk-V6-dUO"/>
+                <constraint firstItem="laP-Ex-fla" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="SXd-RI-q0s"/>
+                <constraint firstItem="ruG-CI-HeV" firstAttribute="height" secondItem="KvN-II-2AL" secondAttribute="height" id="Suv-YP-SZ1"/>
+                <constraint firstItem="hPV-lY-hBU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="TmM-w2-VDv"/>
+                <constraint firstItem="hPV-lY-hBU" firstAttribute="top" secondItem="PS1-mS-QLf" secondAttribute="bottom" constant="8" id="VrP-9n-SQm"/>
+                <constraint firstItem="KvN-II-2AL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="4" id="ZDv-EK-Cdy"/>
+                <constraint firstAttribute="trailing" secondItem="hPV-lY-hBU" secondAttribute="trailing" constant="8" id="ZWo-tg-dSb"/>
+                <constraint firstItem="3xt-Kq-iFf" firstAttribute="leading" secondItem="laP-Ex-fla" secondAttribute="trailing" constant="20" id="f5N-Rk-pqk"/>
+                <constraint firstItem="KvN-II-2AL" firstAttribute="leading" secondItem="ruG-CI-HeV" secondAttribute="trailing" constant="8" id="fbK-iZ-aKB"/>
+                <constraint firstAttribute="trailing" secondItem="PS1-mS-QLf" secondAttribute="trailing" id="n8H-fC-x36"/>
+                <constraint firstAttribute="bottom" secondItem="ruG-CI-HeV" secondAttribute="bottom" constant="102" id="uue-QZ-GFR"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="oops.png" width="1014" height="503"/>
+    </resources>
+</document>

@@ -12,6 +12,10 @@
 		C506835D1B7D2EE900F51500 /* CoreDataCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C506835C1B7D2EE900F51500 /* CoreDataCollectionViewController.m */; };
 		C511961C1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C511961A1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m */; };
 		C511961D1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C511961B1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib */; };
+		C54A9BDC1B7E5D1300789248 /* PARCreateNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C54A9BDA1B7E5D1300789248 /* PARCreateNoteViewController.m */; };
+		C54A9BDD1B7E5D1300789248 /* PARCreateNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C54A9BDB1B7E5D1300789248 /* PARCreateNoteViewController.xib */; };
+		C54A9BDF1B7E67AE00789248 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54A9BDE1B7E67AE00789248 /* CoreLocation.framework */; };
+		C54A9BE11B7E67BA00789248 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54A9BE01B7E67BA00789248 /* MapKit.framework */; };
 		C552F42E1B0A595A000D7821 /* PARSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = C552F42D1B0A595A000D7821 /* PARSettings.m */; };
 		C552F4311B0B403B000D7821 /* PARLibraryTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = C552F4301B0B403B000D7821 /* PARLibraryTabController.m */; };
 		C553CFD71AF3A8DE00EC7017 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C553CFD61AF3A8DE00EC7017 /* main.m */; };
@@ -65,6 +69,11 @@
 		C51196191AFFC27E003CB31C /* PARHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARHeaderCollectionReusableView.h; sourceTree = "<group>"; };
 		C511961A1AFFC27E003CB31C /* PARHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARHeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		C511961B1AFFC27E003CB31C /* PARHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		C54A9BD91B7E5D1300789248 /* PARCreateNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARCreateNoteViewController.h; sourceTree = "<group>"; };
+		C54A9BDA1B7E5D1300789248 /* PARCreateNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARCreateNoteViewController.m; sourceTree = "<group>"; };
+		C54A9BDB1B7E5D1300789248 /* PARCreateNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARCreateNoteViewController.xib; sourceTree = "<group>"; };
+		C54A9BDE1B7E67AE00789248 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C54A9BE01B7E67BA00789248 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C552F42C1B0A595A000D7821 /* PARSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARSettings.h; sourceTree = "<group>"; };
 		C552F42D1B0A595A000D7821 /* PARSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARSettings.m; sourceTree = "<group>"; };
 		C552F42F1B0B403B000D7821 /* PARLibraryTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARLibraryTabController.h; sourceTree = "<group>"; };
@@ -114,6 +123,7 @@
 		C5F4E5541B7BDCE0005E1BED /* NSDate+Formatters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Formatters.m"; sourceTree = "<group>"; };
 		C5F4E5561B7D21D0005E1BED /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		C5F4E5571B7D21D0005E1BED /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		C5F723511B7E3C1800E9BED9 /* ParseSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseSettings.h; sourceTree = "<group>"; };
 		C5FE12011AF4E3E9005AC784 /* PARLibraryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARLibraryTableViewController.h; sourceTree = "<group>"; };
 		C5FE12021AF4E3E9005AC784 /* PARLibraryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARLibraryTableViewController.m; sourceTree = "<group>"; };
 		C5FE12081AF4E44D005AC784 /* PARLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARLibrary.h; sourceTree = "<group>"; };
@@ -127,6 +137,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C54A9BE11B7E67BA00789248 /* MapKit.framework in Frameworks */,
+				C54A9BDF1B7E67AE00789248 /* CoreLocation.framework in Frameworks */,
 				B39B8A597A06DE463DC1AA76 /* libPods-StartupLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +156,8 @@
 		3CB7E70CDA1134953847CB1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C54A9BE01B7E67BA00789248 /* MapKit.framework */,
+				C54A9BDE1B7E67AE00789248 /* CoreLocation.framework */,
 				A2E51308FD459D8BAE57A0BC /* libPods-StartupLibrary.a */,
 			);
 			name = Frameworks;
@@ -228,6 +242,7 @@
 				C553CFD91AF3A8DE00EC7017 /* AppDelegate.m */,
 				C5051A111B752C8B000869B6 /* PARNetworkManager.h */,
 				C5051A121B752C8B000869B6 /* PARNetworkManager.m */,
+				C5F723511B7E3C1800E9BED9 /* ParseSettings.h */,
 				C506835A1B7D2BBB00F51500 /* CoreDataVC */,
 				C5F4E5591B7D21D5005E1BED /* PARSettings */,
 				C5F4E5501B7BC391005E1BED /* CoreDataTableVC */,
@@ -325,6 +340,7 @@
 		C5F4E5421B7A7C05005E1BED /* PARNote */ = {
 			isa = PBXGroup;
 			children = (
+				C5F723551B7E41F000E9BED9 /* CreateViewController */,
 				C5F4E5461B7A7DA5005E1BED /* _PARNote.h */,
 				C5F4E5471B7A7DA5005E1BED /* _PARNote.m */,
 				C5F4E5431B7A7C29005E1BED /* PARNote.h */,
@@ -361,6 +377,17 @@
 				C5051A141B753448000869B6 /* ParseSettings.h */,
 			);
 			name = PARSettings;
+			sourceTree = "<group>";
+		};
+		C5F723551B7E41F000E9BED9 /* CreateViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C54A9BD91B7E5D1300789248 /* PARCreateNoteViewController.h */,
+				C54A9BDA1B7E5D1300789248 /* PARCreateNoteViewController.m */,
+				C54A9BDB1B7E5D1300789248 /* PARCreateNoteViewController.xib */,
+			);
+			name = CreateViewController;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		C5FE12041AF4E3EE005AC784 /* PARLibrary */ = {
@@ -479,6 +506,7 @@
 			files = (
 				C553CFE51AF3A8DE00EC7017 /* LaunchScreen.xib in Resources */,
 				C553CFE21AF3A8DE00EC7017 /* Images.xcassets in Resources */,
+				C54A9BDD1B7E5D1300789248 /* PARCreateNoteViewController.xib in Resources */,
 				C5EC91581AF66FFF00DE1B01 /* PARBookTableViewCell.xib in Resources */,
 				C553D00A1AF4154000EC7017 /* PARWebViewController.xib in Resources */,
 				C5D79EDE1AFFBF4700B096BB /* PARLibraryCollectionViewController.xib in Resources */,
@@ -552,6 +580,7 @@
 				C5FE120A1AF4E44D005AC784 /* PARLibrary.m in Sources */,
 				C553CFDA1AF3A8DE00EC7017 /* AppDelegate.m in Sources */,
 				C5F4E5451B7A7C29005E1BED /* PARNote.m in Sources */,
+				C54A9BDC1B7E5D1300789248 /* PARCreateNoteViewController.m in Sources */,
 				C5F4E5551B7BDCE0005E1BED /* NSDate+Formatters.m in Sources */,
 				C5F4E5411B7A76FF005E1BED /* StartupLibrary.xcdatamodeld in Sources */,
 				C553D0021AF3ABD300EC7017 /* PARBook.m in Sources */,

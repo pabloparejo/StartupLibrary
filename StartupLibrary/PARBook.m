@@ -58,6 +58,11 @@
     return book;
 }
 
+- (BOOL) isDetailDataLoaded{
+    // Summary is loaded on retrieveDetailOnly
+    return self.summary != nil;
+}
+
 -(void) updateModelWithJSONDictionary:(NSDictionary *)dictionary{
     self.objectId = [dictionary objectForKey:@"objectId"];
     self.title = [dictionary objectForKey:@"title"];
@@ -74,12 +79,14 @@
 }
 
 -(void) retrieveDetail{
-    NSError *jsonError = nil;
-    NSData *data = [PARNetworkManager retrieveObjectId:self.objectId forParseClass:@"Book"];
-    NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data
-                                                             options:kNilOptions
-                                                               error:&jsonError];
-    [self updateModelWithJSONDictionary:response];
+    if (![self isDetailDataLoaded]) {
+        NSError *jsonError = nil;
+        NSData *data = [PARNetworkManager retrieveObjectId:self.objectId forParseClass:@"Book"];
+        NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data
+                                                                 options:kNilOptions
+                                                                   error:&jsonError];
+        [self updateModelWithJSONDictionary:response];
+    }
 }
 
 -(void) freeUpMemory{

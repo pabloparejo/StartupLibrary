@@ -6,9 +6,14 @@
 //  Copyright (c) 2015 PabloParejo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+@import CoreData;
+
 #import "_PARNote.h"
 
 @interface PARNote : _PARNote
+
++ (instancetype) noteWithContext:(NSManagedObjectContext *)context
+                            text:(NSString *)text;
 
 @end

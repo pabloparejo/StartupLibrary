@@ -11,6 +11,7 @@
 #import "PARBookViewController.h"
 #import "PARWebViewController.h"
 #import "PARBookViewController.h"
+#import "PARCreateNoteViewController.h"
 #import "ReaderViewController.h"
 
 #define SELF_TITLE @"Book"
@@ -62,6 +63,38 @@
 
 #pragma mark - IBActions
 
+- (IBAction)addNote:(id)sender {
+    
+    /*UIAlertController *notebookDialog = [UIAlertController alertControllerWithTitle:@"New Notebook"
+                                                                            message:@"Please, insert notebook name"
+                                                                     preferredStyle:UIAlertControllerStyleAlert];
+    
+    [notebookDialog addAction:[UIAlertAction actionWithTitle:@"Add new note" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        UITextField *titleTextField = notebookDialog.textFields.firstObject;
+        [PARNote noteWithContext:self.fetchedResultsController.managedObjectContext text:titleTextField.text];
+    }]];
+    
+    [notebookDialog addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        [notebookDialog dismissViewControllerAnimated:YES completion:nil];
+    }]];
+    
+    [notebookDialog addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Notebook name";
+    }];
+    
+    [self presentViewController:notebookDialog animated:YES completion:nil];*/
+}
+
+- (IBAction)buyBook:(id)sender {
+    PARWebViewController *webVC = [[PARWebViewController alloc] initWithURL:[NSURL URLWithString:self.model.webURL] title:BUY_BOOK_TITLE];
+    [self.navigationController pushViewController:webVC animated:YES];
+}
+
+- (IBAction)newNote:(id)sender {
+    PARCreateNoteViewController *noteVC = [PARCreateNoteViewController new];
+    [self presentViewController:noteVC animated:YES completion:nil];
+}
+
 
 - (IBAction)openBook:(id)sender {
     [self.bookLoading startAnimating];
@@ -70,11 +103,6 @@
         [self.navigationController pushViewController:readerVC animated:YES];
         [self.bookLoading stopAnimating];
     }];
-}
-
-- (IBAction)buyBook:(id)sender {
-    PARWebViewController *webVC = [[PARWebViewController alloc] initWithURL:[NSURL URLWithString:self.model.webURL] title:BUY_BOOK_TITLE];
-    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 - (IBAction)shareBook:(id)sender {

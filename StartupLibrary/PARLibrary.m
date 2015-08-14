@@ -29,11 +29,13 @@
     }else{
         data = [PARNetworkManager listParseClass:PARSE_CLASS_BOOK];
     }
-    NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data
-                                                             options:kNilOptions
-                                                               error:&jsonError];
-    NSArray *booksJSON = [response objectForKey:@"results"];
-    [self updateLibraryWithJSONArray:booksJSON context:context];
+    if (data) {
+        NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data
+                                                                 options:kNilOptions
+                                                                   error:&jsonError];
+        NSArray *booksJSON = [response objectForKey:@"results"];
+        [self updateLibraryWithJSONArray:booksJSON context:context];
+    }
 }
 
 + (void) updateLibraryWithJSONArray:(NSArray *)array context:(NSManagedObjectContext *) context{
